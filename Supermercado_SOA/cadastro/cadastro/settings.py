@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 import mongoengine
+from mongoengine import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -110,17 +111,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-_MONGODB_USER = 'tester'
-_MONGODB_PASSWD = 'teste123'
-_MONGODB_HOST = 'localhost/27017'
-_MONGODB_NAME = 'test'
-_MONGODB_DATABASE_HOST = \
-    'mongodb://%s:%s@%s/%s' \
-    % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_HOST, _MONGODB_NAME)
+#_MONGODB_USER = 'admin'
+#_MONGODB_PASSWD = 'admin123'
+#_MONGODB_HOST = 'localhost'
+#_MONGODB_NAME = 'admin'
+#_MONGODB_DATABASE_HOST = \
+#    'mongodb://%s:%s@%s/%s' \
+#    % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_HOST, _MONGODB_NAME)
 
 #mongoengine.connect(_MONGODB_NAME, host=_MONGODB_DATABASE_HOST)
 
-
+connect('supermercado', username='admin', password='admin123')
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 

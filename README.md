@@ -2,6 +2,8 @@
 
 Parte de aplicação web do aplicativo para supermercado
 
+## ATENÇÃO: PARA TESTAR TUDO, É BOM TER O MONGODB INSTALADO PARA TESTAR O BANCO DE DADOS LOCAL
+
 ### Como subir a aplicação utilizando o Django:
 
 Abra a pasta que se deseja inicializar (por exemplo, login) e utilize:
@@ -76,3 +78,24 @@ pip install django-filter
 https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-16-04
 
 <sup>Obs: Ao instalar utilizando o apt-get ao invés de apontar o pacote "mongodb-org", use apenas "mongodb"</sup>
+
+* Executando o MongoDB (Ubuntu)
+
+```cd /usr
+./bin/mongo```
+
+ou
+
+```mongo```
+
+* Criando banco de dados no MongoDB
+
+```use <nome>```
+
+(Serve tanto para criar quanto para selecionar este BD - nome padrão utilizado: supermercado)
+
+* Inserindo dados
+
+https://docs.mongodb.com/getting-started/shell/insert/
+
+Para mais informações, seguir o mesmo tutorial (selecionar dados, etc).
