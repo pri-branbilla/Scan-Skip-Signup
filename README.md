@@ -86,7 +86,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubunt
 
 ou
 
-```mongo```
+mongo
 
 * Criando banco de dados no MongoDB
 
