@@ -2,7 +2,7 @@
 
 Parte de aplicação web do aplicativo para supermercado
 
-## ATENÇÃO: PARA TESTAR TUDO, É BOM TER O MONGODB INSTALADO PARA TESTAR O BANCO DE DADOS LOCAL
+## ATENÇÃO: PARA TESTAR TUDO, É BOM TER O MONGODB INSTALADO PARA TESTAR O BANCO DE DADOS LOCAL. Se não tiver, quando der runserver, vai ter erro de conexão com o BD.
 
 ### Como subir a aplicação utilizando o Django:
 
