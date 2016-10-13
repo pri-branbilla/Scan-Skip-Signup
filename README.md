@@ -73,6 +73,10 @@ pip install django-filter
 
 ```pip install django-rest-framework-mongoengine```
 
+* Para instalar o MongoDB no Windows
+
+https://code.msdn.microsoft.com/Mongo-Database-setup-on-6963f46f
+
 * Para instalar o MongoDB no Ubuntu 16.04
 
 https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-16-04
