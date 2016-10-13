@@ -10,7 +10,7 @@ Abra a pasta que se deseja inicializar (por exemplo, login) e utilize:
 
 
 ### Requerimentos
-OBS: Em alguns sistemas é necessário utilizar o comando "pip" com sudo
+<sup>OBS: Em alguns sistemas é necessário utilizar o comando "pip" com sudo</sup>
 
 * Python 2.7
 
@@ -41,3 +41,5 @@ pip install django-filter
 * Para instalar o MongoDB no Ubuntu 16.04
 
 https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-16-04
+
+<sup>Obs: Ao instalar utilizando o apt-get ao invés de apontar o pacote "mongodb-org", use apenas "mongodb"</sup>
