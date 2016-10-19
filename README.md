@@ -94,6 +94,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubunt
 * Executando o MongoDB (Ubuntu)
 
 ```cd /usr
+
 ./bin/mongo```
 
 ou
