@@ -3,11 +3,15 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django import forms
+from django.template.context import RequestContext
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
 
 from .models import Usuario
+
+def Sobre(request):
+    return(request, 'cadastroapp/sobre.html')
 
 def Cadastro(request):
     registrado = False
@@ -15,6 +19,7 @@ def Cadastro(request):
         user_form = UserForm(data=request.POST)
         if user_form.is_valid():
             Usuario = user_form.save()
+            print(user_form)
             Usuario.set_password(Usuario.senha)
             Usuario.save()
             registrado = True
@@ -23,8 +28,7 @@ def Cadastro(request):
     else:
         user_form = UserForm()
     return render(request,
-                  'cadastroapp/Cadastro.html',
-                  {'user_form': user_form, 'registrado': registrado})
+                  'cadastroapp/Cadastro.html', {'user_form': user_form, 'registrado': registrado})
 
 
 class UserForm(forms.Form):
