@@ -57,11 +57,20 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'cadastro.urls'
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
+#TEMPLATE_DIRS = (
+#    os.path.join(SETTINGS_PATH, 'templates'),
+#)
+
+
+STATICFILES_DIRS = [
+    '/cadastroapp/templates/cadastroapp/css/',
+]
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(SETTINGS_PATH, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,8 +127,11 @@ AUTH_PASSWORD_VALIDATORS = [
 #_MONGODB_DATABASE_HOST = \
 #    'mongodb://%s:%s@%s/%s' \
 #    % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_HOST, _MONGODB_NAME)
-
 #mongoengine.connect(_MONGODB_NAME, host=_MONGODB_DATABASE_HOST)
+
+AUTHENTICATION_BACKENDS = (
+'mongoengine.django.auth.MongoEngineBackend',
+)
 
 connect('supermercado', username='admin', password='admin123')
 # Internationalization
