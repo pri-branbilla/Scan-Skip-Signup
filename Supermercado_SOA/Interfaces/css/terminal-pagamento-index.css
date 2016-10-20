@@ -1,0 +1,151 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 1.5em/1.38 'Open Sans';
+  color: rgb(255, 255, 255);
+}
+
+.background {
+  float: left;
+  width: 100%;
+  height: 712px;
+  border: 1px double rgb(0, 0, 0);
+  background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
+  background-size: cover;
+  background-position: center center;
+}
+
+.cadastro {
+  position: relative;
+  float: left;
+  clear: both;
+  z-index: 8;
+  width: 52.8333333333%;
+  height: 541px;
+  margin: -637px 0 0 23.6%;
+  background-color: rgba(240, 205, 101, 0.48);
+}
+
+.cadastro .container {
+  clear: both;
+  width: 80.0512618296%;
+  height: 33px;
+  margin: 20px 0 0 9.84326%;
+}
+
+.container {
+  float: left;
+}
+
+.text {
+  float: left;
+}
+
+._button {
+  display: block;
+  float: left;
+  clear: both;
+  height: 74px;
+  border-radius: 5px;
+  font-family: Helvetica;
+  font-style: italic;
+  font-size: 1em;
+  font-weight: 700;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+._text {
+  min-height: 33px;
+}
+
+.container-1 {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 712px;
+}
+
+.text-1 {
+  width: 100%;
+  min-height: 50px;
+  font-size: 1.333em;
+  line-height: 2.5;
+  text-align: center;
+  color: rgb(11, 62, 174);
+}
+
+.text-2 {
+  width: 33.8905821865%;
+  margin-left: 0.08005%;
+  font-size: 0.667em;
+  line-height: 1.28;
+  color: rgb(0, 0, 0);
+}
+
+.text-3 {
+  width: 66.0078199562%;
+  font-size: 1em;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: rgb(204, 21, 0);
+}
+
+.cadastro ._button-1 {
+  width: 48.4227129337%;
+  margin: 30px 0 0 25.74182%;
+  background-color: rgb(204, 21, 0);
+}
+
+.cadastro ._button-2 {
+  width: 54.5741324921%;
+  margin: 45px 0 0 22.71047%;
+  background-color: rgb(11, 62, 174);
+}
+
+@media(max-width: 600px) {
+  .cadastro {
+    position: relative;
+    z-index: 8;
+    width: 66.3333333333%;
+    margin-top: -640px;
+    margin-left: 16.83073%;
+  }
+
+  .cadastro .container {
+    width: 84.4221105527%;
+    height: 69px;
+    margin-top: 0;
+    margin-left: 7.78502%;
+  }
+
+  .container {
+    height: 711px;
+  }
+
+  .container .text {
+    width: 99.8830049261%;
+    text-align: center;
+  }
+
+  .cadastro ._button {
+    width: 63.8190954773%;
+    margin-left: 18.08653%;
+  }
+
+  .container .text-2 {
+    margin-left: 0;
+  }
+
+  .container .text-3 {
+    clear: both;
+  }
+
+  .container-1 {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cadastro ._button-1 {
+    margin-top: 45px;
+  }
+}

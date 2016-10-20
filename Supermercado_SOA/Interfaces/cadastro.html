@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>cadastro</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/standardize.css">
+  <link rel="stylesheet" href="css/cadastro-grid.css">
+  <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body class="body page-cadastro clearfix">
+  {% if registrado %}
+
+    Obrigado por registrar-se!<br>
+    Por favor realize o login para visitar sua conta.<br>
+    <a href="{% url 'Login' %}"><button class="btn btn-md btn-primary" style="margin:10px">Ir para tela de login</button></a>
+
+  {% else %}
+    <div class="container clearfix">
+      <div class="background"></div>
+    </div>
+    <form class="cadastro clearfix">
+      <p class="text">Cadastre-se</p>
+      <input class="_input _input-1" name="username" placeholder="Nome de Usuário" type="text" value="{{ username }}">
+      <input class="_input _input-2" name="nome" placeholder="Nome" type="text" value="{{ nome }}">
+      <input class="_input _input-3" name="email" placeholder="E-mail" type="text" value="{{ email }}">
+      <input class="_input _input-4" name="cpf" placeholder="CPF" type="text" value="{{ cpf }}">
+      <input class="_input _input-5" name="senha1" placeholder="Senha" type="text" value="{{ senha1 }}">
+      <input class="_input _input-6" name="senha2" placeholder="Confirmar senha" type="text" value="{{ senha2 }}">
+      <button class="_button" type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>

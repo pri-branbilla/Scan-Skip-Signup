@@ -54,10 +54,22 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'main.urls'
 
+#_MONGODB_USER = 'mongouser'
+#_MONGODB_PASSWD = 'password'
+#_MONGODB_HOST = 'thehost'
+#_MONGODB_NAME = 'thedb'
+#_MONGODB_DATABASE_HOST = \
+#    'mongodb://%s:%s@%s/%s' \
+#    % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_HOST, _MONGODB_NAME)
+connect('supermercado', username='admin', password='admin123')
+#mongoengine.connect(_MONGODB_NAME, host=_MONGODB_DATABASE_HOST)
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR + '/Interfaces/',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -89,6 +101,8 @@ DATABASES = {
 }
 
 SESSION_ENGINE = 'mongoengine.django.sessions'
+SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'
+
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
@@ -107,15 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-#_MONGODB_USER = 'mongouser'
-#_MONGODB_PASSWD = 'password'
-#_MONGODB_HOST = 'thehost'
-#_MONGODB_NAME = 'thedb'
-#_MONGODB_DATABASE_HOST = \
-#    'mongodb://%s:%s@%s/%s' \
-#    % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_HOST, _MONGODB_NAME)
-connect('supermercado', username='admin', password='admin123')
-#mongoengine.connect(_MONGODB_NAME, host=_MONGODB_DATABASE_HOST)
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 

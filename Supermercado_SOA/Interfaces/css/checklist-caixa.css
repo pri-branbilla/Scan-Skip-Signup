@@ -1,0 +1,322 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 1em/0.5 Helvetica;
+  color: rgb(0, 0, 0);
+}
+
+.container {
+  position: relative;
+  float: left;
+}
+
+.container .text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 45px;
+  margin: auto 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.54);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.54);
+  border-left: 1px solid rgba(0, 0, 0, 0.54);
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.text {
+  text-align: center;
+}
+
+._button {
+  display: block;
+  position: absolute;
+  bottom: 19px;
+  right: 2.5%;
+  z-index: 11;
+  width: 15.1133501259%;
+  height: 120px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 25px;
+  background-color: rgb(67, 212, 87);
+  font: 700 1.25em/1.38 'Open Sans';
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+._element {
+  position: absolute;
+  bottom: 19px;
+  left: 2.5188916876%;
+  width: 15.1133501259%;
+  height: 120px;
+  border: 1px solid rgb(0, 0, 0);
+  background: url('../images/prod1.jpg') rgb(222, 222, 222);
+  background-size: cover;
+  background-position: center center;
+}
+
+.container-1 {
+  clear: both;
+  width: 97.7886977886%;
+  height: 160px;
+  margin: 36px 0 0 1.0883799999%;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+}
+
+.container-2 {
+  width: 59.1703400503%;
+  height: 120px;
+  margin: 19px 0 0 20.52897%;
+}
+
+.container-3 {
+  width: 99.8170812824%;
+  height: 45px;
+}
+
+.container-4 {
+  clear: both;
+  z-index: 6;
+  width: 65.1589729945%;
+  height: 45px;
+  margin-top: 26px;
+}
+
+.container-5 {
+  z-index: 9;
+  width: 32.7391246507%;
+  height: 45px;
+  margin: 26px 0 0 1.87575%;
+}
+
+.element-1 {
+  float: left;
+  width: 100%;
+  height: 800px;
+  background: url('../images/Scan&Go.png') rgb(222, 222, 222);
+  background-size: cover;
+  background-position: center center;
+}
+
+.element-2 {
+  float: left;
+  width: 68%;
+  height: 646px;
+  margin: 70px 0 0 16%;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 5px;
+  background-color: rgba(113, 164, 255, 0.2);
+}
+
+.text-1 {
+  width: 100%;
+  min-height: 66px;
+  margin: 48px auto 0;
+  font: 700 1.875em/4 'Open Sans';
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.text-2 {
+  left: 0;
+  z-index: 2;
+  width: 30.4634658314%;
+  min-height: 45px;
+  padding-top: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  line-height: 1;
+}
+
+.text-3 {
+  right: 0.0099946695%;
+  z-index: 1;
+  width: 69.5062633262%;
+  padding-top: 15px;
+  border-right: 1px solid rgba(0, 0, 0, 0.54);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+.text-4 {
+  left: 0;
+  z-index: 5;
+  width: 46.5394038383%;
+  min-height: 45px;
+  padding-top: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  line-height: 1;
+}
+
+.text-5 {
+  left: 46.693548387%;
+  z-index: 4;
+  width: 53.0920751259%;
+  padding-top: 15px;
+  border-right: 1px solid rgba(0, 0, 0, 0.54);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+.text-6 {
+  left: -0.548557497%;
+  z-index: 8;
+  width: 65.5830963023%;
+  min-height: 45px;
+  padding-top: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  line-height: 1;
+}
+
+.text-7 {
+  right: 0.5587159691%;
+  z-index: 7;
+  width: 34.4155844155%;
+  padding-top: 15px;
+  border-right: 1px solid rgba(0, 0, 0, 0.54);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+@media(max-width: 600px) {
+  .container .element {
+    top: 20px;
+    bottom: auto;
+    left: 5%;
+    width: 37.9746835443%;
+    height: 150px;
+  }
+
+  .container ._button {
+    top: 20px;
+    bottom: auto;
+    right: 5.0632911392%;
+    width: 37.9746835443%;
+    height: 150px;
+  }
+
+  .container .container-2 {
+    position: absolute;
+    float: none;
+    top: auto;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    width: 89.8734177215%;
+    height: 141px;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container .container-3 {
+    width: 99.8195422535%;
+  }
+
+  .container .container-4 {
+    position: relative;
+    z-index: 6;
+    width: 65.0704225352%;
+    height: 84px;
+    margin-top: 12px;
+  }
+
+  .container .container-5 {
+    position: relative;
+    z-index: 9;
+    width: 32.676056338%;
+    height: 84px;
+    margin-top: 12px;
+    margin-left: 1.68574%;
+  }
+
+  .container .text-2 {
+    top: 0;
+    bottom: 0;
+    width: 30.4093309859%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .container .text-3 {
+    top: 0;
+    bottom: 0;
+    right: 0.1804577464%;
+    width: 69.3882042253%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .container .text-4 {
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    border-right: 1px solid rgba(0, 0, 0, 0.54);
+    border-bottom-width: 0;
+    border-bottom-style: none;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+  }
+
+  .container .text-5 {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100.0067645268%;
+    height: 39px;
+    margin-right: auto;
+    margin-left: auto;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+  }
+
+  .container .text-6 {
+    top: 0;
+    bottom: auto;
+    left: -0.8620689656%;
+    width: 100%;
+    height: 37px;
+    border-right: 1px solid rgba(0, 0, 0, 0.54);
+    border-bottom-width: 0;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .container .text-7 {
+    top: auto;
+    bottom: 0;
+    right: 0.8620689655%;
+    width: 100%;
+    height: 39px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+  }
+
+  .element .container-1 {
+    width: 97.7832512315%;
+    height: 367px;
+    margin-top: 52px;
+    margin-left: 0.97368%;
+  }
+
+  .element .text-1 {
+    margin-top: 32px;
+  }
+}
