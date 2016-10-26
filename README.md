@@ -94,6 +94,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubunt
 * Executando o MongoDB (Ubuntu)
 
 ```cd /usr
+
 ./bin/mongo```
 
 ou 
@@ -111,3 +112,14 @@ ou
 https://docs.mongodb.com/getting-started/shell/insert/
 
 Para mais informações, seguir o mesmo tutorial (selecionar dados, etc).
+
+* Criando o usuário admin:
+
+https://docs.mongodb.com/v2.6/tutorial/add-user-administrator/
+
+Sigam o item 2, e criem da seguinte forma (caso usem o banco de dados local para testes):
+
+```usuário: admin ```
+```senha: admin123 ```
+
+Façam assim para que o django consiga conectar no bd, já que os arquivos foram configurados dessa forma.

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>login</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/standardize.css">
+  <link rel="stylesheet" href="css/login-grid.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="body page-login clearfix">
+  <div class="container container-1">
+    <div class="background"></div>
+  </div>
+  <div class="container container-2 clearfix">
+    <p class="text text-1">Acessar minha conta</p>
+    <div class="container container-3 clearfix">
+      <form class="login clearfix">
+        <p class="text text-2">Já possui cadastro?</p>
+        <input class="_input _input-1" name="Nome" placeholder="E-mail" type="text">
+        <input class="_input _input-2" name="Sobrenome" placeholder="Senha" type="text">
+        <div class="container clearfix">
+          <label class="permanecer-conectado clearfix">
+            <input class="checkbox" type="checkbox">
+            <span class="point-text">Permanecer conectado</span>
+          </label>
+          <p onClick="window.location='recuperar-senha.html';" class="text text-3">Esqueci a senha</p>
+        </div>
+        <button class="_button" type="submit">Entrar</button>
+      </form>
+    </div>
+    <div class="container container-5 clearfix">
+      <form class="style-2 cadastro clearfix">
+        <p class="text">Ainda não é cadastrado?</p>
+        <input class="_input" name="Nome" placeholder="Nome" type="text">
+        <input class="_input _input-4" name="Sobrenome" placeholder="E-mail" type="text">
+        <button class="_button" type="submit">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

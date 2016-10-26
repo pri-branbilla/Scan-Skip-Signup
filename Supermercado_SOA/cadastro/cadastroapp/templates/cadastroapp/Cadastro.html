@@ -1,0 +1,29 @@
+<!doctype html>
+{% load static %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>cadastro</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/cadastro-grid.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/cadastro.css' %}" type="text/css">
+</head>
+<body class="body page-cadastro clearfix">
+  <div class="container clearfix">
+    <div class="background"></div>
+  </div>
+  <form class="cadastro clearfix">
+    <p class="text">Cadastre-se</p>
+    <input class="_input _input-1" name="Nome completo" placeholder="Nome completo" type="text" value="{{ nome }}">
+    <!--<input class="_input _input-2" name="Sobrenome" placeholder="Sobrenome" type="text">
+    <input class="_input _input-4" name="CPF" placeholder="CPF" type="text">-->
+    <input class="_input _input-3" name="E-mail" placeholder="E-mail" type="text" value="{{ email }}">
+
+    <input class="_input _input-5" name="Senha" placeholder="Senha" type="password" value="{{ senha1 }}">
+    <input class="_input _input-6" name="Confirmação de Senha" placeholder="Confirmar senha" type="password" value="{{ senha2 }}">
+    <button class="_button" type="submit">Cadastrar</button>
+  </form>
+</body>
+</html>

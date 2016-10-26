@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>Fila</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/standardize.css">
+  <link rel="stylesheet" href="css/login-grid.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="body page-cadastro clearfix">
+  {% if naFila %}
+
+    Você foi colocado na fila de espera.<br>
+    Sua posição é
+    <script type="text/javascript">
+        setInterval(function(data) {
+            console.log(data);
+        }, 5000);
+        console.log({{ posicao|safe }});
+    </script>.<br>
+
+  {% else %}
+    <form>
+        <button class="_button" type="submit">Entrar na fila</button>
+    </form>
+</body>
+</html>
