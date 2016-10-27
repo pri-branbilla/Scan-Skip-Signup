@@ -138,7 +138,7 @@ AUTHENTICATION_BACKENDS = (
 'mongoengine.django.auth.MongoEngineBackend',
 )
 
-connect('teste', username='admin', password='admin123')
+connect('teste2')
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 

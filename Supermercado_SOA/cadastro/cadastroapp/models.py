@@ -15,9 +15,11 @@ from django.utils import timezone
 # Create your models here.
 
 class Usuario(Document):
-    nome = models.CharField(max_length=200)
-    email = models.EmailField()
-    senha = models.CharField(max_length=15)
+   # def __init__(self):
+   #     super(Usuario, self).__init__()
+    nome = StringField(max_length=200)
+    email = EmailField(max_length=200)
+    senha = StringField(max_length=15)
 
     #def __str__(self):
     #   return self.email
@@ -27,9 +29,9 @@ class Usuario(Document):
         return self.email
     def getSenha(self):
         return self.senha
-    def setNome(nome):
+    def setNome(self, nome):
         nome = nome
-    def setEmail(email):
+    def setEmail(self, email):
         email = email
-    def setSenha(senha):
+    def setSenha(self, senha):
         senha = senha

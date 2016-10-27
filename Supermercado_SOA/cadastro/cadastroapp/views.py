@@ -5,17 +5,20 @@ from django.contrib.auth import authenticate, login, logout
 from django import forms
 from mongoengine import *
 from django.template.context import RequestContext
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
-# import mongoengine.django.auth
+import mongoengine.django.auth
 from mongoengine.django.auth import User
 
 from .models import Usuario
 
 
 def Sobre(request):
-    return render(request, 'cadastroapp/sobre.html', {})
+    user = Usuario(nome="x2", email="bla@bla.com", senha="x123")
+    user.save()
+    return HttpResponseRedirect('http://143.107.102.52:8000/carrinho/id=3894728582/nome=blablabla')
+   # return render(request, 'cadastroapp/sobre.html', {})
 
 
 
@@ -44,25 +47,26 @@ def cadastro(request):
         # usuario = request.POST.get('username')
         nome = request.POST.get('nome')
         email = request.POST.get('email')
-        if Usuario.objects(email=email).count() > 0 or Usuario.objects(nome=nome).count() > 0:
-            erroUsuario = True
-        else:
-            erroUsuario = False
+    #    if Usuario.objects(email=email).count() > 0 or Usuario.objects(nome=nome).count() > 0:
+    #        erroUsuario = True
+    #    else:
+    #        erroUsuario = False
         senha1 = request.POST.get('senha1')
         senha2 = request.POST.get('senha2')
-        if senha1 == senha2:
-            erroSenha = False
-        else:
-            erroSenha = True
-        if '@' in email and '.' in email:
-            erroEmail = False
-        else:
-            erroEmail = True
-        if not erroUsuario and not erroEmail and not erroSenha:
+
+        #if senha1 == senha2:
+        #    erroSenha = False
+        #else:
+        #    erroSenha = True
+        #if '@' in email and '.' in email:
+        #    erroEmail = False
+        #else:
+        #    erroEmail = True
+        #if not erroUsuario and not erroEmail and not erroSenha:
             #U.create_user(username=usuario, password=senha1, email=email)
-            cliente = Usuario(nome=nome, email=email, senha=senha1)
-            cliente.save()
-            registrado = True
+        cliente = Usuario(nome=nome, email=email, senha=senha1)
+        cliente.save()
+        registrado = True
     else:
         usuario = ''
         nome = ''
@@ -73,24 +77,23 @@ def cadastro(request):
                   {'registrado': registrado, 'usuario': usuario, 'nome': nome, 'email': email})
 
 
-def login(request):
+def login(request, senha, email):
     desativada = False
     errado = False
-    if request.method == 'POST':
-        username = request.POST.get('email')
-        password = request.POST.get('senha')
+    if request.method == 'GET':
+        username = email
+        password = senha
+        try:
+            user = Usuario.objects.get(email=username, senha=password)
 
-        user = authenticate(username=username, password=password)
-        if user:
-            if user.is_active:
-                login(request, user)
-
-                return HttpResponseRedirect('/id=/')
+            if user:
+                id = user["_id"]
+                return HttpResponseRedirect('http://192.168.1.12:5555/carrinho/id=3894728582'+id)
             else:
-                desativada = True
-        else:
-            errado = True
-    return render(request, 'cadastroapp/login.html', {'desativada': desativada, 'errado': errado})
+                errado = True
+        except:
+            pass
+    return render(request, 'cadastroapp/login.html', {'errado': errado})
 
 
 class UserForm(forms.Form):
