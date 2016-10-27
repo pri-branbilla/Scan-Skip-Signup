@@ -14,7 +14,7 @@ from django.utils import timezone
 #)
 # Create your models here.
 
-class Usuario(models.Model):
+class Usuario(Document):
     nome = models.CharField(max_length=200)
     email = models.EmailField()
     senha = models.CharField(max_length=15)

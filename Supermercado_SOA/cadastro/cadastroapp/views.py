@@ -5,28 +5,31 @@ from django.contrib.auth import authenticate, login, logout
 from django import forms
 from mongoengine import *
 from django.template.context import RequestContext
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
-import mongoengine.django.auth
-#from mongoengine.django.auth import User
-
+# import mongoengine.django.auth
+from mongoengine.django.auth import User
 
 from .models import Usuario
 
+
 def Sobre(request):
     return render(request, 'cadastroapp/sobre.html', {})
+
+
 
 def Cadastro(request):
     registrado = False
     if request.method == 'POST':
         user_form = UserForm(data=request.POST)
         if user_form.is_valid():
-            Usuario = user_form.save()
-            print(user_form)
-            Usuario.set_password(Usuario.senha)
-            Usuario.save()
-            registrado = True
+            if user_form.senha1 == user_form.senha2:
+                Usuario = user_form.save()
+                print(user_form)
+                Usuario.set_password(Usuario.senha)
+                Usuario.save()
+                registrado = True
         else:
             print(user_form.errors)
     else:
@@ -34,13 +37,14 @@ def Cadastro(request):
     return render(request,
                   'cadastroapp/Cadastro.html', {'user_form': user_form, 'registrado': registrado})
 
+
 def cadastro(request):
     registrado = False
     if request.method == 'POST':
-        usuario = request.POST.get('username')
+        # usuario = request.POST.get('username')
         nome = request.POST.get('nome')
         email = request.POST.get('email')
-        if User.objects(username=usuario).count() > 0 or User.objects(email=email).count() > 0:
+        if Usuario.objects(email=email).count() > 0 or Usuario.objects(nome=nome).count() > 0:
             erroUsuario = True
         else:
             erroUsuario = False
@@ -55,7 +59,7 @@ def cadastro(request):
         else:
             erroEmail = True
         if not erroUsuario and not erroEmail and not erroSenha:
-            User.create_user(username=usuario, password=senha1, email=email)
+            #U.create_user(username=usuario, password=senha1, email=email)
             cliente = Usuario(nome=nome, email=email, senha=senha1)
             cliente.save()
             registrado = True
@@ -64,25 +68,24 @@ def cadastro(request):
         nome = ''
         email = ''
 
-
     return render(request,
-            'cadastroapp/Cadastro.html',
-            {'registrado': registrado, 'usuario': usuario, 'nome': nome, 'email': email} )
-
+                  'cadastroapp/Cadastro.html',
+                  {'registrado': registrado, 'usuario': usuario, 'nome': nome, 'email': email})
 
 
 def login(request):
     desativada = False
     errado = False
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+        username = request.POST.get('email')
+        password = request.POST.get('senha')
 
         user = authenticate(username=username, password=password)
         if user:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect('/cadastro/sobre/')
+
+                return HttpResponseRedirect('/id=/')
             else:
                 desativada = True
         else:
@@ -93,10 +96,12 @@ def login(request):
 class UserForm(forms.Form):
     nome = forms.CharField(label='Nome completo')
     email = forms.EmailField(label='E-mail')
-    senha = forms.CharField(widget=forms.PasswordInput())
+    senha1 = forms.CharField(widget=forms.PasswordInput())
+    senha2 = forms.CharField(widget=forms.PasswordInput())
 
     def __init__(self, *args, **kwargs):
         super(UserForm, self).__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control'
+
 # Create your views here.

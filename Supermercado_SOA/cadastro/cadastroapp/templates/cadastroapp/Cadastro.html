@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1.0">
-  <title>cadastro</title>
+  <title>Cadastro</title>
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}" type="text/css">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/cadastro-grid.css' %}" type="text/css">
@@ -15,16 +15,25 @@
     <div class="background"></div>
   </div>
   <form class="cadastro clearfix">
-    {% csrf_token %}
+
     <p class="text">Cadastre-se</p>
     <input class="_input _input-1" name="Nome" placeholder="Nome completo" type="text" value="{{ nome }}">
+    <!--<div class="_input _input-1" name="Nome" placeholder="Nome completo" >{{ user_form.nome.errors }}
+       {{ user_form.nome }}</div>-->
     <!--<input class="_input _input-2" name="Sobrenome" placeholder="Sobrenome" type="text">
     <input class="_input _input-4" name="CPF" placeholder="CPF" type="text">-->
     <input class="_input _input-3" name="E-mail" placeholder="E-mail" type="text" value="{{ email }}">
-    <!--<div class="_input _input-3" name="E-mail" placeholder="E-mail" >{{ user_form.email.errors }}
+    <!--<div class="_input _input-3" name="E-mail" placeholder="E-mail" >
+    {{ user_form.email.errors }}
        {{ user_form.email }}</div>-->
     <input class="_input _input-5" name="Senha" placeholder="Senha" type="password" value="{{ senha1 }}">
+    <!--<div class="_input _input-5" name="Senha" placeholder="Senha" >
+    {{ user_form.senha1.errors }}
+       {{ user_form.senha1 }}</div>-->
     <input class="_input _input-6" name="Confirmação de Senha" placeholder="Confirmar senha" type="password" value="{{ senha2 }}">
+    <!--<div class="_input _input-6" name="Confirmação de Senha" placeholder="Confirmar senha" >
+    {{ user_form.senha2.errors }}
+       {{ user_form.senha2 }}</div>-->
     <button class="_button" type="submit">Cadastrar</button>
   </form>
 </body>
