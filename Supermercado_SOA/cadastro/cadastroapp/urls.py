@@ -5,7 +5,7 @@ from django.conf import settings
 import os
 
 urlpatterns = [
-    url(r'^$', views.cadastro, name="cadastro"),
+    url(r'^$', views.Cadastro, name="Cadastro"),
     url(r'^sobre/', views.Sobre, name="Sobre"),
     url(r'^login/', views.login, name="login")
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

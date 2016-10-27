@@ -1,0 +1,556 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 0.75em/2.5 'Open Sans';
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 13;
+  width: 100%;
+  height: 712px;
+  border: 1px double rgb(0, 0, 0);
+  background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
+  background-size: cover;
+  background-position: center center;
+}
+
+.checkbox {
+  display: block;
+  float: left;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.login {
+  position: absolute;
+  bottom: 185.5px;
+  left: 9.8086124401%;
+  z-index: 8;
+  width: 80.3827751196%;
+  height: 268px;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom-left-radius: 10px;
+}
+
+.login .container {
+  bottom: 115px;
+  z-index: 7;
+  width: 80.1435406698%;
+  height: 14px;
+}
+
+.login .text {
+  display: block;
+  float: left;
+  width: 29.2537313432%;
+  height: 14px;
+  margin-top: 2px;
+  font: 1em/1.25 Helvetica;
+  text-align: right;
+  color: rgb(0, 0, 0);
+}
+
+.login .text:hover {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.permanecer-conectado {
+  display: block;
+  float: left;
+  width: 70.447761194%;
+  height: 14px;
+  margin: 2px 0 0 0.00291%;
+}
+
+.point-text {
+  display: block;
+  float: left;
+  margin-left: 6px;
+  font: 1em/1.38 Helvetica;
+}
+
+.point-text:hover {
+  text-decoration: underline;
+}
+
+._button {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 52px;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-style: italic;
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+._button:hover {
+  background-color: rgb(11, 62, 174);
+  color: rgb(250, 220, 10);
+}
+
+._button:focus {
+  background-color: rgb(62, 113, 225);
+}
+
+._input {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 80.0164473684%;
+  height: 33px;
+  margin: 0 auto;
+  padding: 0 10px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  font: italic 1em/1.38 Helvetica;
+  color: rgb(0, 0, 0);
+}
+
+._input:focus {
+  border: 1 solid rgba(0, 0, 0, 0.54);
+}
+
+.login ._button {
+  bottom: 26px;
+  z-index: 2;
+  width: 54.0669856459%;
+  background-color: rgb(62, 113, 225);
+}
+
+.container-1 {
+  top: 0;
+  bottom: 0;
+  z-index: 12;
+  width: 69.7829716193%;
+  height: 541px;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 10px;
+  background-color: rgba(113, 164, 255, 0.2);
+}
+
+.text-1 {
+  position: absolute;
+  top: 362px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  height: 30px;
+  min-height: 50px;
+  margin: 0 auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 1.833em;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.text-2 {
+  position: absolute;
+  top: 21px;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  width: 100%;
+  height: 66px;
+  min-height: 50px;
+  margin: 0 auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 2.667em;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.container ._button-1 {
+  bottom: 59.5px;
+  z-index: 11;
+  width: 29.3062200956%;
+  background-color: rgb(67, 212, 87);
+}
+
+.login ._input-1 {
+  bottom: 155px;
+  z-index: 1;
+}
+
+.login ._input-2 {
+  bottom: 215px;
+}
+
+@media(max-width: 720px) {
+  .container .login {
+    left: -0.0966756066%;
+    width: 100.1933512131%;
+  }
+
+  .container .permanecer-conectado {
+    margin-left: 0;
+  }
+
+  .login .container {
+    left: 0;
+    right: 0;
+    width: 88.2235528942%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .login ._button {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container .text-1,
+  .login ._input {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .container-1 {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 80.5019305019%;
+    margin: auto;
+  }
+
+  .container .text-2 {
+    left: 0;
+    right: 0;
+    width: 99.94504488%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container ._button-1 {
+    left: 0;
+    right: 0;
+    width: 36.9238445705%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media(max-width: 580px) {
+  body {
+    font-size: 0.75em;
+  }
+
+  .login .container {
+    left: 0;
+    right: 0;
+    width: 95.6276791181%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container .text-1,
+  .container .text-2,
+  .login ._button,
+  .login ._input {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .container-1 {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 83.6244541484%;
+    margin: auto;
+  }
+
+  .container ._button-1 {
+    left: 0;
+    right: 0;
+    width: 48.8417137987%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media(max-width: 520px) {
+  .container .text-1,
+  .container .text-2,
+  .login ._button,
+  .login ._input,
+  .login .container {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .container-1 {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .container ._button-1 {
+    left: 0;
+    right: 0;
+    width: 52.037743425%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media(max-width: 460px) {
+  body {
+    font-size: 0.75em;
+  }
+
+  .container .permanecer-conectado {
+    position: relative;
+    z-index: 5;
+    margin-left: 5.32787%;
+  }
+
+  .login .text {
+    position: relative;
+    clear: both;
+    z-index: 6;
+    margin-top: -14px;
+    margin-left: 63.60997%;
+  }
+
+  .container .text-1,
+  .container .text-2,
+  .login ._button,
+  .login ._input,
+  .login .container {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .container-1 {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .container ._button-1 {
+    left: 0;
+    right: 0;
+    width: 62.7877963025%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media(max-width: 410px) {
+  .container .permanecer-conectado {
+    position: relative;
+    z-index: 5;
+    width: 79.1562799616%;
+    margin-left: 5.35613%;
+  }
+
+  .login .container {
+    bottom: 114px;
+    left: 0;
+    right: 0;
+    width: 90.9507655633%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .login .text {
+    position: relative;
+    z-index: 6;
+    width: 44.1802492809%;
+    margin-top: 21px;
+    margin-left: 7.50424%;
+    text-align: left;
+  }
+
+  .login ._button {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container ._button-1,
+  .container .text-1,
+  .container .text-2,
+  .login ._input {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .container-1 {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 89.4607843137%;
+    margin: auto;
+  }
+}
+
+@media(max-width: 370px) {
+  body {
+    font-size: 0.75em;
+  }
+
+  .container .permanecer-conectado {
+    position: relative;
+    z-index: 5;
+    margin-left: 5.35448%;
+  }
+
+  .login .text {
+    position: relative;
+    z-index: 6;
+    margin-left: 7.50401%;
+  }
+
+  .container ._button-1,
+  .container .text-1,
+  .login ._button,
+  .login ._input,
+  .login .container {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .container-1 {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .container .text-2 {
+    top: 19px;
+    left: 0;
+    right: 0;
+    width: 99.8996185504%;
+    height: 68px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 2.5em;
+    line-height: 1;
+  }
+}
+
+@media(max-width: 310px) {
+  .container .permanecer-conectado {
+    position: relative;
+    z-index: 5;
+    margin-left: 5.35915%;
+  }
+
+  .login .text {
+    position: relative;
+    z-index: 6;
+    margin-left: 7.50156%;
+  }
+
+  .container ._button-1,
+  .container .text-1,
+  .container .text-2,
+  .login ._button,
+  .login ._input,
+  .login .container {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .container-1 {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+
+@media(max-width: 260px) {
+  body {
+    font-size: 0.75em;
+  }
+
+  .container .permanecer-conectado {
+    position: relative;
+    z-index: 5;
+    margin-left: 5.35781%;
+  }
+
+  .login .text {
+    position: relative;
+    z-index: 6;
+    margin-left: 7.5069%;
+  }
+
+  .container .text-1,
+  .container .text-2,
+  .login ._button,
+  .login ._input,
+  .login .container {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .container-1 {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .container ._button-1 {
+    left: 0;
+    right: 0;
+    width: 74.9576873603%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

@@ -22,8 +22,8 @@ def login(request, usuario, senha, logado):
 def index(request):
     logado = False
     if request.method == 'POST':
-        username = request.POST.get('username')
-        senha = request.POST.get('senha')
+        username = request.POST.get('E-mail')
+        senha = request.POST.get('Senha')
         request, logado = login(request, username, senha, logado)
         if logado:
             return render(request, 'Interfaces/fila.html', {})

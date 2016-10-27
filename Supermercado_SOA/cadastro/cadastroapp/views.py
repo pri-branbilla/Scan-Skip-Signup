@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from django.contrib.auth import login, logout
+from django.contrib.auth import authenticate, login, logout
 from django import forms
 from mongoengine import *
 from django.template.context import RequestContext
@@ -72,17 +72,22 @@ def cadastro(request):
 
 
 def login(request):
-  #  try:  usuario, senha, logado
-  #      user = User.objects.get(username=usuario)
-  #      if user.check_password(senha):
-  #          user.backend = 'mongoengine.django.auth.MongoEngineBackend'
-  #          request.session.set_expiry(60 * 60 * 1)  # 1 hour timeout
-  #          logado = True
-  #      else:
-  #          pass # Senha errada
-  #  except DoesNotExist:
-  #      pass    # Nome de usuario nao existe
-    return render(request, 'cadastroapp/login.html', {})
+    desativada = False
+    errado = False
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password)
+        if user:
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect('/cadastro/sobre/')
+            else:
+                desativada = True
+        else:
+            errado = True
+    return render(request, 'cadastroapp/login.html', {'desativada': desativada, 'errado': errado})
 
 
 class UserForm(forms.Form):
