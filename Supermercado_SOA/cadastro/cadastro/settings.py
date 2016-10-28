@@ -138,7 +138,7 @@ AUTHENTICATION_BACKENDS = (
 'mongoengine.django.auth.MongoEngineBackend',
 )
 
-connect('teste2')
+connect('supermercado')
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 

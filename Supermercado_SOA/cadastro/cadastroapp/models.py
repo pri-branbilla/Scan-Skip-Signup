@@ -17,6 +17,7 @@ from django.utils import timezone
 class Usuario(Document):
    # def __init__(self):
    #     super(Usuario, self).__init__()
+    _id = StringField()
     nome = StringField(max_length=200)
     email = EmailField(max_length=200)
     senha = StringField(max_length=15)

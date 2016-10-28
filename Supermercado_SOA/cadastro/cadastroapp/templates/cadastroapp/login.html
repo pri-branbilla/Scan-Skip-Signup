@@ -13,21 +13,28 @@
 <body class="body page-login clearfix">
   <div class="background">
     <div class="container container-1">
-      <a href="/cadastro"><button class="_button _button-1" type="submit">Cadastre-se</button></a>
-      <p class="text text-1">Ainda não tem conta?</p>
-      <p class="text text-2">Acessar minha conta</p>
-      <form class="login">
+
+      <form class="login" method="POST">{% csrf_token %}
+
+        <input class="_input _input-2" name="email" placeholder="E-mail" type="email">
+        <input class="_input _input-1" name="senha" placeholder="Senha" type="password">
+        <button class="_button" type="submit">Entrar</button>
+        {% if errado %}
+          <div style="margin-left: 80px; margin-top: -3px; color: red">E-mail e/ou senha incorretos</div>
+        {% endif %}
         <div class="container clearfix">
+
           <label class="permanecer-conectado clearfix">
             <input class="checkbox" type="checkbox">
             <span class="point-text">Permanecer conectado</span>
           </label>
-          <a href="recuperar-senha.html" class="text">Esqueci a senha</a>
+          <a href="/cadastro/recuperar-senha" class="text">Esqueci a senha</a>
         </div>
-        <button class="_button" type="submit">Entrar</button>
-        <input class="_input _input-1" name="senha" placeholder="Senha" type="password">
-        <input class="_input _input-2" name="email" placeholder="E-mail" type="email">
+
       </form>
+      <a href="/cadastro"><button class="_button _button-1" type="submit">Cadastre-se</button></a>
+      <p class="text text-1">Ainda não tem conta?</p>
+      <p class="text text-2">Acessar minha conta</p>
     </div>
   </div>
 </body>
