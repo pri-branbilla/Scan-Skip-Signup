@@ -39,30 +39,37 @@ def Cadastro(request):
 
 def cadastro(request):
     registrado = False
+    erroSenha = False
+    erroEmail = False
+    erroUsuario = False
     if request.method == 'POST':
         nome = request.POST['nome']
         email = request.POST['email']
-    #    if Usuario.objects(email=email).count() > 0 or Usuario.objects(nome=nome).count() > 0:
-    #        erroUsuario = True
-    #    else:
-    #        erroUsuario = False
+        if nome=="":
+            erroUsuario = True
+        else:
+            erroUsuario = False
         senha1 = request.POST['senha1']
         senha2 = request.POST['senha2']
-
-        #if senha1 == senha2:
-        #    erroSenha = False
-        #else:
-        #    erroSenha = True
-        #if '@' in email and '.' in email:
-        #    erroEmail = False
-        #else:
-        #    erroEmail = True
-        #if not erroUsuario and not erroEmail and not erroSenha:
+        try:
+            user = Usuario.objects.get(nome=nome, email=email)
+            registrado = True
+        except:
+            registrado = False
+        if senha1 == senha2:
+            erroSenha = False
+        else:
+            erroSenha = True
+        if '@' in email and '.' in email:
+            erroEmail = False
+        else:
+            erroEmail = True
+        if not erroUsuario and not erroEmail and not erroSenha:
             #U.create_user(username=usuario, password=senha1, email=email)
-        cliente = Usuario(nome=nome, email=email, senha=senha1)
-        cliente.save()
-        registrado = True
-        return HttpResponseRedirect('/cadastro/login')
+            cliente = Usuario(nome=nome, email=email, senha=senha1)
+            cliente.save()
+            registrado = True
+            return HttpResponseRedirect('/cadastro/login')
     else:
         usuario = ''
         nome = ''
@@ -70,7 +77,7 @@ def cadastro(request):
 
     return render(request,
                   'cadastroapp/Cadastro.html',
-                  {'registrado': registrado, 'usuario': usuario, 'nome': nome, 'email': email})
+                  {'erroSenha' : erroSenha, 'registrado' : registrado, 'erroEmail' : erroEmail, 'erroUsuario' : erroUsuario})
 
 
 def login(request):
@@ -82,8 +89,6 @@ def login(request):
 
         try: #se usuario e senha corretos
                 user = Usuario.objects.get(email=email, senha=senha)
-
-
                 id = str(user._id)
                 nome = str(user.nome)
                 return HttpResponseRedirect('http://192.168.1.12:5555/carrinho/id=' + id + '/nome=' + nome)

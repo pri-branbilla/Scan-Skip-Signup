@@ -12,11 +12,22 @@
 </head>
 <body class="body page-cadastro clearfix">
   <div class="container clearfix">
-    <div class="background"></div>
-  </div>
-  <form class="cadastro clearfix" method="POST">{% csrf_token %}
+    <div class="background clearfix">
+      <form class="style-1 cadastro clearfix" method="POST">{% csrf_token %}
 
     <p class="text">Cadastre-se</p>
+     <div style="font-size: 10px; margin-left: 95px; margin-bottom:5px;">  {% if registrado %}
+        Usuário já cadastrado<br>
+        {% endif %}
+        {% if erroUsuario %}
+        Nome invalido<br>
+        {% endif %}
+     {% if erroEmail %}
+        E-mail invalido<br>
+        {% endif %}
+     {% if erroSenha %}
+        As senhas devem ser iguais<br>
+        {% endif %}</div>
     <input class="_input _input-1" name="nome" placeholder="Nome completo" type="text">
 
     <input class="_input _input-3" name="email" placeholder="E-mail" type="text">
@@ -27,5 +38,8 @@
 
     <button class="_button" type="submit">Cadastrar</button>
   </form>
+      </div>
+  </div>
+<script src="{% static 'cadastroapp/js/jquery-min.js' %}"></script>
 </body>
 </html>
