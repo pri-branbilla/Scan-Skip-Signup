@@ -1,0 +1,237 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 600 2em/2.5 'Open Sans';
+  color: rgb(0, 0, 0);
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  width: 100%;
+  height: 712px;
+  border: 1px double rgb(0, 0, 0);
+  background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
+  background-size: cover;
+  background-position: center center;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  width: 56.0934891485%;
+  height: 507px;
+  margin: auto;
+  border-radius: 10px;
+  background-color: rgba(113, 164, 255, 0.2);
+}
+
+.login {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  width: 100%;
+  height: 194px;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.login .text {
+  float: left;
+  font-size: 0.563em;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.text {
+  width: 100%;
+  min-height: 50px;
+  text-align: center;
+}
+
+._button {
+  display: block;
+  position: absolute;
+  top: 115px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 21.7703349282%;
+  height: 52px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: rgb(62, 113, 225);
+  font: italic 700 0.75em/1.38 Helvetica;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+._button:hover {
+  background-color: rgb(11, 62, 174);
+  color: rgb(250, 220, 10);
+}
+
+._input {
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  width: 56.3397129186%;
+  height: 33px;
+  margin: 0 auto;
+  padding: 0 10px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  font: italic 400 0.375em/1.38 Helvetica;
+  color: rgb(0, 0, 0);
+}
+
+.text-1 {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+@media(max-width: 670px) {
+  .background .container,
+  .container .login {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .login .text {
+    width: 91.5222656977%;
+  }
+
+  .login ._button {
+    top: 125px;
+    left: 0;
+    right: 0;
+    width: 27.128749767%;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 0.688em;
+  }
+
+  .login ._input {
+    top: 72px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container .text-1 {
+    left: 0;
+    right: 0;
+    width: 86.7353321379%;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 1.5;
+  }
+}
+
+@media(max-width: 600px) {
+  body {
+    font-size: 2em;
+  }
+
+  .background .container,
+  .container .login {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .login .text {
+    margin-top: -10px;
+    margin-left: 2.77623%;
+    line-height: 2;
+  }
+
+  .container .text-1,
+  .login ._button,
+  .login ._input {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media(max-width: 390px) {
+  .background .container {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 70.1030927835%;
+    margin: auto;
+  }
+
+  .container .login {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .login .text {
+    position: absolute;
+    float: none;
+    left: 0;
+    right: 0;
+    width: 91.5211397058%;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .login ._button {
+    top: 133px;
+    left: 0;
+    right: 0;
+    width: 36.7647058823%;
+    height: 44px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .login ._input {
+    top: 88px;
+    left: 0;
+    right: 0;
+    width: 79.7794117647%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container .text-1 {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

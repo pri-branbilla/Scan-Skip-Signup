@@ -5,7 +5,9 @@ body {
 }
 
 .background {
+  position: relative;
   float: left;
+  z-index: 7;
   width: 100%;
   height: 712px;
   background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
@@ -13,39 +15,77 @@ body {
   background-position: center center;
 }
 
-.container {
-  float: left;
+.barra {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  width: 100%;
+  height: 50px;
+  margin: 0 auto;
+  background-color: rgb(11, 62, 174);
 }
 
-.container .container {
+.botoesbarra {
+  float: left;
+  width: 44.0013020833%;
   height: 50px;
+  margin-left: 13.58073%;
+  background-color: rgb(11, 62, 174);
+}
+
+.corpo {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  height: 742px;
+  margin: 0 auto;
 }
 
 .footer {
-  float: left;
-  clear: both;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 8;
   width: 100%;
   height: 30px;
+  margin: 0 auto;
   background-color: rgb(11, 62, 174);
 }
 
 .text {
   float: left;
   width: 42.4166666666%;
+  height: 50px;
   min-height: 50px;
   border-radius: 5px;
   background-color: rgb(11, 62, 174);
-  font-size: 1.875em;
-  line-height: 1.5;
+  font: italic 400 2em/1.5 'Open Sans';
   text-align: center;
-  color: rgb(240, 205, 101);
+  color: rgb(250, 220, 10);
+}
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  width: 100%;
+  height: 712px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 ._button {
   display: block;
-  float: left;
+  float: right;
   height: 31px;
-  margin-top: 10px;
   border-radius: 5px;
   background-color: rgb(11, 62, 174);
   font-style: italic;
@@ -55,77 +95,299 @@ body {
 }
 
 ._button:hover {
-  color: rgb(240, 205, 101);
+  color: rgb(250, 220, 10);
 }
 
-.container-1 {
-  width: 100%;
-  height: 742px;
-  margin-top: 50px;
+.botoesbarra ._button-1 {
+  width: 20.4539401651%;
+  margin: 10px 79.54606% 0 0;
 }
 
-.container-2 {
-  width: 100%;
-  margin-top: -50px;
-  background-color: rgb(11, 62, 174);
+.botoesbarra ._button-2 {
+  position: relative;
+  clear: both;
+  z-index: 1;
+  width: 18.9388334862%;
+  margin: -31px 60.60723% 0 0;
 }
 
-.container-3 {
-  width: 49.8333333333%;
-  margin-left: 7.66667%;
+.botoesbarra ._button-3 {
+  position: relative;
+  clear: both;
+  z-index: 2;
+  width: 19.128221821%;
+  margin: -31px 41.55003% 0 0;
 }
 
-.container ._button-1 {
-  width: 13.168896321%;
-  margin-left: 18.73955%;
+.botoesbarra ._button-4 {
+  clear: both;
+  width: 34.0899002752%;
+  margin: -31px 7.45717% 0 0;
 }
 
-.container ._button-2 {
-  width: 12.9598662207%;
-  margin-left: 3.87751%;
-}
+@media(max-width: 800px) {
+  .barra,
+  .corpo .footer {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
 
-.container ._button-3 {
-  width: 13.168896321%;
-  margin-left: 4.06825%;
-}
+  .barra .botoesbarra {
+    margin-left: 13.58008%;
+  }
 
-.container ._button-4 {
-  width: 30.1003344481%;
-  margin-left: 3.88535%;
+  .corpo {
+    top: 98px;
+    left: 0;
+    right: 0;
+    height: 694px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .corpo .background {
+    position: relative;
+    z-index: 7;
+  }
+
+  .corpo .wrapper {
+    top: -47px;
+    left: 0;
+    right: 0;
+    height: 711px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .botoesbarra ._button {
+    position: relative;
+  }
+
+  .botoesbarra ._button-1 {
+    z-index: 0;
+    width: 20.4545454545%;
+    min-width: 50px;
+    margin-right: 79.54102%;
+  }
+
+  .botoesbarra ._button-2 {
+    z-index: 1;
+    width: 18.936434659%;
+    margin-right: 60.61346%;
+  }
+
+  .botoesbarra ._button-3 {
+    z-index: 2;
+    width: 19.1273082386%;
+    margin-right: 41.56605%;
+  }
+
+  .botoesbarra ._button-4 {
+    z-index: 3;
+    width: 37.9838423295%;
+    min-width: 100px;
+    margin-right: 3.55558%;
+  }
 }
 
 @media(max-width: 600px) {
-  .container .text {
-    margin-left: 16.83073%;
+  body {
+    font-size: 1em;
   }
 
-  .container .container-3 {
-    clear: both;
-    width: 100%;
-    margin-left: 0;
-    background-color: rgb(11, 62, 174);
+  .barra,
+  .corpo .footer {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
   }
 
-  .container ._button-1 {
-    margin-left: 16.28125%;
+  .barra .botoesbarra {
+    margin-left: 13.58073%;
   }
 
-  .container ._button-2 {
-    margin-left: 6.44531%;
+  .corpo {
+    top: 50px;
+    left: 0;
+    right: 0;
+    height: 742px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
-  .container ._button-3 {
+  .corpo .background {
     position: relative;
+    z-index: 7;
+  }
+
+  .corpo .wrapper {
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .botoesbarra ._button {
+    position: relative;
+  }
+
+  .botoesbarra ._button-1 {
+    z-index: 0;
+    width: 16.9197396963%;
+    margin-right: 209px;
+  }
+
+  .botoesbarra ._button-2 {
+    z-index: 1;
+    width: 18.9393939393%;
+    min-width: 50px;
+    margin-right: 159px;
+  }
+
+  .botoesbarra ._button-3 {
     z-index: 2;
-    margin-left: 7.90625%;
+    width: 19.1287878787%;
+    min-width: 50px;
+    margin-right: 108px;
   }
 
-  .container ._button-4 {
+  .botoesbarra ._button-4 {
+    z-index: 3;
+    width: 37.9853219696%;
+    margin-right: 8px;
+  }
+}
+
+@media(max-width: 460px) {
+  .barra {
+    left: 0;
+    right: 0;
+    height: 98px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .barra .botoesbarra {
+    clear: both;
+    width: 100.2173913043%;
+    margin-left: -0.21739%;
+  }
+
+  .corpo {
+    top: 98px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .corpo .background {
     position: relative;
+    z-index: 7;
+  }
+
+  .corpo .footer,
+  .corpo .wrapper {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .botoesbarra ._button {
+    position: relative;
+  }
+
+  .botoesbarra ._button-1 {
+    float: left;
+    z-index: 0;
+    width: 20%;
+    margin-right: 0;
+  }
+
+  .botoesbarra ._button-2 {
+    float: left;
+    clear: none;
+    z-index: 1;
+    width: 20%;
+    margin-top: 10px;
+    margin-right: 0;
+    margin-left: 9px;
+  }
+
+  .botoesbarra ._button-3 {
+    clear: none;
+    z-index: 2;
+    width: 20%;
+    margin-top: 10px;
+    margin-right: 134px;
+  }
+
+  .botoesbarra ._button-4 {
+    z-index: 3;
+    width: 30%;
+    min-width: 80px;
+    margin-right: 0;
+  }
+}
+
+@media(max-width: 360px) {
+  body {
+    font-size: 1em;
+  }
+
+  .barra,
+  .corpo,
+  .corpo .footer,
+  .corpo .wrapper {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .barra .botoesbarra {
+    margin-left: -0.2777800001%;
+  }
+
+  .corpo .background {
+    position: relative;
+    z-index: 7;
+  }
+
+  .botoesbarra ._button {
+    position: relative;
+  }
+
+  .botoesbarra ._button-1 {
+    float: right;
+    z-index: 0;
+    margin-right: 79.71849%;
+  }
+
+  .botoesbarra ._button-2 {
+    float: right;
     clear: both;
     z-index: 1;
     margin-top: -31px;
-    margin-left: 69.86979%;
+    margin-right: 59.71849%;
+    margin-left: 0;
+  }
+
+  .botoesbarra ._button-3 {
+    clear: both;
+    z-index: 2;
+    margin-top: -31px;
+    margin-right: 39.71416%;
+  }
+
+  .botoesbarra ._button-4 {
+    z-index: 3;
+    width: 39.359029883%;
+    margin-right: 0.27718%;
   }
 }

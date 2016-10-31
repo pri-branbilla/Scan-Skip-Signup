@@ -15,15 +15,12 @@ from django.utils import timezone
 # Create your models here.
 
 class Usuario(Document):
-   # def __init__(self):
-   #     super(Usuario, self).__init__()
     _id = StringField()
     nome = StringField(max_length=200)
     email = EmailField(max_length=200)
+    cpf = IntField()
     senha = StringField(max_length=15)
 
-    #def __str__(self):
-    #   return self.email
     def getNome(self):
         return self.nome
     def getEmail(self):

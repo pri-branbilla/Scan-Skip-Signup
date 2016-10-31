@@ -1,0 +1,39 @@
+<!doctype html>
+{% extends "MainPage.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>home</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}">
+  {% block extra_head_content %}
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/home-grid.css' %}">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/home.css' %}">
+  {% endblock %}
+</head>
+<body class="body page-home clearfix">
+{% block content %}
+  <div class="background">
+    <div class="container clearfix">
+      <p class="text text-1">Scan&amp;Skip</p>
+      <img class="image" src="{% static 'cadastroapp/images/Pague leve LOGO 2-450x278.png' %}" data-rimage data-src="{% static 'cadastroapp/images/Pague leve LOGO 2-450x278.png' %}">
+      <div class="text _text text-2">
+        <p>Augue duis dolore te feugait nulla facilisi nam liber tempor cum soluta. Sequitur mutationem consuetudium lectorum mirum est notare quam littera gothica quam nunc putamus parum claram anteposuerit. Quinta decima eodem modo typi qui nunc nobis videntur parum clari fiant sollemnes in! Est etiam processus dynamicus qui litterarum formas humanitatis per seacula quarta decima et. Ut aliquip ex ea commodo consequat duis autem vel eum iriure dolor in hendrerit. Eros et accumsan et iusto odio dignissim qui blandit; praesent luptatum zzril delenit nobis eleifend. Lobortis nisl in vulputate velit esse molestie consequat.</p>
+        <p>Est etiam processus dynamicus qui sequitur mutationem consuetudium lectorum mirum est. Et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril. Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut! Quod ii legunt saepius claritas notare quam littera gothica quam nunc putamus parum claram! Liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat. Est usus legentis in iis qui facit eorum.</p>
+        <p>Claritatem insitam est usus legentis in iis qui facit eorum claritatem Investigationes demonstraverunt lectores legere. Hendrerit in vulputate velit esse molestie consequat vel illum; dolore eu feugiat nulla.</p>
+        <p>Eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim. Quinta decima eodem modo typi qui nunc nobis videntur parum, clari fiant sollemnes. Nam liber tempor cum soluta nobis assum typi. Nulla facilisis at vero eros et accumsan et iusto odio dignissim qui. Eum iriure dolor in hendrerit in vulputate velit esse. Etiam processus dynamicus qui sequitur mutationem consuetudium lectorum mirum est. Claritatem Investigationes demonstraverunt lectores legere me lius, quod ii legunt.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static 'cadastroapp/js/jquery-min.js' %}"></script>
+  <script src="{% static 'cadastroapp/js/rimages.js' %}"></script>
+{% endblock %}
+</body>
+
+</html>

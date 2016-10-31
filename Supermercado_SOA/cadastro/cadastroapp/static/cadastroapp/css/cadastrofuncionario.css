@@ -1,0 +1,486 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 0.875em/1.38 'Open Sans';
+  color: rgb(0, 0, 0);
+}
+
+.background {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 1020px;
+  background-image: url('../images/Pague%20leve.png');
+  background-size: cover;
+  background-position: center center;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 79.6479724702%;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.element {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  right: 0;
+  z-index: 24;
+  width: 56%;
+  height: 939px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: rgba(113, 164, 255, 0.2);
+}
+
+.text {
+  position: absolute;
+  top: 27px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-height: 50px;
+  margin: 0 auto;
+  font-size: 2.286em;
+  line-height: 2.5;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+._button {
+  display: block;
+  position: absolute;
+  top: 858px;
+  left: 0;
+  right: 0;
+  z-index: 23;
+  width: 22.9887462797%;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: rgb(62, 113, 255);
+  font-style: italic;
+  font-size: 1.714em;
+  font-weight: 600;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+._input {
+  display: block;
+  padding: 0 10px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+._select {
+  display: block;
+  float: left;
+  height: 38px;
+  padding-left: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') rgb(242, 242, 242);
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.container ._input {
+  float: left;
+}
+
+.container-1 {
+  top: 584px;
+  z-index: 19;
+  height: 37px;
+}
+
+.container-2 {
+  top: 523px;
+  z-index: 16;
+  height: 38px;
+}
+
+.container-3 {
+  top: 467px;
+  z-index: 13;
+  height: 33px;
+}
+
+.container-4 {
+  top: 412px;
+  z-index: 10;
+  height: 33px;
+}
+
+.container-5 {
+  top: 235px;
+  z-index: 5;
+  height: 35px;
+}
+
+.container ._input-12 {
+  width: 49.8422712933%;
+  height: 35px;
+}
+
+.container ._input-13 {
+  width: 40.8517350157%;
+  height: 35px;
+  margin-left: 9.28624%;
+}
+
+.container ._input-4 {
+  width: 44.9044585987%;
+  height: 37px;
+}
+
+.container ._input-5 {
+  width: 45.382165605%;
+  height: 37px;
+  margin-left: 9.69494%;
+}
+
+.container ._input-6 {
+  width: 19.1387559808%;
+  height: 33px;
+}
+
+.container ._input-7 {
+  width: 76.8740031897%;
+  height: 33px;
+  margin-left: 3.96147%;
+}
+
+.container ._input-8 {
+  width: 18.9254467036%;
+  height: 33px;
+}
+
+.container ._input-9 {
+  width: 77.1293375394%;
+  height: 33px;
+  margin-left: 3.9206%;
+}
+
+.container ._select-1 {
+  width: 23.7261146496%;
+}
+
+.container ._select-2 {
+  width: 71.0191082802%;
+  margin-left: 5.2226%;
+}
+
+.container ._select-2:active {
+  font-style: italic;
+}
+
+.element ._input-1 {
+  position: absolute;
+  top: 772px;
+  left: 0;
+  right: 0;
+  z-index: 22;
+  width: 79.6479724702%;
+  height: 41px;
+  margin: 0 auto;
+}
+
+.element ._input-10 {
+  position: absolute;
+  top: 354px;
+  left: 0;
+  right: 0;
+  z-index: 7;
+  width: 79.6479724702%;
+  height: 35px;
+  margin: 0 auto;
+}
+
+.element ._input-11 {
+  position: absolute;
+  top: 293px;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  width: 79.6479724702%;
+  height: 38px;
+  margin: 0 auto;
+}
+
+.element ._input-14 {
+  position: absolute;
+  top: 179px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  width: 79.6479724702%;
+  height: 34px;
+  margin: 0 auto;
+}
+
+.element ._input-15 {
+  position: absolute;
+  top: 121px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 79.6479724702%;
+  height: 35px;
+  margin: 0 auto;
+}
+
+.element ._input-15:active {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+}
+
+.element ._input-2 {
+  position: absolute;
+  top: 708px;
+  left: 0;
+  right: 0;
+  z-index: 21;
+  width: 79.6479724702%;
+  height: 41px;
+  margin: 0 auto;
+}
+
+.element ._input-3 {
+  position: absolute;
+  top: 644px;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  width: 79.6479724702%;
+  height: 42px;
+  margin: 0 auto;
+}
+
+@media(max-width: 870px) {
+  .background .element {
+    left: 0;
+    right: 0;
+    width: 66.0919540229%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element ._input-1,
+  .element ._input-10,
+  .element ._input-11,
+  .element ._input-14,
+  .element ._input-15,
+  .element ._input-2,
+  .element ._input-3,
+  .element .container,
+  .element .text {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element ._button {
+    top: 878px;
+    left: 0;
+    right: 0;
+    width: 38.4949821843%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media(max-width: 720px) {
+  body {
+    font-size: 0.875em;
+  }
+
+  .background .element {
+    left: 0;
+    right: 0;
+    width: 66.3888888888%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element ._input-1,
+  .element ._input-10,
+  .element ._input-11,
+  .element ._input-14,
+  .element ._input-15,
+  .element ._input-2,
+  .element ._input-3,
+  .element .container,
+  .element .text {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element ._button {
+    top: 858px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media(max-width: 560px) {
+  .background .element {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element .container {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element .text {
+    top: 30px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 2;
+  }
+
+  .element ._button {
+    top: 878px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element .container-1 {
+    top: 629px;
+  }
+
+  .element .container-2 {
+    top: 568px;
+  }
+
+  .element .container-3 {
+    top: 512px;
+  }
+
+  .element .container-4 {
+    top: 457px;
+  }
+
+  .element .container-5 {
+    top: 280px;
+  }
+
+  .element ._input-1 {
+    top: 817px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element ._input-10 {
+    top: 399px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element ._input-11 {
+    top: 338px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element ._input-14 {
+    top: 224px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element ._input-15 {
+    top: 166px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element ._input-2 {
+    top: 753px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element ._input-3 {
+    top: 689px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media(max-width: 430px) {
+  body {
+    font-size: 0.875em;
+  }
+
+  .background .element {
+    left: 0;
+    right: 0;
+    width: 79.7674418604%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element ._input-1,
+  .element ._input-10,
+  .element ._input-11,
+  .element ._input-14,
+  .element ._input-15,
+  .element ._input-2,
+  .element ._input-3,
+  .element .container,
+  .element .text {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element ._button {
+    left: 0;
+    right: 0;
+    width: 48.3965014577%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

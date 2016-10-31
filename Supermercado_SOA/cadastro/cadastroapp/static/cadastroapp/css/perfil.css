@@ -1,0 +1,351 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 600 1em/2.5 'Open Sans';
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.background {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 800px;
+  background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
+  background-size: cover;
+  background-position: center center;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.image {
+  display: block;
+  float: left;
+  width: 170px;
+  height: auto;
+  overflow: hidden;
+}
+
+.params {
+  position: absolute;
+  top: 315px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  height: 223px;
+  margin: 0 auto;
+}
+
+.params .text {
+  height: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.perfil {
+  position: absolute;
+  top: 34px;
+  left: 0;
+  right: 0;
+  z-index: 14;
+  width: 52.9166666666%;
+  height: 678px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: rgba(113, 164, 255, 0.5);
+}
+
+.text {
+  position: absolute;
+  text-align: center;
+}
+
+._button {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 47.5540204032%;
+  height: 54px;
+  border-radius: 3px;
+  font-size: 1em;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+._button:hover {
+  color: rgb(240, 205, 101);
+}
+
+.container-1 {
+  top: 109px;
+  z-index: 13;
+  width: 170px;
+  height: 170px;
+}
+
+.container-2 {
+  top: 576px;
+  z-index: 2;
+  width: 61.361395899%;
+  height: 54px;
+}
+
+.text-1 {
+  top: 28px;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  width: 100%;
+  min-height: 63px;
+  margin: 0 auto;
+  font-size: 1.5em;
+  color: rgb(0, 0, 0);
+}
+
+.text-2 {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.text-3 {
+  top: 47px;
+  left: 24.9236001577%;
+  z-index: 8;
+  width: 20%;
+}
+
+.text-4 {
+  top: 47px;
+  right: 24.9186711356%;
+  z-index: 7;
+  width: 28%;
+}
+
+.text-5 {
+  top: 94px;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.text-6 {
+  top: 141px;
+  left: 25%;
+  z-index: 5;
+  width: 20%;
+}
+
+.text-7 {
+  top: 141px;
+  right: 25%;
+  z-index: 4;
+  width: 28%;
+}
+
+.text-8 {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.container ._button-1 {
+  left: -0.090770343%;
+  z-index: 1;
+  padding: 5px;
+  background-color: rgb(62, 113, 255);
+  line-height: 1.38;
+}
+
+.container ._button-2 {
+  right: 0.0473933649%;
+  background-color: #3e71ff;
+  line-height: 2;
+}
+
+@media(max-width: 600px) {
+  .background .perfil {
+    top: 32px;
+    left: 0;
+    right: 0;
+    width: 53%;
+    height: 589px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container .image {
+    width: 130px;
+    height: auto;
+  }
+
+  .perfil .container {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .perfil .params {
+    top: 244px;
+    left: 0;
+    right: 0;
+    height: 220px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .params .text-2 {
+    left: 0;
+    right: 0;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .params .text-3 {
+    top: 44px;
+    left: 15%;
+  }
+
+  .params .text-4 {
+    top: 44px;
+    right: 15%;
+    width: 48%;
+  }
+
+  .params .text-5 {
+    top: 89px;
+    left: 0;
+    right: 0;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .params .text-6 {
+    top: 134px;
+    left: 15%;
+  }
+
+  .params .text-7 {
+    top: 134px;
+    right: 15%;
+    width: 48%;
+  }
+
+  .params .text-8 {
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .perfil .container-1 {
+    top: 96px;
+    width: 130px;
+    height: 130px;
+  }
+
+  .perfil .container-2 {
+    top: 494px;
+    width: 70.0315457413%;
+    min-width: 120px;
+  }
+
+  .perfil .text-1 {
+    top: 14px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container ._button-1 {
+    left: 0;
+    width: 41%;
+    min-width: 40px;
+    font-weight: 700;
+  }
+
+  .container ._button-1:hover {
+    color: rgb(240, 205, 101);
+  }
+
+  .container ._button-2 {
+    right: 0;
+    width: 41.3134998596%;
+  }
+}
+
+@media(max-width: 488px) {
+  body {
+    font-size: 0.75em;
+  }
+
+  .container .image {
+    position: absolute;
+    float: none;
+    width: 100px;
+    height: auto;
+  }
+
+  .params .text {
+    font-size: 12px;
+  }
+
+  .background .perfil,
+  .perfil .container-2,
+  .perfil .params {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container ._button {
+    font-size: 12px;
+  }
+
+  .params .text-2,
+  .params .text-5,
+  .params .text-8 {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .perfil .container-1 {
+    top: 103px;
+    left: 30.7412790697%;
+    right: auto;
+    width: 38.6660222329%;
+    height: 100px;
+  }
+
+  .perfil .text-1 {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 2em;
+  }
+}

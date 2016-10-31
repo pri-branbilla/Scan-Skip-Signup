@@ -1,0 +1,560 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 1em/3.5 Helvetica;
+  color: rgb(0, 0, 0);
+}
+
+.background {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 800px;
+  background: url('../images/Pague%20leve.png') rgb(222, 222, 222);
+  background-size: cover;
+  background-position: center center;
+}
+
+.cadastroproducto {
+  position: absolute;
+  top: 79px;
+  left: 0;
+  right: 0;
+  z-index: 15;
+  width: 66.3333333333%;
+  min-height: 450px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: rgba(113, 164, 255, 0.2);
+}
+
+.containerdeprodutos {
+  position: absolute;
+  top: 450px;
+  left: 0;
+  right: 0;
+  z-index: 13;
+  width: 100%;
+  height: 185px;
+  min-height: 185px;
+  margin: 0 auto;
+}
+
+.produto {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 12;
+  width: 79.4970948492%;
+  height: 168px;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+.produto .text {
+  height: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 10px;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.text {
+  position: absolute;
+  text-align: center;
+}
+
+._button {
+  display: block;
+  position: absolute;
+  top: 369px;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  width: 38.3165829145%;
+  height: 52px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #3e71ff;
+  font: italic 1.5em/1.38 'Open Sans';
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+._input {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 0 10px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.38;
+  color: rgb(0, 0, 0);
+}
+
+._select {
+  display: block;
+  position: absolute;
+  top: 260px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  width: 79.3969849246%;
+  height: 42px;
+  margin: 0 auto;
+  padding-left: 10px;
+  border: 1px solid rgb(119, 119, 119);
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') rgb(242, 242, 242);
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font: italic 0.813em/1.38 'Open Sans';
+  color: rgb(0, 0, 0);
+}
+
+.text-1 {
+  top: 10px;
+  left: 10px;
+  z-index: 11;
+  width: 27.9978202174%;
+}
+
+.text-2 {
+  bottom: 10px;
+  right: 10px;
+  z-index: 10;
+  width: 30%;
+}
+
+.text-3 {
+  bottom: 10px;
+  left: 10px;
+  z-index: 9;
+  width: 20%;
+}
+
+.text-4 {
+  bottom: 10px;
+  left: 161px;
+  z-index: 8;
+  width: 38.5227019395%;
+}
+
+.text-5 {
+  top: 10px;
+  right: 10px;
+  z-index: 7;
+  width: 64.8386217829%;
+}
+
+.text-6 {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-height: 63px;
+  margin: 0 auto;
+  font: 2em/2 'Open Sans';
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.cadastroproducto ._input-1 {
+  top: 64px;
+  z-index: 14;
+  width: 79.3969849246%;
+  height: 33px;
+  font-size: 0.75em;
+}
+
+.cadastroproducto ._input-2 {
+  top: 317px;
+  z-index: 6;
+  width: 79.5226130653%;
+  height: 37px;
+  font-size: 0.813em;
+}
+
+.cadastroproducto ._input-3 {
+  top: 160px;
+  z-index: 4;
+  width: 79.3969849246%;
+  height: 33px;
+  font-size: 0.75em;
+}
+
+.cadastroproducto ._input-4 {
+  top: 208px;
+  z-index: 2;
+  width: 79.3969849246%;
+  height: 37px;
+  font-size: 0.75em;
+}
+
+.cadastroproducto ._input-5 {
+  top: 112px;
+  z-index: 1;
+  width: 79.3969849246%;
+  height: 33px;
+  font-size: 0.75em;
+}
+
+@media(max-width: 960px) {
+  .background .cadastroproducto {
+    top: 162px;
+    left: 0;
+    right: 0;
+    width: 52.9166666666%;
+    height: 565px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastroproducto .containerdeprodutos {
+    top: auto;
+    left: auto;
+    right: auto;
+  }
+
+  .containerdeprodutos .produto {
+    left: 0;
+    right: 0;
+    width: 79.4968011811%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .produto .text {
+    width: 25.7873558771%;
+  }
+
+  .cadastroproducto ._button {
+    top: 480px;
+    left: 0;
+    right: 0;
+    width: 35.8636811023%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastroproducto ._input {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastroproducto ._select {
+    top: 323px;
+    left: 0;
+    right: 0;
+    width: 64.0655757874%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastroproducto .text-6 {
+    top: 23px;
+    left: 0;
+    right: 0;
+    width: 99.8369832677%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .produto .text-4 {
+    left: auto;
+  }
+
+  .produto .text-1,
+  .produto .text-5 {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastroproducto ._input-1 {
+    width: 64.0655757874%;
+  }
+
+  .cadastroproducto ._input-2 {
+    top: 396px;
+    width: 64.1424704724%;
+  }
+
+  .cadastroproducto ._input-3 {
+    top: 191px;
+    width: 64.0655757874%;
+  }
+
+  .cadastroproducto ._input-4 {
+    top: 255px;
+    width: 64.0655757874%;
+  }
+
+  .cadastroproducto ._input-5 {
+    top: 127px;
+    width: 64.0655757874%;
+  }
+}
+
+@media(max-width: 750px) {
+  body {
+    font-size: 1em;
+  }
+
+  .background .cadastroproducto {
+    left: 0;
+    right: 0;
+    width: 66.5333333333%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .containerdeprodutos .produto {
+    left: 0;
+    right: 0;
+    width: 79.4964929859%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .produto .text {
+    width: 25.7877737513%;
+  }
+
+  .cadastroproducto ._button {
+    top: 457px;
+    left: 0;
+    right: 0;
+    width: 50.065756513%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastroproducto ._input {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastroproducto ._select {
+    top: 301px;
+    left: 0;
+    right: 0;
+    width: 64.0562374749%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastroproducto .text-6 {
+    top: 18px;
+    left: 0;
+    right: 0;
+    width: 99.8277805611%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .produto .text-1,
+  .produto .text-5 {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastroproducto ._input-1 {
+    width: 64.0562374749%;
+  }
+
+  .cadastroproducto ._input-2 {
+    top: 368px;
+    width: 64.134519038%;
+  }
+
+  .cadastroproducto ._input-3 {
+    top: 180px;
+    width: 64.0562374749%;
+  }
+
+  .cadastroproducto ._input-4 {
+    top: 239px;
+    width: 64.0562374749%;
+  }
+
+  .cadastroproducto ._input-5 {
+    top: 122px;
+    width: 64.0562374749%;
+  }
+}
+
+@media(max-width: 600px) {
+  .background .cadastroproducto {
+    left: 0;
+    right: 0;
+    width: 69.6666666666%;
+    height: 652px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .containerdeprodutos .produto {
+    left: 0;
+    right: 0;
+    width: 79.4968600478%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .produto .text {
+    width: 25.7864296797%;
+  }
+
+  .cadastroproducto ._button {
+    top: 530px;
+    left: 0;
+    right: 0;
+    width: 50.1495215311%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastroproducto ._input {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastroproducto ._select {
+    top: 365px;
+    left: 0;
+    right: 0;
+    width: 64.1671650717%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastroproducto .text-6 {
+    top: 69px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .produto .text-1,
+  .produto .text-5 {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastroproducto ._input-1 {
+    width: 64.1671650717%;
+  }
+
+  .cadastroproducto ._input-2 {
+    top: 438px;
+    width: 64.2456638755%;
+  }
+
+  .cadastroproducto ._input-3 {
+    top: 234px;
+    width: 64.1671650717%;
+  }
+
+  .cadastroproducto ._input-4 {
+    top: 298px;
+    width: 64.1671650717%;
+  }
+
+  .cadastroproducto ._input-5 {
+    top: 170px;
+    width: 64.1671650717%;
+  }
+}
+
+@media(max-width: 450px) {
+  body {
+    font-size: 1em;
+  }
+
+  .background .cadastroproducto,
+  .produto .text-1,
+  .produto .text-5 {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .containerdeprodutos .produto {
+    left: 0;
+    right: 0;
+    width: 79.3600159497%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .produto .text {
+    width: 25.7884506865%;
+  }
+
+  .cadastroproducto ._button {
+    left: 0;
+    right: 0;
+    width: 50.1520211334%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastroproducto ._input {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastroproducto ._select {
+    left: 0;
+    right: 0;
+    width: 64.1678712057%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastroproducto .text-6 {
+    top: 37px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1.875em;
+  }
+
+  .cadastroproducto ._input-2 {
+    width: 64.2426356975%;
+  }
+
+  .cadastroproducto ._input-1,
+  .cadastroproducto ._input-3,
+  .cadastroproducto ._input-4,
+  .cadastroproducto ._input-5 {
+    width: 64.1678712057%;
+  }
+}

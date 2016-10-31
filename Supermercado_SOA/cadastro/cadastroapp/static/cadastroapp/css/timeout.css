@@ -1,0 +1,166 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 700 1.75em/1.38 'Open Sans';
+  color: rgb(0, 0, 0);
+}
+
+.element {
+  position: absolute;
+  top: 135px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  width: 39.19921875%;
+  height: 326px;
+  margin: 0 auto;
+  border: 2px solid rgba(0, 0, 0, 0.54);
+  border-radius: 5px;
+  background-color: rgb(222, 222, 222);
+}
+
+.text {
+  position: absolute;
+  top: 63px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-height: 73px;
+  margin: 0 auto;
+  font-size: 1em;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+._button {
+  display: block;
+  position: absolute;
+  bottom: 39.5px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 43.9545713424%;
+  height: 72px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: rgb(62, 113, 255);
+  font-size: 0.929em;
+  font-weight: 600;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+._button:hover {
+  background-color: rgb(11, 62, 174);
+  color: rgb(255, 255, 255);
+}
+
+@media(max-width: 915px) {
+  .element {
+    left: 0;
+    right: 0;
+    width: 48.1967213114%;
+    height: 335px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element .text {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element ._button {
+    bottom: 62px;
+    left: 0;
+    right: 0;
+    width: 42.4199084668%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media(max-width: 690px) {
+  body {
+    font-size: 1.75em;
+  }
+
+  .element {
+    left: 0;
+    right: 0;
+    width: 66.5217391304%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element .text {
+    top: 45px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element ._button {
+    left: 0;
+    right: 0;
+    width: 42.4190391153%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media(max-width: 510px) {
+  .element {
+    left: 0;
+    right: 0;
+    width: 69.2156862745%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element .text {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element ._button {
+    left: 0;
+    right: 0;
+    width: 42.4203080229%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media(max-width: 435px) {
+  body {
+    font-size: 1.75em;
+  }
+
+  .element {
+    left: 0;
+    right: 0;
+    width: 80.2298850574%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element .text {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .element ._button {
+    left: 0;
+    right: 0;
+    width: 44.2617753623%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

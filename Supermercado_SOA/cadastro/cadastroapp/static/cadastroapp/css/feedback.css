@@ -1,0 +1,798 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 1em/1.38 Helvetica;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 77;
+  width: 100%;
+  height: 800px;
+  margin: 0 auto;
+  background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
+  background-size: cover;
+  background-position: center center;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.container .container {
+  top: 33px;
+  width: 100%;
+  height: 25px;
+  padding-left: 5px;
+}
+
+.container .text {
+  top: 0;
+  width: 100%;
+  height: 33px;
+  min-height: 22px;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 2;
+}
+
+.feedback {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  z-index: 76;
+  width: 52.8333333333%;
+  height: 720px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: rgba(113, 164, 255, 0.2);
+}
+
+.point-text {
+  display: block;
+  float: left;
+  margin-left: 6px;
+}
+
+.radio {
+  display: block;
+  float: left;
+  margin-top: 3px;
+}
+
+.radio-label {
+  display: block;
+  position: absolute;
+  top: 0;
+  height: 25px;
+}
+
+.text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  font-family: 'Open Sans';
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+._button {
+  display: block;
+  position: absolute;
+  top: 627px;
+  left: 0;
+  right: 0;
+  width: 27.0726537854%;
+  height: 52px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: rgb(67, 212, 87);
+  font-style: italic;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+._input {
+  display: block;
+  position: absolute;
+  top: 445px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 69.9995070977%;
+  height: 160px;
+  margin: 0 auto;
+  padding: -1px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  font-style: italic;
+  font-size: 0.875em;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+}
+
+.container-1 {
+  top: 367px;
+  z-index: 75;
+  width: 79.9980283911%;
+  height: 58px;
+}
+
+.container-2 {
+  z-index: 74;
+}
+
+.container-3 {
+  top: 287px;
+  z-index: 57;
+  width: 79.9980283911%;
+  height: 58px;
+}
+
+.container-4 {
+  z-index: 56;
+}
+
+.container-5 {
+  top: 208px;
+  z-index: 39;
+  width: 79.9980283911%;
+  height: 58px;
+}
+
+.container-6 {
+  z-index: 38;
+}
+
+.container-7 {
+  top: 128px;
+  z-index: 21;
+  width: 79.9980283911%;
+  height: 58px;
+}
+
+.container-8 {
+  z-index: 19;
+}
+
+.radio-label-1 {
+  left: 0;
+  z-index: 73;
+  width: 23.9298844537%;
+  padding-left: 10px;
+}
+
+.radio-label-10 {
+  left: 59.8739495798%;
+  z-index: 43;
+  width: 25.2100840336%;
+}
+
+.radio-label-11 {
+  left: 0;
+  z-index: 37;
+  width: 23.9298844537%;
+  padding-left: 10px;
+}
+
+.radio-label-12 {
+  left: 23.9495798319%;
+  z-index: 34;
+  width: 16.806722689%;
+}
+
+.radio-label-13 {
+  left: 40.756302521%;
+  z-index: 31;
+  width: 19.1176470588%;
+}
+
+.radio-label-14 {
+  left: 85.0840336134%;
+  z-index: 28;
+  width: 14.9159663865%;
+  padding-left: 5px;
+}
+
+.radio-label-15 {
+  left: 59.8739495798%;
+  z-index: 25;
+  width: 25.2100840336%;
+}
+
+.radio-label-16 {
+  left: 0;
+  z-index: 18;
+  width: 23.9298844537%;
+  padding-left: 10px;
+}
+
+.radio-label-17 {
+  left: 23.9495798319%;
+  z-index: 15;
+  width: 16.806722689%;
+}
+
+.radio-label-18 {
+  left: 40.756302521%;
+  z-index: 12;
+  width: 19.1176470588%;
+}
+
+.radio-label-19 {
+  left: 85.0840336134%;
+  z-index: 9;
+  width: 14.9159663865%;
+  padding-left: 5px;
+}
+
+.radio-label-2 {
+  left: 23.9495798319%;
+  z-index: 70;
+  width: 16.806722689%;
+}
+
+.radio-label-20 {
+  left: 59.8739495798%;
+  z-index: 6;
+  width: 25.2100840336%;
+}
+
+.radio-label-3 {
+  left: 40.756302521%;
+  z-index: 67;
+  width: 19.1176470588%;
+}
+
+.radio-label-4 {
+  left: 85.0840336134%;
+  z-index: 64;
+  width: 14.9159663865%;
+  padding-left: 5px;
+}
+
+.radio-label-5 {
+  left: 59.8739495798%;
+  z-index: 61;
+  width: 25.2100840336%;
+}
+
+.radio-label-6 {
+  left: 0;
+  z-index: 55;
+  width: 23.9298844537%;
+  padding-left: 10px;
+}
+
+.radio-label-7 {
+  left: 23.9495798319%;
+  z-index: 52;
+  width: 16.806722689%;
+}
+
+.radio-label-8 {
+  left: 40.756302521%;
+  z-index: 49;
+  width: 19.1176470588%;
+}
+
+.radio-label-9 {
+  left: 85.0840336134%;
+  z-index: 46;
+  width: 14.9159663865%;
+  padding-left: 5px;
+}
+
+.text-1 {
+  z-index: 58;
+}
+
+.text-2 {
+  z-index: 40;
+}
+
+.text-3 {
+  z-index: 22;
+}
+
+.text-4 {
+  z-index: 20;
+}
+
+.text-5 {
+  top: 39px;
+  z-index: 3;
+  width: 100%;
+  height: 45px;
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.text-6 {
+  top: 84px;
+  z-index: 2;
+  width: 60.8561711356%;
+  min-height: 25px;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+@media(max-width: 1120px) {
+  .background,
+  .container .text {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .feedback {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 66.4285714285%;
+    height: 760px;
+    margin: auto;
+  }
+
+  .container .container {
+    left: 0;
+    right: 0;
+    height: 47px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container .radio-label {
+    height: 47px;
+  }
+
+  .radio-label .point-text {
+    position: absolute;
+    float: none;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .radio-label .radio {
+    position: absolute;
+    float: none;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .feedback ._button {
+    top: 682px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .feedback ._input {
+    top: 502px;
+    left: 0;
+    right: 0;
+    width: 70.0623700623%;
+    height: 129px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container .radio-label-1 {
+    top: 1px;
+    left: -0.0682575937%;
+    width: 23.8586542752%;
+  }
+
+  .container .radio-label-10,
+  .container .radio-label-5 {
+    left: 59.9144154787%;
+    width: 25.2028038119%;
+  }
+
+  .container .radio-label-11,
+  .container .radio-label-16 {
+    left: 0.0840336134%;
+    width: 23.8655462184%;
+  }
+
+  .container .radio-label-13,
+  .container .radio-label-18 {
+    width: 19.1596638655%;
+  }
+
+  .container .radio-label-14,
+  .container .radio-label-19 {
+    left: 85.1260504201%;
+    width: 14.9579831932%;
+  }
+
+  .container .radio-label-15,
+  .container .radio-label-20 {
+    left: 59.9159663865%;
+  }
+
+  .container .radio-label-6 {
+    left: -0.0682575937%;
+    width: 23.8586542752%;
+  }
+
+  .container .radio-label-2,
+  .container .radio-label-7 {
+    left: 23.9584153737%;
+    width: 16.8018692079%;
+  }
+
+  .container .radio-label-3,
+  .container .radio-label-8 {
+    left: 40.7602845816%;
+    width: 19.154130897%;
+  }
+
+  .container .radio-label-4,
+  .container .radio-label-9 {
+    left: 85.1172192906%;
+    width: 14.953663595%;
+  }
+
+  .feedback .container-1 {
+    top: 409px;
+    left: 0;
+    right: 0;
+    height: 80px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .feedback .container-3 {
+    top: 315px;
+    left: 0;
+    right: 0;
+    height: 80px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .feedback .container-5 {
+    top: 220px;
+    left: 0;
+    right: 0;
+    width: 79.9731182795%;
+    height: 80px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .feedback .container-7 {
+    top: 126px;
+    left: 0;
+    right: 0;
+    width: 79.9731182795%;
+    height: 80px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .feedback .text-5 {
+    top: 22px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .feedback .text-6 {
+    top: 67px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media(max-width: 690px) {
+  body {
+    font-size: 1em;
+  }
+
+  .background,
+  .container .container,
+  .container .text,
+  .feedback ._button,
+  .feedback ._input,
+  .feedback .text-5,
+  .feedback .text-6,
+  .radio-label .point-text,
+  .radio-label .radio {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .feedback {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 80.1666666666%;
+    margin: auto;
+  }
+
+  .feedback .container-1,
+  .feedback .container-3 {
+    left: 0;
+    right: 0;
+    width: 94.9069339333%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .feedback .container-5,
+  .feedback .container-7 {
+    left: 0;
+    right: 0;
+    width: 94.6887570737%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media(max-width: 600px) {
+  .background,
+  .container .container,
+  .container .text,
+  .feedback ._button,
+  .feedback .container-1,
+  .feedback .container-3,
+  .feedback .container-5,
+  .feedback .container-7,
+  .feedback .text-5,
+  .radio-label .point-text,
+  .radio-label .radio {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .feedback {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .feedback ._input {
+    top: 533px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .feedback .text-6 {
+    top: 93px;
+    left: 0;
+    right: 0;
+    width: 86.6943866943%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media(max-width: 475px) {
+  body {
+    font-size: 1em;
+  }
+
+  .background {
+    left: 0;
+    right: 0;
+    height: auto;
+    min-height: 800px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .feedback {
+    top: 50px;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: 87.7894736842%;
+    height: 936px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container .container {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container .text {
+    left: 0;
+    right: 0;
+    height: 60px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .radio-label .point-text {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .radio-label .radio {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container ._container {
+    height: 60px;
+  }
+
+  .feedback ._button {
+    top: 849px;
+    left: 0;
+    right: 0;
+    width: 35.9580052493%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .feedback ._input {
+    top: 686px;
+    left: 0;
+    right: 0;
+    width: 86.8766404199%;
+    height: 133px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container .radio-label-1 {
+    left: -0.1942334255%;
+    width: 23.7569060773%;
+    height: 59px;
+  }
+
+  .container .radio-label-11,
+  .container .radio-label-12,
+  .container .radio-label-16,
+  .container .radio-label-17,
+  .container .radio-label-7 {
+    height: 60px;
+  }
+
+  .container .radio-label-2 {
+    left: 23.8389157458%;
+    width: 16.8508287292%;
+    height: 60px;
+  }
+
+  .container .radio-label-3 {
+    left: 40.6897444751%;
+    width: 19.0607734806%;
+  }
+
+  .container .radio-label-4 {
+    left: 85.1648825966%;
+    width: 14.9171270718%;
+  }
+
+  .container .radio-label-5 {
+    left: 60.0267610497%;
+    width: 25.1381215469%;
+  }
+
+  .container .radio-label-6 {
+    left: -0.1944516464%;
+    width: 23.7835969233%;
+    height: 60px;
+  }
+
+  .container .container-2,
+  .container .text-1 {
+    width: 100.1123498401%;
+  }
+
+  .feedback .container-1 {
+    top: 549px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .feedback .container-3 {
+    top: 408px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .feedback .container-5 {
+    top: 267px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .feedback .container-7 {
+    left: 0;
+    right: 0;
+    height: 120px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .feedback .text-5 {
+    top: 8px;
+    left: 0;
+    right: 0;
+    width: 100.0574476815%;
+    height: 71px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .feedback .text-6 {
+    top: 79px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .radio-label .point-text-14,
+  .radio-label .point-text-19,
+  .radio-label .point-text-4,
+  .radio-label .point-text-9 {
+    padding-left: 20px;
+  }
+
+  .radio-label .point-text-10,
+  .radio-label .point-text-15,
+  .radio-label .point-text-20,
+  .radio-label .point-text-5 {
+    padding-left: 5px;
+  }
+}

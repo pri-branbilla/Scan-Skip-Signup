@@ -1,0 +1,232 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 600 1.5em/1.38 'Open Sans';
+  color: rgb(255, 255, 255);
+}
+
+.background {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 712px;
+  border: 1px double rgb(0, 0, 0);
+  background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
+  background-size: cover;
+  background-position: center center;
+}
+
+.container {
+  position: absolute;
+  top: 168px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  width: 100%;
+  height: 33px;
+  margin: 0 auto;
+}
+
+.terminalcaixa {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  width: 52.9215358931%;
+  height: 541px;
+  margin: auto;
+  border-radius: 10px;
+  background-color: rgba(113, 164, 255, 0.2);
+}
+
+._button {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 54.4164037854%;
+  height: 74px;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-family: Helvetica;
+  font-style: italic;
+  font-size: 1em;
+  font-weight: 700;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+._text {
+  float: left;
+  min-height: 33px;
+}
+
+.text-1 {
+  position: absolute;
+  top: 51px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  width: 100%;
+  min-height: 50px;
+  margin: 0 auto;
+  font-size: 1.333em;
+  line-height: 2.5;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.text-2 {
+  width: 38.4858044164%;
+  margin-left: 0.13062%;
+  padding-right: 10px;
+  padding-left: 15px;
+  font-size: 0.667em;
+  line-height: 2;
+  text-align: right;
+  color: rgb(0, 0, 0);
+}
+
+.text-3 {
+  width: 61.3564668769%;
+  margin-left: 0.02711%;
+  font-size: 1em;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: rgb(204, 21, 0);
+}
+
+.terminalcaixa ._button-1 {
+  top: 394px;
+  z-index: 5;
+  background-color: rgb(11, 62, 174);
+}
+
+.terminalcaixa ._button-2 {
+  top: 264px;
+  z-index: 4;
+  background-color: rgb(204, 21, 0);
+}
+
+@media(max-width: 710px) {
+  .background .terminalcaixa {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 66.6666666666%;
+    margin: auto;
+  }
+
+  .container .text {
+    position: absolute;
+    float: none;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .terminalcaixa .container {
+    top: 187px;
+    left: 0;
+    right: 0;
+    width: 100.0875766295%;
+    height: 65px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .terminalcaixa ._button {
+    left: 0;
+    right: 0;
+    width: 63.8190954773%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container .text-2 {
+    width: 99.9140041013%;
+    height: 32px;
+  }
+
+  .container .text-3 {
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 33px;
+  }
+
+  .terminalcaixa .text-1 {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .terminalcaixa ._button-1 {
+    top: 429px;
+  }
+
+  .terminalcaixa ._button-2 {
+    top: 301px;
+  }
+}
+
+@media(max-width: 600px) {
+  body {
+    font-size: 1.5em;
+  }
+
+  .background .terminalcaixa {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 66.5551839464%;
+    margin: auto;
+  }
+
+  .container .text {
+    right: auto;
+    width: 99.8830049261%;
+  }
+
+  .terminalcaixa .container {
+    top: 179px;
+    left: 0;
+    right: auto;
+    width: 100%;
+    height: 69px;
+  }
+
+  .terminalcaixa ._button {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .container .text-3 {
+    bottom: 3px;
+  }
+
+  .terminalcaixa .text-1 {
+    top: 57px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 1.5;
+  }
+
+  .terminalcaixa ._button-1 {
+    top: 422px;
+  }
+
+  .terminalcaixa ._button-2 {
+    top: 315px;
+  }
+}

@@ -1,0 +1,167 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 1em/1.38 'Open Sans';
+  color: rgb(0, 0, 0);
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  width: 100%;
+  min-height: 800px;
+  margin: 0 auto;
+  background-image: url('../images/Pague%20leve.png');
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-position: center center;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  width: 100%;
+  height: 954px;
+  margin: 0 auto;
+}
+
+.image {
+  display: block;
+  width: 450px;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.text {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.text-2 p {
+  margin-bottom: 1em;
+}
+
+._text {
+  width: 56.0833333333%;
+  min-height: 433px;
+  margin-top: 42px;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.text-1 {
+  width: 100%;
+  min-height: 50px;
+  font-size: 2em;
+  line-height: 2.5;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+@media(max-width: 800px) {
+  .background {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .container {
+    top: -77px;
+    right: auto;
+    height: 1042px;
+  }
+
+  .container .image {
+    height: auto;
+  }
+
+  .container ._text {
+    width: 69.875%;
+  }
+}
+
+@media(max-width: 600px) {
+  body {
+    font-size: 1em;
+  }
+
+  .background {
+    left: 0;
+    right: 0;
+    height: 711px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .container {
+    height: 1209px;
+  }
+
+  .container .image {
+    width: 400px;
+    height: auto;
+    margin-top: 80px;
+  }
+
+  .container .text-1 {
+    float: left;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@media(max-width: 460px) {
+  .background {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .container {
+    height: 1266px;
+  }
+
+  .container .image {
+    width: 300px;
+    height: auto;
+  }
+
+  .container ._text {
+    width: 79.7826086956%;
+    margin-top: 28px;
+  }
+}
+
+@media(max-width: 360px) {
+  body {
+    font-size: 1em;
+  }
+
+  .background {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .container {
+    height: 1499px;
+  }
+
+  .container .image {
+    width: 250px;
+    height: auto;
+  }
+
+  .container ._text {
+    width: 79.7786458333%;
+  }
+}

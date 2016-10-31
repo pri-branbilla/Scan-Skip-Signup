@@ -1,0 +1,230 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 300 1em/1.38 'Open Sans';
+  color: rgb(0, 0, 0);
+}
+
+.background {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 700px;
+  background-image: url('../images/Pague%20leve.png');
+  background-size: cover;
+  background-position: center center;
+}
+
+.cadastro {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 7;
+  width: 52.8333333333%;
+  height: 541px;
+  margin: auto;
+  border-radius: 10px;
+  background-color: rgba(113, 164, 255, 0.2);
+}
+
+.confirmar {
+  display: block;
+  position: absolute;
+  top: 469px;
+  left: 0;
+  right: 0;
+  width: 28.7066246056%;
+  height: 52px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: rgb(62, 113, 255);
+  font-style: italic;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.confirmar:hover {
+  background-color: rgb(11, 62, 174);
+}
+
+.element {
+  position: absolute;
+  top: 209px;
+  left: 9.8738170347%;
+  z-index: 6;
+  width: 38.643533123%;
+  height: 235px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 15px;
+  background: url('../images/prod1.jpg') rgb(222, 222, 222);
+  background-size: cover;
+  background-position: center center;
+}
+
+.text {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  min-height: 50px;
+  margin: 0 auto;
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 2.5;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.textmarcaproduto {
+  position: absolute;
+  top: 209px;
+  left: 51.5141955835%;
+  z-index: 3;
+  width: 38.3280757097%;
+  height: 46px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.textnomeproduto {
+  position: absolute;
+  top: 113px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  width: 79.9684542586%;
+  height: 59px;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.textocategoriaproduto {
+  position: absolute;
+  top: 406px;
+  left: 51.7335370662%;
+  z-index: 5;
+  width: 38.3280757097%;
+  height: 37px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.textoprecoproduto {
+  position: absolute;
+  top: 288px;
+  left: 51.5141955835%;
+  z-index: 4;
+  width: 38.4858044164%;
+  height: 64px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+@media(max-width: 770px) {
+  .background .cadastro {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .cadastro .confirmar {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastro .text,
+  .cadastro .textnomeproduto {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastro .textocategoriaproduto {
+    width: 38.3469042863%;
+    height: 54px;
+  }
+}
+
+@media(max-width: 645px) {
+  body {
+    font-size: 1em;
+  }
+
+  .background .cadastro {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 66.5116279069%;
+    margin: auto;
+  }
+
+  .cadastro .confirmar {
+    top: 471px;
+    left: 0;
+    right: 0;
+    width: 37.5624742078%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastro .element {
+    left: 7.9254079254%;
+    width: 40.7925407925%;
+  }
+
+  .cadastro .text {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 1.5;
+  }
+
+  .cadastro .textmarcaproduto {
+    left: 51.5151515151%;
+    width: 40.0932400932%;
+  }
+
+  .cadastro .textnomeproduto {
+    left: 0;
+    right: 0;
+    width: 84.1491841491%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cadastro .textocategoriaproduto {
+    top: 390px;
+    left: 51.9813519813%;
+    width: 40.0932400932%;
+  }
+
+  .cadastro .textoprecoproduto {
+    left: 51.5151515151%;
+    width: 40.3263403263%;
+  }
+}

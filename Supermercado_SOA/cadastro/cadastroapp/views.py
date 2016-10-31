@@ -14,12 +14,13 @@ from .models import Usuario
 
 
 def Sobre(request):
-    #user = Usuario(nome="x3231", email="bla@bla3.com", senha="x1233")
-    #user.save()
-    #return HttpResponseRedirect('http://143.107.102.52:8000/carrinho/id=3894728582/nome=blablabla')
     return render(request, 'cadastroapp/sobre.html', {})
 
+def Home(request):
+    return render(request, 'cadastroapp/home.html', {})
 
+def header(request):
+    return render(request, 'cadastroapp/header---footer.html', {})
 
 def Cadastro(request):
     registrado = False
@@ -45,6 +46,7 @@ def cadastro(request):
     if request.method == 'POST':
         nome = request.POST['nome']
         email = request.POST['email']
+        cpf = request.POST['cpf']
         if nome=="":
             erroUsuario = True
         else:
@@ -66,7 +68,7 @@ def cadastro(request):
             erroEmail = True
         if not erroUsuario and not erroEmail and not erroSenha:
             #U.create_user(username=usuario, password=senha1, email=email)
-            cliente = Usuario(nome=nome, email=email, senha=senha1)
+            cliente = Usuario(nome=nome, email=email, cpf=cpf, senha=senha1)
             cliente.save()
             registrado = True
             return HttpResponseRedirect('/cadastro/login')
