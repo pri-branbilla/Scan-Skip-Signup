@@ -1,3 +1,4 @@
+from __future__ import print_function
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
@@ -9,7 +10,7 @@ from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
 import mongoengine.django.auth
-
+import random
 from .models import Usuario
 
 
@@ -68,7 +69,7 @@ def cadastro(request):
             erroEmail = True
         if not erroUsuario and not erroEmail and not erroSenha:
             #U.create_user(username=usuario, password=senha1, email=email)
-            cliente = Usuario(nome=nome, email=email, cpf=cpf, senha=senha1)
+            cliente = Usuario(idusuario=str(random.randint(0,100000)), nome=nome, email=email, cpf=cpf, senha=senha1)
             cliente.save()
             registrado = True
             return HttpResponseRedirect('/cadastro/login')
@@ -88,12 +89,16 @@ def login(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         senha = request.POST.get('senha')
-
+        permanece = request.POST.get('permanece')
         try: #se usuario e senha corretos
                 user = Usuario.objects.get(email=email, senha=senha)
-                id = str(user._id)
+                id1 = str(user.idusuario)
                 nome = str(user.nome)
-                return HttpResponseRedirect('http://192.168.1.12:5555/carrinho/id=' + id + '/nome=' + nome)
+                if (permanece=="on"):
+                    request.session['logado'] = True
+                    request.session['nome'] = nome
+                    request.session['idusuario'] = id1
+                return HttpResponseRedirect('http://143.107.102.33:8000/carrinho/id=' + id1 + '/nome=' + nome)
         except:
                 errado = True
     return render(request, 'cadastroapp/login.html', {'errado': errado})

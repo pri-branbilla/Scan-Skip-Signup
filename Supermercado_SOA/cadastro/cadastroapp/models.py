@@ -15,7 +15,7 @@ from django.utils import timezone
 # Create your models here.
 
 class Usuario(Document):
-    _id = StringField()
+    idusuario = StringField()
     nome = StringField(max_length=200)
     email = EmailField(max_length=200)
     cpf = IntField()

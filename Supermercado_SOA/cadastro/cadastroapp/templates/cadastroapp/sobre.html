@@ -1,4 +1,5 @@
 <!doctype html>
+
 {% load static %}
 <html>
 <head>
@@ -7,10 +8,13 @@
   <title>sobre</title>
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}">
+  {% block extra_head_content %}
   <link rel="stylesheet" href="{% static 'cadastroapp/css/sobre-grid.css' %}">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/sobre.css' %}">
+  {% endblock %}
 </head>
 <body class="body page-sobre clearfix">
+{% block content %}
   <div class="container _container container-1">
     <p class="text text-1">Por trás do Scan&amp;Skip</p>
     <div class="container _container clearfix">
@@ -26,5 +30,6 @@
 
   <script src="js/jquery-min.js"></script>
   <script src="js/rimages.js"></script>
+{% endblock %}
 </body>
 </html>

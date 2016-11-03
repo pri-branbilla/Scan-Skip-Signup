@@ -14,19 +14,20 @@
     {% block extra_head_content %}{% endblock %}
 </head>
 <body class="body page-header---footer clearfix">
-  <div class="corpo clearfix">
 
+<div class="corpo">
+    <div class="wrapper">{% block content %} {% endblock %}</div>
+    <footer class="footer"></footer>
+</div>
   <div class="barra clearfix">
     <p class="text">Scan&Skip</p>
     <div class="botoesbarra clearfix">
-      <a href="/cadastro/home"><button class="_button _button-1">Home</button></a>
-      <a href="/cadastro/sobre"><button class="_button _button-2" type="button">Sobre</button></a>
-      <a href="/cadastro/login"><button class="_button _button-3">Login</button></a>
-      <a href="/cadastro/realiza_cadastro"><button class="_button _button-4">Cadastre-se</button></a>
+      <a href="/cadastro/home"><button class="botaobarra botaohome">Home</button></a>
+      <a href="/cadastro/sobre"><button class="botaobarra botaosobre" type="button">Sobre</button></a>
+      <a href="/cadastro/login"><button class="botaobarra botaologin">Login</button></a>
+      <a href="/cadastro/realiza_cadastro"><button class="botaobarra botaocadastro">Cadastre-se</button></a>
     </div>
   </div>
-      <div class="background">{% block content %}{% endblock %}</div>
-    <footer class="footer"></footer>
+
   <script src="{% static 'cadastroapp/js/jquery-min.js' %}"></script>
-</div>
 </body>
