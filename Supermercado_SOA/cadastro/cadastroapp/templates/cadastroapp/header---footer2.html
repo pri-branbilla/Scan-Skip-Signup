@@ -6,28 +6,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1.0">
-  <title>Scan&Skip - {% block title %}{% endblock %}</title>
+  <title>Scan&Skip -</title>
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}">
-  <link rel="stylesheet" href="{% static 'cadastroapp/css/header---footer-grid.css' %}">
-  <link rel="stylesheet" href="{% static 'cadastroapp/css/header---footer.css' %}">
-    {% block extra_head_content %}{% endblock %}
+  <link rel="stylesheet" href="css/standardize.css">
+  <link rel="stylesheet" href="css/header---footer-grid.css">
+  <link rel="stylesheet" href="css/header---footer.css">
+
 </head>
 <body class="body page-header---footer clearfix">
 
 <div class="corpo">
-    <div class="wrapper">{% block content %} {% endblock %}</div>
+    <div class="wrapper">teste</div>
     <footer class="footer"></footer>
 </div>
   <div class="barra clearfix">
     <p class="textheader">Scan&Skip</p>
     <div class="botoesbarra clearfix">
-      <a href="/cadastro"><button class="botaoBarra botaoHome">Home</button></a>
+      <a href="/cadastro/home"><button class="botaoBarra botaoHome">Home</button></a>
       <a href="/cadastro/sobre"><button class="botaoBarra botaoSobre" type="button">Sobre</button></a>
       <a href="/cadastro/login"><button class="botaoBarra botaoLogin">Login</button></a>
       <a href="/cadastro/realiza_cadastro"><button class="botaoBarra botaoCadastro">Cadastre-se</button></a>
     </div>
   </div>
 
-  <script src="{% static 'cadastroapp/js/jquery-min.js' %}"></script>
+  <script src="cadastroapp/js/jquery-min.js"></script>
 </body>
