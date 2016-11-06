@@ -5,7 +5,7 @@ from django.conf import settings
 import os
 
 urlpatterns = [
-    url(r'^realiza_cadastro/', views.cadastro, name="cadastro"),
+    url(r'^cadastro/', views.cadastro, name="cadastro"),
     url(r'^sobre/', views.Sobre, name="Sobre"),
     url(r'^login/', views.login, name="login"),
     url(r'^header/', views.header, name="header"),
