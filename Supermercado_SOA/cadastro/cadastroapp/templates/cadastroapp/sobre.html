@@ -1,19 +1,13 @@
-<!doctype html>
+
 {% extends "MainPage.html" %}
 {% load static %}
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0">
-  <title>sobre</title>
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}">
+
   {% block extra_head_content %}
+   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/sobre-grid.css' %}">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/sobre.css' %}">
   {% endblock %}
-</head>
-<body class="body page-sobre clearfix">
+
 {% block content %}
   <div class="container _container container-1">
     <p class="text text-1">Por trás do Scan&amp;Skip</p>
@@ -28,8 +22,6 @@
     </div>
   </div>
 
-  <script src="js/jquery-min.js"></script>
-  <script src="js/rimages.js"></script>
+  <script src="{% static 'cadastroapp/js/jquery-min.js' %}"></script>
+  <script src="{% static 'cadastroapp/js/rimages.js' %}"></script>
 {% endblock %}
-</body>
-</html>

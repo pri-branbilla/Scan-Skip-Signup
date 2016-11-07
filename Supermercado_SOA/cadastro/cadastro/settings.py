@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_mongoengine',
     'cadastroapp',
+
 ]
 
 
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'cadastro.urls'
@@ -125,20 +127,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-#_MONGODB_USER = 'admin'
-#_MONGODB_PASSWD = 'admin123'
-#_MONGODB_HOST = 'localhost'
-#_MONGODB_NAME = 'admin'
-#_MONGODB_DATABASE_HOST = \
-#    'mongodb://%s:%s@%s/%s' \
-#    % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_HOST, _MONGODB_NAME)
-#mongoengine.connect(_MONGODB_NAME, host=_MONGODB_DATABASE_HOST)
+_MONGODB_USER = 'admin'
+_MONGODB_PASSWD = 'admin123'
+_MONGODB_HOST = 'ds143737.mlab.com:43737'
+_MONGODB_NAME = 'supermercado'
+_MONGODB_DATABASE_HOST = 'mongodb://%s:%s@%s/%s' % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_HOST, _MONGODB_NAME)
+connect(_MONGODB_NAME, host=_MONGODB_DATABASE_HOST)
 
 AUTHENTICATION_BACKENDS = (
 'mongoengine.django.auth.MongoEngineBackend',
 )
 
-connect('supermercado')
+#connect('supermercado')
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 

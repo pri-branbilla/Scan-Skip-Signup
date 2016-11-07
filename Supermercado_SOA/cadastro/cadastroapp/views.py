@@ -86,6 +86,7 @@ def cadastro(request):
 def login(request):
     desativada = False
     errado = False
+
     if request.method == 'POST':
         email = request.POST.get('email')
         senha = request.POST.get('senha')
@@ -94,13 +95,17 @@ def login(request):
                 user = Usuario.objects.get(email=email, senha=senha)
                 id1 = str(user.idusuario)
                 nome = str(user.nome)
+
                 if (permanece=="on"):
                     request.session['logado'] = True
                     request.session['nome'] = nome
                     request.session['idusuario'] = id1
                 return HttpResponseRedirect('http://143.107.102.33:8000/carrinho/id=' + id1 + '/nome=' + nome)
         except:
+
                 errado = True
+
+
     return render(request, 'cadastroapp/login.html', {'errado': errado})
 
 
