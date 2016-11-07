@@ -11,10 +11,10 @@
   <title>Cadastro</title>
 
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}">
      {% block extra_head_content %}
-  <link rel="stylesheet" href="{% static 'cadastroapp/css/cadastro-grid.css' %}" type="text/css">
-  <link rel="stylesheet" href="{% static 'cadastroapp/css/cadastro.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/cadastro-grid.css' %}">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/cadastro.css' %}">
     {% endblock %}
 </head>
     {% block content %}
@@ -25,7 +25,7 @@
       <form class="style-1 cadastro clearfix" method="POST">{% csrf_token %}
 
     <p class="text">Cadastre-se</p>
-     <div style="font-size: 10px; margin-left: 95px; margin-bottom:5px;">  {% if registrado %}
+     {% if registrado %}
         Usuário já cadastrado<br>
         {% endif %}
         {% if erroUsuario %}
@@ -36,7 +36,7 @@
         {% endif %}
      {% if erroSenha %}
         As senhas devem ser iguais<br>
-        {% endif %}</div>
+        {% endif %}
     <input class="_input _input-1" name="nome" placeholder="Nome completo" type="text">
 
     <input class="_input _input-3" name="email" placeholder="E-mail" type="text">
