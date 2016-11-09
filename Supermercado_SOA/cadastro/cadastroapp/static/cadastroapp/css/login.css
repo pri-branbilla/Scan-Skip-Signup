@@ -1,7 +1,5 @@
 body {
-  background-color: rgb(255, 255, 255);
-  font: 400 0.75em/2.5 'Open Sans';
-  color: rgba(0, 0, 0, 0.87);
+
 }
 
 .background {
@@ -15,6 +13,9 @@ body {
   background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
   background-size: cover;
   background-position: center center;
+  background-color: rgb(255, 255, 255);
+  font: 400 0.75em/2.5 'Open Sans';
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .checkbox {

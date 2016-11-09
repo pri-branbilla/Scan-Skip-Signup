@@ -1,19 +1,13 @@
-<!doctype html>
+
 {% extends "MainPage.html" %}
 {% load static %}
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0">
-  <title>home</title>
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}">
+
   {% block extra_head_content %}
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/home-grid.css' %}">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/home.css' %}">
   {% endblock %}
-</head>
-<body class="body page-home clearfix">
+
 {% block content %}
   <div class="background">
     <div class="container clearfix">
@@ -31,6 +25,4 @@
   <script src="{% static 'cadastroapp/js/jquery-min.js' %}"></script>
   <script src="{% static 'cadastroapp/js/rimages.js' %}"></script>
 {% endblock %}
-</body>
 
-</html>

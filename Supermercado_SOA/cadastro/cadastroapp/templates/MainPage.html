@@ -9,24 +9,29 @@
   <title>Scan&Skip - {% block title %}{% endblock %}</title>
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}">
-  {% block extra_head_content %} {% endblock %}
+
+
   <link rel="stylesheet" href="{% static 'cadastroapp/css/header---footer-grid.css' %}">
-  <link rel="stylesheet" href="{% static 'cadastroapp/css/header---footer.css' %}">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/header-footer2.css' %}">
+
+{% block extra_head_content %}{% endblock %}
+
 
 </head>
 <body class="body page-header---footer clearfix">
 
 <div class="corpo">
-    <div class="wrapper">{% block content %} {% endblock %}</div>
-    <footer class="footer"></footer>
+  <footer class="footer"></footer>
+    {% block content %} {% endblock %}
+
 </div>
   <div class="barra clearfix">
     <p class="textheader">Scan&Skip</p>
     <div class="botoesbarra clearfix">
-      <a href="/"><button class="botaoBarra botaoHome">Home</button></a>
-      <a href="/sobre"><button class="botaoBarra botaoSobre" type="button">Sobre</button></a>
-      <a href="/login"><button class="botaoBarra botaoLogin">Login</button></a>
-      <a href="/cadastro"><button class="botaoBarra botaoCadastro">Cadastre-se</button></a>
+      <button onclick="window.location='/'" class="botaoBarra botaoHome">Home</button>
+      <button onclick="window.location='/sobre'" class="botaoBarra botaoSobre">Sobre</button>
+      <button onclick="window.location='/login'" class="botaoBarra botaoLogin">Login</button>
+      <button onclick="window.location='/cadastro'" class="botaoBarra botaoCadastro">Cadastre-se</button>
     </div>
   </div>
 
