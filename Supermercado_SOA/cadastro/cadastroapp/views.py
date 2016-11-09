@@ -72,7 +72,7 @@ def cadastro(request):
             cliente = Usuario(idusuario=str(random.randint(0,100000)), nome=nome, email=email, cpf=cpf, senha=senha1)
             cliente.save()
             registrado = True
-            return HttpResponseRedirect('/login')
+            return HttpResponseRedirect('/cadastro/login')
     else:
         usuario = ''
         nome = ''
@@ -100,7 +100,7 @@ def login(request):
                     request.session['logado'] = True
                     request.session['nome'] = nome
                     request.session['idusuario'] = id1
-                return HttpResponseRedirect('http://143.107.102.33:8000/carrinho/id=' + id1 + '/nome=' + nome)
+                return HttpResponseRedirect('https://scan-skip-carrinho.herokuapp.com//carrinho/id=' + id1 + '/nome=' + nome)
         except:
 
                 errado = True

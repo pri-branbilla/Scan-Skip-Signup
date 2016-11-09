@@ -2,18 +2,11 @@
 {% extends "MainPage.html" %}
 {% load static %}
 {% block title %}Cadastro{% endblock %}
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0">
-  <title>Cadastro</title>
 
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}">
+
      {% block extra_head_content %}
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
      <link rel="stylesheet" href="{% static 'cadastroapp/css/cadastro-grid.css' %}">
-
   <link rel="stylesheet" href="{% static 'cadastroapp/css/cadastro.css' %}">
     {% endblock %}
 
@@ -25,7 +18,7 @@
       <form class="style-1 cadastro clearfix" method="POST">{% csrf_token %}
 
     <p class="text">Cadastre-se</p>
-     {% if registrado %}
+     <div style="font-size: 10px; margin-left: 95px; margin-bottom:5px;">  {% if registrado %}
         Usuário já cadastrado<br>
         {% endif %}
         {% if erroUsuario %}
@@ -36,7 +29,7 @@
         {% endif %}
      {% if erroSenha %}
         As senhas devem ser iguais<br>
-        {% endif %}
+        {% endif %}</div>
     <input class="_input _input-1" name="nome" placeholder="Nome completo" type="text">
 
     <input class="_input _input-3" name="email" placeholder="E-mail" type="text">
