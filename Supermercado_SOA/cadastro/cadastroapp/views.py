@@ -7,6 +7,10 @@ from mongoengine import *
 from django.template.context import RequestContext
 from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
+
+import string
+
+from cadastroapp.control import verificaUsuario, pegaUsuario
 from control import *
 import random
 from .models import Usuario
@@ -20,28 +24,14 @@ def Sobre(request):
 def Home(request):
     return render(request, 'cadastroapp/home.html', {})
 
-def Cadastro(request):
-    registrado = False
-    if request.method == 'POST':
-        user_form = UsuarioForm(data=request.POST)
-        if user_form.is_valid():
-            if user_form.senha1 == user_form.senha2:
-                Usuario = user_form.save()
-                registrado = True
-        else:
-            print(user_form.errors)
-    else:
-        user_form = UsuarioForm()
-    return render(request,
-                  'cadastroapp/Cadastro.html', {'user_form': user_form, 'registrado': registrado})
-
-
 def cadastro(request):
     registrado = False
     erroSenha = False
     erroEmail = False
     erroCPF = False
     erroUsuario = False
+    chars = string.letters + string.digits
+    siz = 25
     if request.method == 'POST':
         nome = request.POST['nome']
         email = request.POST['email']
@@ -70,7 +60,8 @@ def cadastro(request):
             erroEmail = True
         if not erroUsuario and not erroEmail and not erroSenha and not erroCPF:
             #U.create_user(username=usuario, password=senha1, email=email)
-            cliente = Usuario(idusuario=str(random.randint(0,100000)), nome=nome, email=email, cpf=cpf, senha=senha1)
+            tokenEmail = ''.join(random.choice(chars) for x in range(siz))
+            cliente = Usuario(idusuario=str(random.randint(0,100000)), nome=nome, email=email, cpf=cpf, senha=senha1, ativado=False, tokenEmail = tokenEmail)
             cliente.save()
             registrado = True
             return HttpResponseRedirect('/login')
@@ -132,14 +123,3 @@ def perfil(request):
         return render(request, 'cadastroapp/home.html', {})
 
 
-class UsuarioForm(forms.Form):
-    nome = forms.CharField(required=True)
-    email = forms.EmailField(required=True)
-    senha1 = forms.CharField(widget=forms.PasswordInput(), required=True)
-    senha2 = forms.CharField(widget=forms.PasswordInput(), required=True)
-
-    def __init__(self, *args, **kwargs):
-		self.instance = kwargs.pop('instance', None)
-		super(UsuarioForm, self).__init__(*args, **kwargs)
-
-# Create your views here.
