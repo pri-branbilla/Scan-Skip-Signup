@@ -1,15 +1,12 @@
 from __future__ import print_function
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from django import forms
-from mongoengine import *
-from django.template.context import RequestContext
 from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
-
+from django.contrib import messages
+from django.conf import settings
 import string
-
 from cadastroapp.control import verificaUsuario, pegaUsuario
 from control import *
 import random
@@ -63,6 +60,11 @@ def cadastro(request):
             tokenEmail = ''.join(random.choice(chars) for x in range(siz))
             cliente = Usuario(idusuario=str(random.randint(0,100000)), nome=nome, email=email, cpf=cpf, senha=senha1, ativado=False, tokenEmail = tokenEmail)
             cliente.save()
+            subject = '[Sem Resposta]'
+            message = 'Acesse o link para confirmar seu e-mail /n http://localhost:8000/cadastro/ativa/token=' + tokenEmail
+            from_email = settings.EMAIL_HOST_USER
+            to_list = [email]
+            send_mail(subject, message, from_email, to_list, fail_silently=True)
             registrado = True
             return HttpResponseRedirect('/login')
     else:
@@ -122,4 +124,8 @@ def perfil(request):
     else:
         return render(request, 'cadastroapp/home.html', {})
 
-
+def Ativa(request, token):
+    user=Usuario.objects.get(tokenEmail = token)
+    user.ativado = True
+    user.save()
+    return redirect('/perfil')

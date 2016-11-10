@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^login/', views.login, name="login"),
     url(r'^logout/', views.logout, name="logout"),
     url(r'^$', views.Home, name="Home"),
+    url(r'^ativa/token=(?P<token>[-\w ]+)', views.Ativa, name="Ativa"),
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #?senha=(?P<senha>[-\w ]+)&email=(?P<email>\w+)/$
 #site_media = os.path.join(os.path.dirname(__file__), ',,/', 'cadastroapp', 'static', 'cadastro')
