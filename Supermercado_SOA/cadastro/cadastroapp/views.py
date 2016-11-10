@@ -10,6 +10,7 @@ from django.utils.crypto import get_random_string
 from control import *
 import random
 from .models import Usuario
+from tests import *
 
 # Link do carrinho: 'https://scan-skip-carrinho.herokuapp.com/id=' + id1 + '/nome=' + nome
 
@@ -39,6 +40,7 @@ def cadastro(request):
     registrado = False
     erroSenha = False
     erroEmail = False
+    erroCPF = False
     erroUsuario = False
     if request.method == 'POST':
         nome = request.POST['nome']
@@ -48,6 +50,9 @@ def cadastro(request):
             erroUsuario = True
         else:
             erroUsuario = False
+        veif = validar_cpf(cpf)
+        if not veif:
+            erroCPF = True
         senha1 = request.POST['senha1']
         senha2 = request.POST['senha2']
         try:
@@ -63,12 +68,12 @@ def cadastro(request):
             erroEmail = False
         else:
             erroEmail = True
-        if not erroUsuario and not erroEmail and not erroSenha:
+        if not erroUsuario and not erroEmail and not erroSenha and not erroCPF:
             #U.create_user(username=usuario, password=senha1, email=email)
             cliente = Usuario(idusuario=str(random.randint(0,100000)), nome=nome, email=email, cpf=cpf, senha=senha1)
             cliente.save()
             registrado = True
-            return HttpResponseRedirect('/cadastro/login')
+            return HttpResponseRedirect('/login')
     else:
         usuario = ''
         nome = ''
@@ -76,7 +81,7 @@ def cadastro(request):
 
     return render(request,
                   'cadastroapp/Cadastro.html',
-                  {'erroSenha' : erroSenha, 'registrado' : registrado, 'erroEmail' : erroEmail, 'erroUsuario' : erroUsuario})
+                  {'erroSenha' : erroSenha, 'registrado' : registrado, 'erroEmail' : erroEmail, 'erroUsuario' : erroUsuario, 'erroCPF' : erroCPF})
 
 
 def login(request):
