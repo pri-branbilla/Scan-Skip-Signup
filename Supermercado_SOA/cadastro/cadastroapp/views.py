@@ -8,6 +8,7 @@ from django.template.context import RequestContext
 from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
 from control import *
+from tests import *
 import random
 from .models import Usuario
 
@@ -19,25 +20,10 @@ def Sobre(request):
 def Home(request):
     return render(request, 'cadastroapp/home.html', {})
 
-def Cadastro(request):
-    registrado = False
-    if request.method == 'POST':
-        user_form = UsuarioForm(data=request.POST)
-        if user_form.is_valid():
-            if user_form.senha1 == user_form.senha2:
-                Usuario = user_form.save()
-                registrado = True
-        else:
-            print(user_form.errors)
-    else:
-        user_form = UsuarioForm()
-    return render(request,
-                  'cadastroapp/Cadastro.html', {'user_form': user_form, 'registrado': registrado})
-
-
 def cadastro(request):
     registrado = False
     erroSenha = False
+    erroCPF = False
     erroEmail = False
     erroUsuario = False
     if request.method == 'POST':
@@ -48,6 +34,9 @@ def cadastro(request):
             erroUsuario = True
         else:
             erroUsuario = False
+        valido = validar_cpf(cpf)
+        if not valido:
+            erroCPF=True
         senha1 = request.POST['senha1']
         senha2 = request.POST['senha2']
         try:
@@ -63,12 +52,12 @@ def cadastro(request):
             erroEmail = False
         else:
             erroEmail = True
-        if not erroUsuario and not erroEmail and not erroSenha:
+        if not erroUsuario and not erroEmail and not erroSenha and not erroCPF:
             #U.create_user(username=usuario, password=senha1, email=email)
             cliente = Usuario(idusuario=str(random.randint(0,100000)), nome=nome, email=email, cpf=cpf, senha=senha1)
             cliente.save()
             registrado = True
-            return HttpResponseRedirect('/cadastro/login')
+            return HttpResponseRedirect('/login')
     else:
         usuario = ''
         nome = ''
@@ -76,7 +65,7 @@ def cadastro(request):
 
     return render(request,
                   'cadastroapp/Cadastro.html',
-                  {'erroSenha' : erroSenha, 'registrado' : registrado, 'erroEmail' : erroEmail, 'erroUsuario' : erroUsuario})
+                  {'erroSenha' : erroSenha, 'registrado' : registrado, 'erroEmail' : erroEmail, 'erroUsuario' : erroUsuario, 'erroCPF' : erroCPF})
 
 
 def login(request):
@@ -126,15 +115,5 @@ def perfil(request):
     else:
         return render(request, 'cadastroapp/home.html', {})
 
-
-class UsuarioForm(forms.Form):
-    nome = forms.CharField(required=True)
-    email = forms.EmailField(required=True)
-    senha1 = forms.CharField(widget=forms.PasswordInput(), required=True)
-    senha2 = forms.CharField(widget=forms.PasswordInput(), required=True)
-
-    def __init__(self, *args, **kwargs):
-		self.instance = kwargs.pop('instance', None)
-		super(UsuarioForm, self).__init__(*args, **kwargs)
 
 # Create your views here.
