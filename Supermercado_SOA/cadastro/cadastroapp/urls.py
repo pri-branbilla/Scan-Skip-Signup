@@ -7,8 +7,9 @@ import os
 urlpatterns = [
     url(r'^cadastro/', views.cadastro, name="cadastro"),
     url(r'^sobre/', views.Sobre, name="Sobre"),
+    url(r'^perfil/', views.perfil, name="perfil"),
     url(r'^login/', views.login, name="login"),
-    url(r'^header/', views.header, name="header"),
+    url(r'^logout/', views.logout, name="logout"),
     url(r'^$', views.Home, name="Home"),
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #?senha=(?P<senha>[-\w ]+)&email=(?P<email>\w+)/$

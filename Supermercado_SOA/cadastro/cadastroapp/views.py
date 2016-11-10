@@ -2,26 +2,22 @@ from __future__ import print_function
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from django.contrib.auth import authenticate, login, logout
 from django import forms
 from mongoengine import *
 from django.template.context import RequestContext
-from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
-import mongoengine.django.auth
+from control import *
 import random
 from .models import Usuario
 
+# Link do carrinho: 'https://scan-skip-carrinho.herokuapp.com/id=' + id1 + '/nome=' + nome
 
 def Sobre(request):
     return render(request, 'cadastroapp/sobre.html', {})
 
 def Home(request):
     return render(request, 'cadastroapp/home.html', {})
-
-def header(request):
-    return render(request, 'cadastroapp/header---footer.html', {})
 
 def Cadastro(request):
     registrado = False
@@ -91,22 +87,44 @@ def login(request):
         email = request.POST.get('email')
         senha = request.POST.get('senha')
         permanece = request.POST.get('permanece')
-        try: #se usuario e senha corretos
-                user = Usuario.objects.get(email=email, senha=senha)
-                id1 = str(user.idusuario)
-                nome = str(user.nome)
+        try:  # se usuario e senha corretos
+            user = Usuario.objects.get(email=email, senha=senha)
+            id1 = str(user.idusuario)
+            nome = str(user.nome)
 
-                if (permanece=="on"):
-                    request.session['logado'] = True
-                    request.session['nome'] = nome
-                    request.session['idusuario'] = id1
-                return HttpResponseRedirect('https://scan-skip-carrinho.herokuapp.com//carrinho/id=' + id1 + '/nome=' + nome)
+            if (permanece == "on"):
+                request.session.set_expiry(1000000000)
+            else:
+                request.session.set_expiry(10000)
+            request.session['logado'] = True
+            request.session['nome'] = nome
+            request.session['idusuario'] = id1
+            return perfil(request)
         except:
-
-                errado = True
-
+            errado = True
 
     return render(request, 'cadastroapp/login.html', {'errado': errado})
+
+
+def logout(request):
+    logado = verificaUsuario(request)
+    if logado:
+        request.session.set_expiry(1)
+        del request.session['logado']
+        del request.session['nome']
+        del request.session['idusuario']
+    return render(request, 'cadastroapp/home.html', {})
+
+
+def perfil(request):
+    logado = verificaUsuario(request)
+    if logado:
+        usuario = pegaUsuario(request.session['idusuario'], request.session['nome'])
+        email = usuario.email
+        CPF = usuario.cpf
+        return render(request, 'cadastroapp/perfil.html', {'email': email, 'CPF': CPF})
+    else:
+        return render(request, 'cadastroapp/home.html', {})
 
 
 class UsuarioForm(forms.Form):

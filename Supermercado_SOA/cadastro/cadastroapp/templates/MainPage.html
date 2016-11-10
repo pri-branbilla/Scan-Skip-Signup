@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 {% load static %}
 <html>
@@ -7,33 +5,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1.0">
   <title>Scan&Skip - {% block title %}{% endblock %}</title>
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}">
-
-
   <link rel="stylesheet" href="{% static 'cadastroapp/css/header---footer-grid.css' %}">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/header-footer2.css' %}">
-
-{% block extra_head_content %}{% endblock %}
-
-
+  {% block extra_head_content %}{% endblock %}
 </head>
 <body class="body page-header---footer clearfix">
-
-<div class="corpo">
-  <footer class="footer"></footer>
+  <div class="corpo">
+    <footer class="footer"></footer>
     {% block content %} {% endblock %}
-
-</div>
+  </div>
   <div class="barra clearfix">
     <p class="textheader">Scan&Skip</p>
     <div class="botoesbarra clearfix">
       <button onclick="window.location='/'" class="botaoBarra botaoHome">Home</button>
       <button onclick="window.location='/sobre'" class="botaoBarra botaoSobre">Sobre</button>
-      <button onclick="window.location='/login'" class="botaoBarra botaoLogin">Login</button>
-      <button onclick="window.location='/cadastro'" class="botaoBarra botaoCadastro">Cadastre-se</button>
+      {% if request.session.logado %}
+        <button onClick="window.location='/perfil'" class="botaoBarra botaoLogin">Perfil</button>
+        <button onClick="window.location='/logout'" class="botaoBarra botaoCadastro">Logout</button>
+      {% else %}
+        <button onclick="window.location='/login'" class="botaoBarra botaoLogin">Login</button>
+        <button onclick="window.location='/cadastro'" class="botaoBarra botaoCadastro">Cadastre-se</button>
+      {% endif %}
     </div>
   </div>
-
-  <script src="{% static 'cadastroapp/js/jquery-min.js' %}"></script>
 </body>

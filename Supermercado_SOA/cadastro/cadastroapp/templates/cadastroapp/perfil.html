@@ -1,0 +1,34 @@
+{% extends "MainPage.html" %}
+{% load static %}
+
+{% block title %}Perfil{% endblock %}
+
+{% block extra_head_content %}
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/perfil-grid.css' %}">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/perfil.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="background">
+    <div class="perfil">
+      <div class="container container-1 clearfix">
+        <img class="image" src="{% static 'cadastroapp/images/zeus-170x170.jpg' %}" data-rimage data-src="{% static 'cadastroapp/images/zeus-170x170.jpg' %}">
+      </div>
+      <p class="text _text">Meu Perfil</p>
+      <div class="params">
+        <p class="text nome">Nome: {{ request.session.nome }}</p>
+        <p class="text cpf">CPF: {{ CPF }}</p>
+        <p class="text email">E-mail: {{ email }}</p>
+      </div>
+      <div class="container container-2">
+        <button onClick="window.location='https://scan-skip-carrinho.herokuapp.com/id={{ request.session.idusuario }}/nome={{ request.session.nome }}'" class="buttonperfil carrinho">Carrinho</button>
+        <button onClick="window.location='/feedback'" class="buttonperfil feedback">Feedback</button>
+        <button onClick="window.location='/mapa'" class="buttonperfil mapa">Mapa</button>
+        <button onClick="window.location='/editarcadastro'" class="buttonperfil alterar_dados">Alterar Dados</button>
+        <button onClick="window.location='/editarsenha'" class="buttonperfil alterar_senha">Alterar Senha</button>
+      </div>
+    </div>
+  </div>
+{% endblock %}
