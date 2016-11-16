@@ -6,6 +6,7 @@ from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
 from django.contrib import messages
 from django.conf import settings
+from mongoengine.django.sessions import MongoSession
 import string
 from cadastroapp.control import verificaUsuario, pegaUsuario
 from control import *
@@ -13,7 +14,7 @@ import random
 from .models import Usuario
 from tests import *
 
-# Link do carrinho: 'https://scan-skip-carrinho.herokuapp.com/id=' + id1 + '/nome=' + nome
+siteCarrinho = 'https://scan-skip-carrinho-teste.herokuapp.com/'
 
 def Sobre(request):
     return render(request, 'cadastroapp/sobre.html', {})
@@ -56,12 +57,11 @@ def cadastro(request):
         else:
             erroEmail = True
         if not erroUsuario and not erroEmail and not erroSenha and not erroCPF:
-            #U.create_user(username=usuario, password=senha1, email=email)
             tokenEmail = ''.join(random.choice(chars) for x in range(siz))
-            cliente = Usuario(idusuario=str(random.randint(0,100000)), nome=nome, email=email, cpf=cpf, senha=senha1, ativado=False, tokenEmail = tokenEmail)
+            cliente = Usuario(idusuario=str(random.randint(0, 100000)), nome=nome, email=email, cpf=cpf, senha=senha1, ativado=False, tokenEmail=tokenEmail)
             cliente.save()
             subject = '[Sem Resposta]'
-            message = 'Acesse o link para confirmar seu e-mail /n http://localhost:8000/cadastro/ativa/token=' + tokenEmail
+            message = 'Acesse o link para confirmar seu e-mail /n https://scan-skip-teste.herokuapp.com/cadastro/ativa/token=' + tokenEmail
             from_email = settings.EMAIL_HOST_USER
             to_list = [email]
             send_mail(subject, message, from_email, to_list, fail_silently=True)
@@ -91,13 +91,14 @@ def login(request):
             nome = str(user.nome)
 
             if (permanece == "on"):
-                request.session.set_expiry(1000000000)
+                tempo = 1000000000
             else:
-                request.session.set_expiry(10000)
+                tempo = 10000
+            request.session.set_expiry(tempo)
             request.session['logado'] = True
             request.session['nome'] = nome
             request.session['idusuario'] = id1
-            return perfil(request)
+            return HttpResponseRedirect(siteCarrinho + 'id=' + id1 + '/nome=' + nome)
         except:
             errado = True
 
@@ -107,10 +108,7 @@ def login(request):
 def logout(request):
     logado = verificaUsuario(request)
     if logado:
-        request.session.set_expiry(1)
-        del request.session['logado']
-        del request.session['nome']
-        del request.session['idusuario']
+        MongoSession.objects.get(session_key=request.session.session_key).delete()
     return render(request, 'cadastroapp/home.html', {})
 
 
