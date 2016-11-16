@@ -203,7 +203,7 @@ def alterar_senha(request):
             else:
                 atualErrada = True
 
-        return render(request, 'cadastroapp/alterar-dados.html', {'errado': errado})
+        return render(request, 'cadastroapp/alterar-dados.html', {'atualErrada': atualErrada, 'naoConfirma' : naoConfirma})
     
     else:
         return render(request, 'cadastroapp/home.html', {})
