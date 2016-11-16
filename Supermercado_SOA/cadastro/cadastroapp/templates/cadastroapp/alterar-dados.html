@@ -1,0 +1,33 @@
+{% extends "MainPage.html" %}
+{% load static %}
+
+{% block title %}Alterar-dados{% endblock %}
+
+{% block extra_head_content %}
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/alterar-dados-grid.css' %}">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/alterar-dados.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="background clearfix">
+    <form class="style-1 alterardados clearfix" method="POST">
+      <p class="text">Meus Dados Cadastrais</p>
+      <div style="font-size: 10px; margin-left: 95px; margin-bottom:5px;">  
+        {% if atualErrada %}
+          Senha atual não corresponde<br>
+        {% endif %}
+        {% if naoConfirma %}
+          Senha não está de acordo com a confirmação<br>
+        {% endif %}
+      </div>
+      <input class="nome" name="Nome" placeholder="Nome Completo" type="text">
+      <input class="email" name="E-mail" placeholder="E-mail" type="text">
+      <input class="cpf" name="CPF" placeholder="CPF" type="text" disabled>
+      <button class="buttondados salvar" type="submit">Salvar alterações</button>
+    </form>
+  </div>
+
+  <script src="js/jquery-min.js"></script>
+{% endblock %}

@@ -1,0 +1,122 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 2em/1.38 'Open Sans';
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.alterardados {
+  width: 69.7829716193%;
+  min-width: 600px;
+  height: 541px;
+  margin: 75px auto 0;
+  border-radius: 10px;
+  background-color: rgba(113, 164, 255, 0.2);
+}
+
+.background {
+  float: left;
+  width: 100%;
+  height: 712px;
+  border: 1px double rgb(0, 0, 0);
+  background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
+  background-size: cover;
+  background-position: center center;
+}
+
+.buttondados {
+  display: block;
+  float: left;
+  clear: both;
+  width: 28.7066246056%;
+  min-width: 200px;
+  height: 52px;
+  margin: 29px 0 0 35.64033%;
+  border-radius: 5px;
+  background-color: rgb(62, 113, 225);
+  font-family: Helvetica;
+  font-style: italic;
+  font-size: 0.75em;
+  font-weight: 700;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.buttondados:hover {
+  background-color: rgb(16, 161, 36);
+}
+
+.cpf,
+.email,
+.nome,
+.sobrenome {
+  display: block;
+  float: left;
+  clear: both;
+  width: 80.0177444794%;
+  height: 33px;
+  margin: 28px 0 0 9.93197%;
+  padding: 0 10px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  font-family: Helvetica;
+  font-style: italic;
+  font-size: 0.375em;
+  color: rgb(0, 0, 0);
+}
+
+.text {
+  width: 100%;
+  min-height: 50px;
+  margin: 28px auto 0;
+  font-size: 1em;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+@media(max-width: 900px) {
+  .alterardados .buttondados {
+    float: none;
+    clear: none;
+    margin-top: 28px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .alterardados .cpf,
+  .alterardados .email,
+  .alterardados .nome,
+  .alterardados .sobrenome {
+    float: none;
+    clear: none;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .background .alterardados {
+    width: 65.1447661469%;
+    min-width: 400px;
+  }
+}
+
+@media(max-width: 600px) {
+  body {
+    font-size: 2em;
+  }
+
+  .background .alterardados {
+    width: 65.2173913043%;
+    min-width: 300px;
+  }
+}
+
+@media(max-width: 360px) {
+  .alterardados .buttondados {
+    margin-top: 40px;
+  }
+
+  .background .alterardados {
+    width: 85%;
+    min-width: 208px;
+  }
+}

@@ -1,0 +1,228 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 600 2em/2.5 'Open Sans';
+  color: rgb(0, 0, 0);
+}
+
+.atual {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 40%;
+  height: 33px;
+  margin: 0 auto;
+  padding: 0 10px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  font: italic 400 0.375em/1.38 Helvetica;
+  color: rgb(0, 0, 0);
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  width: 100%;
+  height: 712px;
+  border: 1px double rgb(0, 0, 0);
+  background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
+  background-size: cover;
+  background-position: center center;
+}
+
+.buttonsenha {
+  display: block;
+  position: absolute;
+  top: 144px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 25%;
+  height: 52px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: rgb(62, 113, 225);
+  font: italic 700 0.75em/1.38 Helvetica;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.buttonsenha:hover {
+  background-color: rgb(11, 62, 174);
+  color: rgb(250, 220, 10);
+}
+
+.confirma {
+  display: block;
+  position: absolute;
+  top: 96px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  width: 40%;
+  height: 33px;
+  margin: 0 auto;
+  padding: 0 10px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  font: italic 400 0.375em/1.38 Helvetica;
+  color: rgb(0, 0, 0);
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  width: 66.4440734557%;
+  height: 507px;
+  margin: auto;
+  border-radius: 10px;
+  background-color: rgba(113, 164, 255, 0.2);
+}
+
+.alterarsenha {
+  position: absolute;
+  top: 155px;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  width: 100%;
+  height: 196px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.nova {
+  display: block;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  width: 40%;
+  height: 33px;
+  margin: 0 auto;
+  padding: 0 10px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  font: italic 400 0.375em/1.38 Helvetica;
+  color: rgb(0, 0, 0);
+}
+
+.text {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  width: 100%;
+  min-height: 50px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1em;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+@media(max-width: 1000px) {
+  .background .container {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-width: 175px;
+    margin: auto;
+  }
+
+  .container .alterarsenha {
+    left: 0;
+    right: 0;
+    min-width: 175px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .alterarsenha .text {
+    left: 0;
+    right: 0;
+    min-width: 175px;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 2;
+  }
+
+  .alterarsenha .atual,
+  .alterarsenha .confirma,
+  .alterarsenha .nova {
+    left: 0;
+    right: 0;
+    min-width: 165px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .alterarsenha .buttonsenha {
+    left: 0;
+    right: 0;
+    min-width: 165px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media(max-width: 600px) {
+  body {
+    font-size: 2em;
+  }
+
+  .background .container {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .container .alterarsenha,
+  .alterarsenha .text,
+  .alterarsenha .atual,
+  .alterarsenha .buttonsenha,
+  .alterarsenha .confirma,
+  .alterarsenha .nova {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media(max-width: 320px) {
+  .background .container {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .container .alterarsenha,
+  .alterarsenha .text,
+  .alterarsenha .atual,
+  .alterarsenha .buttonsenha,
+  .alterarsenha .confirma,
+  .alterarsenha .nova {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
