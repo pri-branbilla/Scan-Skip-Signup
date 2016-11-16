@@ -29,9 +29,4 @@ class Usuario(Document):
         return self.email
     def getSenha(self):
         return self.senha
-    def setNome(self, nome):
-        nome = nome
-    def setEmail(self, email):
-        email = email
-    def setSenha(self, senha):
-        senha = senha
+    

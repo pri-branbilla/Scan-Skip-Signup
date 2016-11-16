@@ -35,7 +35,8 @@ body {
   float: left;
   width: 100%;
   min-height: 50px;
-  font-size: 1em;
+  background-color: rgb(255, 255, 255);
+  font: 400 2em/1.38 'Open Sans';
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -118,9 +119,6 @@ body {
 }
 
 @media(max-width: 600px) {
-  body {
-    font-size: 2em;
-  }
 
   .background .cadastro {
     width: 65.2173913043%;

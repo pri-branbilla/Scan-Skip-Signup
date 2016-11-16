@@ -137,13 +137,7 @@ def alterar_dados(request):
         nome = usuario.nome
         email = usuario.email
         CPF = usuario.cpf
-
-        document.getElementsByName("nome")[0].value="";
-        document.getElementsByName("nome")[0].placeholder=nome;
-        document.getElementsByName("email")[0].value="";
-        document.getElementsByName("email")[0].placeholder=email;
-        document.getElementsByName("CPF")[0].value="";
-        document.getElementsByName("CPF")[0].placeholder=CPF;
+        senha = usuario.senha
 
         if request.method == 'POST':
             nome = request.POST['nome']
@@ -159,17 +153,11 @@ def alterar_dados(request):
                 erroEmail = True
         
             if not erroEmail:
-                usuario.setNome(nome)
-                usuario.setEmail(email)   
+                usuario.nome=nome
+                request.session['nome']=nome
+                usuario.email=email  
                 usuario.save()
-            
-            #cliente = Usuario(idusuario=str(random.randint(0,100000)), nome=nome, email=email, cpf=cpf, senha=senha1, ativado=False, tokenEmail = tokenEmail)
-            cliente.save()
-            
-        else:
-            usuario = ''
-            nome = ''
-            email = ''
+            return perfil(request)
 
         return render(request, 'cadastroapp/alterar-dados.html', {'nome': nome, 'email': email, 'CPF': CPF, 'erroEmail' : erroEmail})
 
@@ -185,23 +173,31 @@ def alterar_senha(request):
         usuario = pegaUsuario(request.session['idusuario'], request.session['nome'])
         senha_salva = usuario.senha
 
+        senha_atual = ""
+        senha_nova = ""
+        senha_confirma = ""
+
         if request.method == 'POST':
-            senha_atual = request.POST.get('atual')
-            senha_nova = request.POST.get('nova')
-            senha_confirma = request.POST.get('confirma')
+            senha_atual = request.POST.get('senha_atual')
+            senha_nova = request.POST.get('senha_nova')
+            senha_confirma = request.POST.get('senha_confirma')
+            print("salva: ", senha_salva)
+            print("atual: ", senha_atual)
+            print("nova: ", senha_nova)
+            print("confirma: ", senha_confirma)
 
             if (senha_salva == senha_atual): # se senha correta
                 if (senha_nova == senha_confirma):
-                    usuario.setSenha(senha_nova)
+                    usuario.senha=senha_nova
                     usuario.save()
                     return perfil(request)
-
                 else:
                     naoConfirma = True
             else:
                 atualErrada = True
+            
 
-        return render(request, 'cadastroapp/alterar-dados.html', {'atualErrada': atualErrada, 'naoConfirma' : naoConfirma})
+        return render(request, 'cadastroapp/alterar-senha.html', {'atualErrada': atualErrada, 'naoConfirma' : naoConfirma})
     
     else:
         return render(request, 'cadastroapp/home.html', {})

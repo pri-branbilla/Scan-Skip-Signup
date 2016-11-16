@@ -1,7 +1,5 @@
 body {
-  background-color: rgb(255, 255, 255);
-  font: 400 2em/1.38 'Open Sans';
-  color: rgba(0, 0, 0, 0.87);
+
 }
 
 .alterardados {
@@ -11,6 +9,8 @@ body {
   margin: 75px auto 0;
   border-radius: 10px;
   background-color: rgba(113, 164, 255, 0.2);
+  font: 400 2em/2.5 'Open Sans';
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .background {
@@ -69,7 +69,6 @@ body {
   width: 100%;
   min-height: 50px;
   margin: 28px auto 0;
-  font-size: 1em;
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -100,9 +99,6 @@ body {
 }
 
 @media(max-width: 600px) {
-  body {
-    font-size: 2em;
-  }
 
   .background .alterardados {
     width: 65.2173913043%;

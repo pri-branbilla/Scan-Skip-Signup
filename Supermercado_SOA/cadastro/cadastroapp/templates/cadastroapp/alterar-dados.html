@@ -4,17 +4,18 @@
 {% block title %}Alterar-dados{% endblock %}
 
 {% block extra_head_content %}
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,400" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/alterar-dados-grid.css' %}">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/alterar-dados.css' %}">
 {% endblock %}
 
 {% block content %}
   <div class="background clearfix">
-    <form class="style-1 alterardados clearfix" method="POST">
+    <form class="style-1 alterardados clearfix" method="POST" action="{% url 'alterardados'%}">
+      {% csrf_token %}
       <p class="text">Meus Dados Cadastrais</p>
-      <div style="font-size: 10px; margin-left: 95px; margin-bottom:5px;">  
+      <div style="font-size: 15px; color: rgb(0,0,0); text-align: center; top: 0px; margin-bottom:15px;">  
         {% if atualErrada %}
           Senha atual não corresponde<br>
         {% endif %}
@@ -22,9 +23,9 @@
           Senha não está de acordo com a confirmação<br>
         {% endif %}
       </div>
-      <input class="nome" name="Nome" placeholder="Nome Completo" type="text">
-      <input class="email" name="E-mail" placeholder="E-mail" type="text">
-      <input class="cpf" name="CPF" placeholder="CPF" type="text" disabled>
+      <input class="nome" name="nome" value="{{nome}}" type="text">
+      <input class="email" name="email" value="{{email}}" type="text">
+      <input class="cpf" name="CPF" placeholder="{{CPF}}" type="text" disabled>
       <button class="buttondados salvar" type="submit">Salvar alterações</button>
     </form>
   </div>
