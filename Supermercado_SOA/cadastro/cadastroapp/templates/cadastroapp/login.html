@@ -1,19 +1,15 @@
-<!doctype html>
 {% extends "MainPage.html" %}
+
 {% load static %}
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0">
-  <title>login</title>
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:600,400" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}">
-  {% block extra_head_content %}
+
+{% block title %}Login{% endblock %}
+
+{% block extra_head_content %}
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,400" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/login-grid.css' %}">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/login.css' %}">
-  {% endblock %}
-</head>
-<body class="body page-login clearfix">
+{% endblock %}
+
 {% block content %}
   <div class="background">
     <div class="container container-1">
@@ -42,5 +38,3 @@
     </div>
   </div>
 {% endblock %}
-</body>
-</html>

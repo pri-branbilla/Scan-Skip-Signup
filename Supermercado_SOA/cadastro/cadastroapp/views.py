@@ -1,18 +1,20 @@
 from __future__ import print_function
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from django.contrib.auth import authenticate, login, logout
-from django import forms
-from mongoengine import *
-from django.template.context import RequestContext
-from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
-import mongoengine.django.auth
+from django.contrib import messages
+from django.conf import settings
+from mongoengine.django.sessions import MongoSession
+import string
+from cadastroapp.control import verificaUsuario, pegaUsuario
+from control import *
 import random
 from .models import Usuario
+from tests import *
 
+siteCarrinho = 'https://scan-skip-carrinho-teste.herokuapp.com/'
 
 def Sobre(request):
     return render(request, 'cadastroapp/sobre.html', {})
@@ -20,30 +22,14 @@ def Sobre(request):
 def Home(request):
     return render(request, 'cadastroapp/home.html', {})
 
-def header(request):
-    return render(request, 'cadastroapp/header---footer.html', {})
-
-def Cadastro(request):
-    registrado = False
-    if request.method == 'POST':
-        user_form = UsuarioForm(data=request.POST)
-        if user_form.is_valid():
-            if user_form.senha1 == user_form.senha2:
-                Usuario = user_form.save()
-                registrado = True
-        else:
-            print(user_form.errors)
-    else:
-        user_form = UsuarioForm()
-    return render(request,
-                  'cadastroapp/Cadastro.html', {'user_form': user_form, 'registrado': registrado})
-
-
 def cadastro(request):
     registrado = False
     erroSenha = False
     erroEmail = False
+    erroCPF = False
     erroUsuario = False
+    chars = string.letters + string.digits
+    siz = 25
     if request.method == 'POST':
         nome = request.POST['nome']
         email = request.POST['email']
@@ -52,6 +38,9 @@ def cadastro(request):
             erroUsuario = True
         else:
             erroUsuario = False
+        veif = validar_cpf(cpf)
+        if not veif:
+            erroCPF = True
         senha1 = request.POST['senha1']
         senha2 = request.POST['senha2']
         try:
@@ -67,12 +56,17 @@ def cadastro(request):
             erroEmail = False
         else:
             erroEmail = True
-        if not erroUsuario and not erroEmail and not erroSenha:
-            #U.create_user(username=usuario, password=senha1, email=email)
-            cliente = Usuario(idusuario=str(random.randint(0,100000)), nome=nome, email=email, cpf=cpf, senha=senha1)
+        if not erroUsuario and not erroEmail and not erroSenha and not erroCPF:
+            tokenEmail = ''.join(random.choice(chars) for x in range(siz))
+            cliente = Usuario(idusuario=str(random.randint(0, 100000)), nome=nome, email=email, cpf=cpf, senha=senha1, ativado=False, tokenEmail=tokenEmail)
             cliente.save()
+            subject = '[Sem Resposta]'
+            message = 'Acesse o link para confirmar seu e-mail /n https://scan-skip-teste.herokuapp.com/cadastro/ativa/token=' + tokenEmail
+            from_email = settings.EMAIL_HOST_USER
+            to_list = [email]
+            send_mail(subject, message, from_email, to_list, fail_silently=True)
             registrado = True
-            return HttpResponseRedirect('/cadastro/login')
+            return HttpResponseRedirect('/login')
     else:
         usuario = ''
         nome = ''
@@ -80,38 +74,133 @@ def cadastro(request):
 
     return render(request,
                   'cadastroapp/Cadastro.html',
-                  {'erroSenha' : erroSenha, 'registrado' : registrado, 'erroEmail' : erroEmail, 'erroUsuario' : erroUsuario})
+                  {'erroSenha' : erroSenha, 'registrado' : registrado, 'erroEmail' : erroEmail, 'erroUsuario' : erroUsuario, 'erroCPF' : erroCPF})
 
 
 def login(request):
     desativada = False
     errado = False
+
     if request.method == 'POST':
         email = request.POST.get('email')
         senha = request.POST.get('senha')
         permanece = request.POST.get('permanece')
-        try: #se usuario e senha corretos
-                user = Usuario.objects.get(email=email, senha=senha)
-                id1 = str(user.idusuario)
-                nome = str(user.nome)
-                if (permanece=="on"):
-                    request.session['logado'] = True
-                    request.session['nome'] = nome
-                    request.session['idusuario'] = id1
-                return HttpResponseRedirect('http://143.107.102.33:8000/carrinho/id=' + id1 + '/nome=' + nome)
+        try:  # se usuario e senha corretos
+            user = Usuario.objects.get(email=email, senha=senha)
+            id1 = str(user.idusuario)
+            nome = str(user.nome)
+
+            if (permanece == "on"):
+                tempo = 1000000000
+            else:
+                tempo = 10000
+            request.session.set_expiry(tempo)
+            request.session['logado'] = True
+            request.session['nome'] = nome
+            request.session['idusuario'] = id1
+            return HttpResponseRedirect(siteCarrinho + 'id=' + id1 + '/nome=' + nome)
         except:
-                errado = True
+            errado = True
+
     return render(request, 'cadastroapp/login.html', {'errado': errado})
 
 
-class UsuarioForm(forms.Form):
-    nome = forms.CharField(required=True)
-    email = forms.EmailField(required=True)
-    senha1 = forms.CharField(widget=forms.PasswordInput(), required=True)
-    senha2 = forms.CharField(widget=forms.PasswordInput(), required=True)
+def logout(request):
+    logado = verificaUsuario(request)
+    if logado:
+        MongoSession.objects.get(session_key=request.session.session_key).delete()
+    return render(request, 'cadastroapp/home.html', {})
 
-    def __init__(self, *args, **kwargs):
-		self.instance = kwargs.pop('instance', None)
-		super(UsuarioForm, self).__init__(*args, **kwargs)
 
-# Create your views here.
+def perfil(request):
+    logado = verificaUsuario(request)
+    if logado:
+        usuario = pegaUsuario(request.session['idusuario'], request.session['nome'])
+        email = usuario.email
+        CPF = usuario.cpf
+        return render(request, 'cadastroapp/perfil.html', {'email': email, 'CPF': CPF})
+    else:
+        return render(request, 'cadastroapp/home.html', {})
+
+def Ativa(request, token):
+    user=Usuario.objects.get(tokenEmail = token)
+    user.ativado = True
+    user.save()
+    return redirect('/perfil')
+
+def alterar_dados(request):
+    logado = verificaUsuario(request)
+    erroEmail = False
+
+    if logado:
+        usuario = pegaUsuario(request.session['idusuario'], request.session['nome'])
+        nome = usuario.nome
+        email = usuario.email
+        CPF = usuario.cpf
+        senha = usuario.senha
+
+        if request.method == 'POST':
+            nome = request.POST['nome']
+            email = request.POST['email']
+            if nome=="":
+                nome = usuario.nome
+                
+            if email=="":
+                email = usuario.email
+            elif '@' in email and '.' in email:
+                erroEmail = False
+            else:
+                erroEmail = True
+        
+            if not erroEmail:
+                usuario.nome=nome
+                request.session['nome']=nome
+                usuario.email=email  
+                usuario.save()
+            return perfil(request)
+
+        return render(request, 'cadastroapp/alterar-dados.html', {'nome': nome, 'email': email, 'CPF': CPF, 'erroEmail' : erroEmail})
+
+    else:
+        return render(request, 'cadastroapp/home.html', {})
+
+def alterar_senha(request):
+    atualErrada = False
+    naoConfirma = False
+    logado = verificaUsuario(request)
+
+    if logado:
+        usuario = pegaUsuario(request.session['idusuario'], request.session['nome'])
+        senha_salva = usuario.senha
+
+        senha_atual = ""
+        senha_nova = ""
+        senha_confirma = ""
+
+        if request.method == 'POST':
+            senha_atual = request.POST.get('senha_atual')
+            senha_nova = request.POST.get('senha_nova')
+            senha_confirma = request.POST.get('senha_confirma')
+            print("salva: ", senha_salva)
+            print("atual: ", senha_atual)
+            print("nova: ", senha_nova)
+            print("confirma: ", senha_confirma)
+
+            if (senha_salva == senha_atual): # se senha correta
+                if (senha_nova == senha_confirma):
+                    usuario.senha=senha_nova
+                    usuario.save()
+                    return perfil(request)
+                else:
+                    naoConfirma = True
+            else:
+                atualErrada = True
+            
+
+        return render(request, 'cadastroapp/alterar-senha.html', {'atualErrada': atualErrada, 'naoConfirma' : naoConfirma})
+    
+    else:
+        return render(request, 'cadastroapp/home.html', {})
+
+    
+

@@ -1,7 +1,4 @@
 body {
-  background-color: rgb(255, 255, 255);
-  font: 400 1.75em/1.38 'Open Sans';
-  color: rgb(255, 255, 255);
 }
 
 .container {
@@ -45,6 +42,9 @@ body {
   height: 660px;
   margin-top: auto;
   margin-bottom: auto;
+  background-color: rgb(255, 255, 255);
+  font: 400 1.75em/1.38 'Open Sans';
+  color: rgb(255, 255, 255);
 }
 
 .container-1 {

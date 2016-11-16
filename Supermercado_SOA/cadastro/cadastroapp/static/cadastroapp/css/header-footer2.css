@@ -1,15 +1,13 @@
 body {
-  background-color: rgb(255, 255, 255);
-  font: 700 1em/1.38 'Open Sans';
-  color: rgb(255, 255, 255);
+    font-family: 'Open Sans'
 }
 
 .barra {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 6;
+  z-index: 96;
   width: 100%;
   height: 50px;
   margin: 0 auto;
@@ -68,13 +66,16 @@ body {
 }
 
 .corpo {
+ background-color: rgb(255, 255, 255);
+  font: 700 1em/1.38 'Open Sans';
+  color: rgb(255, 255, 255);
   position: absolute;
   top: 50px;
   left: 0;
   right: 0;
   z-index: 9;
   width: 100%;
-  min-height: 800px;
+  min-height: 450px;
   margin: 0 auto;
 }
 
@@ -83,7 +84,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 99;
+  z-index: 7;
   width: 100%;
   height: 30px;
   margin: 0 auto;
@@ -158,7 +159,7 @@ body {
   }
 
   .corpo {
-    top: 98px;
+    top: 50px;
     left: 0;
     right: 0;
     height: 694px;

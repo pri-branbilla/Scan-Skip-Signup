@@ -11,12 +11,11 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-import mongoengine
 from mongoengine import *
+from whitenoise import WhiteNoise
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -42,18 +41,20 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_mongoengine',
     'cadastroapp',
-]
 
+]
 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'cadastro.urls'
@@ -87,6 +88,8 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 WSGI_APPLICATION = 'cadastro.wsgi.application'
 
 REST_FRAMEWORK = {
@@ -110,6 +113,12 @@ SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'scaneskip@gmail.com'
+EMAIL_HOST_PASSWORD = 'Senha123'
+EMAIL_PORT = 587
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -125,20 +134,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-#_MONGODB_USER = 'admin'
-#_MONGODB_PASSWD = 'admin123'
-#_MONGODB_HOST = 'localhost'
-#_MONGODB_NAME = 'admin'
-#_MONGODB_DATABASE_HOST = \
-#    'mongodb://%s:%s@%s/%s' \
-#    % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_HOST, _MONGODB_NAME)
-#mongoengine.connect(_MONGODB_NAME, host=_MONGODB_DATABASE_HOST)
+_MONGODB_USER = 'admin'
+_MONGODB_PASSWD = 'admin123'
+_MONGODB_HOST = 'ds143737.mlab.com:43737'
+_MONGODB_NAME = 'supermercado'
+_MONGODB_DATABASE_HOST = 'mongodb://%s:%s@%s/%s' % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_HOST, _MONGODB_NAME)
+connect(_MONGODB_NAME, host=_MONGODB_DATABASE_HOST)
 
 AUTHENTICATION_BACKENDS = (
 'mongoengine.django.auth.MongoEngineBackend',
 )
 
-connect('supermercado')
+#connect('supermercado')
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 

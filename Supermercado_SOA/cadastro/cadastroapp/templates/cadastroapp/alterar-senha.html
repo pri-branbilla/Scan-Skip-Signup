@@ -1,0 +1,36 @@
+{% extends "MainPage.html" %}
+{% load static %}
+
+{% block title %}Alterar-senha{% endblock %}
+
+{% block extra_head_content %}
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/alterar-senha-grid.css' %}">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/alterar-senha.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="background clearfix">    
+    <div class="container">
+      <p class="text">Alterar Senha</p>
+      <form class="style-1 alterarsenha clearfix" method="POST" action="{% url 'alterarsenha'%}"> 
+        {% csrf_token %}      
+        <div style="font-size: 15px; color: rgb(0,0,0); text-align: center; margin-bottom: 15px;">  
+          {% if atualErrada %}
+            Senha atual não corresponde<br>
+          {% endif %}
+          {% if naoConfirma %}
+            Senha não está de acordo com a confirmação<br>
+          {% endif %}
+        </div>           
+        <input class="atual" name="senha_atual" placeholder="Senha atual" type="password">
+        <input class="nova" name="senha_nova" placeholder="Nova senha" type="password">
+        <input class="confirma" name="senha_confirma" placeholder="Confirme sua nova senha" type="password">     
+        
+        <button class="buttonsenha alterar" type="submit">Alterar senha</button>   
+
+      </form>
+    </div>
+  </div>
+  <script src="js/jquery-min.js"></script>
+{% endblock %}

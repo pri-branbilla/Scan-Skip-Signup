@@ -1,0 +1,12 @@
+blinker==1.4
+Django==1.10.1
+django-filter==0.15.2
+django-rest-framework-mongoengine==3.3.0
+djangorestframework==3.4.7
+gunicorn==19.6.0
+Markdown==2.6.7
+mongoengine==0.9.0
+pymongo==2.8
+requests==2.11.1
+virtualenv==15.0.3
+whitenoise==3.2.2

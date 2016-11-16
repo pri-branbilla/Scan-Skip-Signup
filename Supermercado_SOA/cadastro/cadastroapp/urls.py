@@ -5,11 +5,15 @@ from django.conf import settings
 import os
 
 urlpatterns = [
-    url(r'^realiza_cadastro/', views.cadastro, name="cadastro"),
+    url(r'^cadastro/', views.cadastro, name="cadastro"),
     url(r'^sobre/', views.Sobre, name="Sobre"),
+    url(r'^perfil/', views.perfil, name="perfil"),
+    url(r'^editarcadastro/', views.alterar_dados, name="alterardados"),
+    url(r'^editarsenha/', views.alterar_senha, name="alterarsenha"),
     url(r'^login/', views.login, name="login"),
-    url(r'^header/', views.header, name="header"),
+    url(r'^logout/', views.logout, name="logout"),
     url(r'^$', views.Home, name="Home"),
+    url(r'^ativa/token=(?P<token>[-\w ]+)', views.Ativa, name="Ativa"),
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #?senha=(?P<senha>[-\w ]+)&email=(?P<email>\w+)/$
 #site_media = os.path.join(os.path.dirname(__file__), ',,/', 'cadastroapp', 'static', 'cadastro')
