@@ -35,12 +35,15 @@ def cadastro(request):
         nome = request.POST['nome']
         email = request.POST['email']
         cpf = str(request.POST['cpf'])
+<<<<<<< HEAD
         try:
             user2 = Usuario.objects.get(cpf=cpf)
             erroCPFexistente = True
             print(erroCPFexistente)
         except:
             erroCPFexistente = False
+=======
+>>>>>>> pris/develop
         if nome=="":
             erroUsuario = True
         else:
@@ -63,7 +66,11 @@ def cadastro(request):
             erroEmail = False
         else:
             erroEmail = True
+<<<<<<< HEAD
         if not erroUsuario and not erroEmail and not erroSenha and not erroCPF and not erroCPFexistente:
+=======
+        if not erroUsuario and not erroEmail and not erroSenha and not erroCPF:
+>>>>>>> pris/develop
             tokenEmail = ''.join(random.choice(chars) for x in range(siz))
             cliente = Usuario(idusuario=str(random.randint(0, 100000)), nome=nome, email=email, cpf=cpf, senha=senha1, ativado=False, tokenEmail=tokenEmail)
             cliente.save()
