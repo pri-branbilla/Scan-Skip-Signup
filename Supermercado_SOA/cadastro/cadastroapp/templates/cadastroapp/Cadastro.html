@@ -27,6 +27,9 @@
          {% if erroCPF %}
          CPF inválido
          {% endif %}
+         {% if erroCPFexistente %}
+         CPF já cadastrado
+         {% endif %}
      {% if erroEmail %}
         E-mail invalido<br>
         {% endif %}

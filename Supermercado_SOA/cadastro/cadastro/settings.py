@@ -113,6 +113,12 @@ SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'scaneskip@gmail.com'
+EMAIL_HOST_PASSWORD = 'Senha123'
+EMAIL_PORT = 587
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',

@@ -20,6 +20,8 @@ class Usuario(Document):
     email = EmailField(max_length=200)
     cpf = StringField(max_length=15)
     senha = StringField(max_length=15)
+    ativado = BooleanField()
+    tokenEmail = StringField()
 
     def getNome(self):
         return self.nome
@@ -27,9 +29,4 @@ class Usuario(Document):
         return self.email
     def getSenha(self):
         return self.senha
-    def setNome(self, nome):
-        nome = nome
-    def setEmail(self, email):
-        email = email
-    def setSenha(self, senha):
-        senha = senha
+    
