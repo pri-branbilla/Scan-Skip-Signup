@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^editarsenha/', views.alterar_senha, name="alterarsenha"),
     url(r'^login/', views.login, name="login"),
     url(r'^logout/', views.logout, name="logout"),
+    url(r'^mapa/', views.mapa, name="mapa"),
     url(r'^$', views.Home, name="Home"),
     url(r'^ativa/token=(?P<token>[-\w ]+)', views.Ativa, name="Ativa"),
 ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

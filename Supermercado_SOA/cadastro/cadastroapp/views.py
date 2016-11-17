@@ -114,6 +114,8 @@ def logout(request):
         MongoSession.objects.get(session_key=request.session.session_key).delete()
     return render(request, 'cadastroapp/home.html', {})
 
+def mapa(request):
+    return render(request, 'cadastroapp/mapa.html', {})
 
 def perfil(request):
     logado = verificaUsuario(request)
