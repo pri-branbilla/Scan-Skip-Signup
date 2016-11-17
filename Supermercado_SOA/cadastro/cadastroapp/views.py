@@ -111,6 +111,9 @@ def login(request):
 
     return render(request, 'cadastroapp/login.html', {'errado': errado})
 
+def mapa(request):
+    return render(request, 'cadastroapp/mapa.html', {})
+
 
 def logout(request):
     logado = verificaUsuario(request)
