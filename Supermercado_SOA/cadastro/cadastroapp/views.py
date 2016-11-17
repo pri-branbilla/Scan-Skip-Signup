@@ -27,6 +27,7 @@ def cadastro(request):
     erroSenha = False
     erroEmail = False
     erroCPF = False
+    erroCPFexistente = False
     erroUsuario = False
     chars = string.letters + string.digits
     siz = 25
@@ -34,6 +35,12 @@ def cadastro(request):
         nome = request.POST['nome']
         email = request.POST['email']
         cpf = str(request.POST['cpf'])
+        try:
+            user2 = Usuario.objects.get(cpf=cpf)
+            erroCPFexistente = True
+            print(erroCPFexistente)
+        except:
+            erroCPFexistente = False
         if nome=="":
             erroUsuario = True
         else:
@@ -56,7 +63,7 @@ def cadastro(request):
             erroEmail = False
         else:
             erroEmail = True
-        if not erroUsuario and not erroEmail and not erroSenha and not erroCPF:
+        if not erroUsuario and not erroEmail and not erroSenha and not erroCPF and not erroCPFexistente:
             tokenEmail = ''.join(random.choice(chars) for x in range(siz))
             cliente = Usuario(idusuario=str(random.randint(0, 100000)), nome=nome, email=email, cpf=cpf, senha=senha1, ativado=False, tokenEmail=tokenEmail)
             cliente.save()
@@ -74,7 +81,7 @@ def cadastro(request):
 
     return render(request,
                   'cadastroapp/Cadastro.html',
-                  {'erroSenha' : erroSenha, 'registrado' : registrado, 'erroEmail' : erroEmail, 'erroUsuario' : erroUsuario, 'erroCPF' : erroCPF})
+                  {'erroSenha' : erroSenha, 'erroCPFexistente' : erroCPFexistente, 'registrado' : registrado, 'erroEmail' : erroEmail, 'erroUsuario' : erroUsuario, 'erroCPF' : erroCPF})
 
 
 def login(request):
@@ -104,6 +111,9 @@ def login(request):
 
     return render(request, 'cadastroapp/login.html', {'errado': errado})
 
+def mapa(request):
+    return render(request, 'cadastroapp/mapa.html', {})
+
 
 def logout(request):
     logado = verificaUsuario(request)
@@ -114,8 +124,6 @@ def logout(request):
         MongoSession.objects.get(session_key=request.session.session_key).delete()
     return render(request, 'cadastroapp/home.html', {})
 
-def mapa(request):
-    return render(request, 'cadastroapp/mapa.html', {})
 
 def perfil(request):
     logado = verificaUsuario(request)

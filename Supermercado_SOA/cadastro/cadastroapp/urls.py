@@ -1,8 +1,5 @@
 from . import views
 from django.conf.urls import include, url
-from django.conf.urls.static import static
-from django.conf import settings
-import os
 
 urlpatterns = [
     url(r'^cadastro/', views.cadastro, name="cadastro"),
@@ -15,6 +12,4 @@ urlpatterns = [
     url(r'^mapa/', views.mapa, name="mapa"),
     url(r'^$', views.Home, name="Home"),
     url(r'^ativa/token=(?P<token>[-\w ]+)', views.Ativa, name="Ativa"),
-] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-#?senha=(?P<senha>[-\w ]+)&email=(?P<email>\w+)/$
-#site_media = os.path.join(os.path.dirname(__file__), ',,/', 'cadastroapp', 'static', 'cadastro')
+]
