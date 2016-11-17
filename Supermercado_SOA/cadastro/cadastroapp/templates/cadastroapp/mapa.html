@@ -1,15 +1,13 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0">
-  <title>mapa</title>
+{% extends "MainPage.html" %}
+{% load static %}
+
+  {% block extra_head_content %}
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:800,600" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="css/standardize.css">
-  <link rel="stylesheet" href="css/mapa-grid.css">
-  <link rel="stylesheet" href="css/mapa.css">
-</head>
-<body class="body page-mapa clearfix">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/mapa-grid.css %}">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/mapa.css %}">
+  {% endblock %}
+
+{% block content %}
   <div class="background">
     <div class="container container-1">
       <p class="text text-1">Mapa da loja</p>
@@ -71,5 +69,4 @@
       </div>
     </div>
   </div>
-</body>
-</html>
+{% endblock %}
