@@ -22,7 +22,7 @@
       <button onclick="window.location='/sobre'" class="botaoBarra botaoSobre">Sobre</button>
       {% if request.session.logado %}
         <button onClick="window.location='/perfil'" class="botaoBarra botaoLogin">Perfil</button>
-        <button onClick="window.location='/logout'" class="botaoBarra botaoCadastro">Logout</button>
+        <button onClick="window.location='https://scan-skip-carrinho-teste.herokuapp.com/logout'" class="botaoBarra botaoCadastro">Logout</button>
       {% else %}
         <button onclick="window.location='/login'" class="botaoBarra botaoLogin">Login</button>
         <button onclick="window.location='/cadastro'" class="botaoBarra botaoCadastro">Cadastre-se</button>

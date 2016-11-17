@@ -33,7 +33,7 @@ def cadastro(request):
     if request.method == 'POST':
         nome = request.POST['nome']
         email = request.POST['email']
-        cpf = request.POST['cpf']
+        cpf = str(request.POST['cpf'])
         if nome=="":
             erroUsuario = True
         else:
@@ -108,6 +108,9 @@ def login(request):
 def logout(request):
     logado = verificaUsuario(request)
     if logado:
+        del request.session['logado']
+        del request.session['nome']
+        del request.session['idusuario']
         MongoSession.objects.get(session_key=request.session.session_key).delete()
     return render(request, 'cadastroapp/home.html', {})
 
@@ -122,11 +125,13 @@ def perfil(request):
     else:
         return render(request, 'cadastroapp/home.html', {})
 
+
 def Ativa(request, token):
     user=Usuario.objects.get(tokenEmail = token)
     user.ativado = True
     user.save()
     return redirect('/perfil')
+
 
 def alterar_dados(request):
     logado = verificaUsuario(request)
@@ -164,6 +169,7 @@ def alterar_dados(request):
     else:
         return render(request, 'cadastroapp/home.html', {})
 
+
 def alterar_senha(request):
     atualErrada = False
     naoConfirma = False
@@ -181,10 +187,6 @@ def alterar_senha(request):
             senha_atual = request.POST.get('senha_atual')
             senha_nova = request.POST.get('senha_nova')
             senha_confirma = request.POST.get('senha_confirma')
-            print("salva: ", senha_salva)
-            print("atual: ", senha_atual)
-            print("nova: ", senha_nova)
-            print("confirma: ", senha_confirma)
 
             if (senha_salva == senha_atual): # se senha correta
                 if (senha_nova == senha_confirma):

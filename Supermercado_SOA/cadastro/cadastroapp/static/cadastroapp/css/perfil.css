@@ -8,7 +8,6 @@ body {
   top: 0;
   left: 0;
   z-index: 1;
-  width: 47.5540204032%;
   padding: 5px;
   background-color: rgb(62, 113, 255);
   line-height: 1.38;
@@ -17,7 +16,6 @@ body {
 .alterar_senha {
   top: 0;
   right: 0;
-  width: 47.5540204032%;
   background-color: #3e71ff;
   line-height: 2;
 }
@@ -35,6 +33,7 @@ body {
 .buttonperfil {
   display: block;
   position: absolute;
+  width: 49%;
   height: 54px;
   border-radius: 3px;
   font-size: 1em;
@@ -49,8 +48,7 @@ body {
 .carrinho {
   top: 70px;
   right: 0;
-  z-index: 4;
-  width: 31%;
+  z-index: 3;
   padding: 5px;
   background-color: rgb(62, 113, 255);
   line-height: 1.38;
@@ -65,7 +63,7 @@ body {
 
 .cpf {
   top: 47px;
-  z-index: 7;
+  z-index: 6;
   width: 99.7429305912%;
   height: 35px;
   border: 1px solid rgba(0, 0, 0, 0.54);
@@ -77,7 +75,7 @@ body {
 
 .email {
   top: 94px;
-  z-index: 6;
+  z-index: 5;
   width: 100%;
   height: 35px;
   border: 1px solid rgba(0, 0, 0, 0.54);
@@ -85,16 +83,6 @@ body {
   background-color: rgb(255, 255, 255);
   font-size: 1em;
   color: rgba(0, 0, 0, 0.87);
-}
-
-.feedback {
-  top: 70px;
-  left: 0;
-  z-index: 3;
-  width: 31%;
-  padding: 5px;
-  background-color: rgb(62, 113, 255);
-  line-height: 1.38;
 }
 
 .image {
@@ -108,10 +96,7 @@ body {
 .mapa {
   top: 70px;
   left: 0;
-  right: 0;
   z-index: 2;
-  width: 31%;
-  margin: 0 auto;
   padding: 5px;
   background-color: rgb(62, 113, 255);
   line-height: 1.38;
@@ -119,7 +104,7 @@ body {
 
 .nome {
   top: 0;
-  z-index: 8;
+  z-index: 7;
   width: 100%;
   height: 35px;
   border: 1px solid rgba(0, 0, 0, 0.54);
@@ -134,7 +119,7 @@ body {
   top: 315px;
   left: 0;
   right: 0;
-  z-index: 9;
+  z-index: 8;
   width: 75.8253461128%;
   height: 128px;
   margin: 0 auto;
@@ -145,7 +130,7 @@ body {
   top: 34px;
   left: 0;
   right: 0;
-  z-index: 13;
+  z-index: 12;
   width: 78.25%;
   height: 678px;
   margin: 0 auto;
@@ -163,7 +148,7 @@ body {
 
 ._text {
   top: 28px;
-  z-index: 10;
+  z-index: 9;
   width: 100%;
   min-height: 63px;
   font-size: 1.5em;
@@ -172,50 +157,29 @@ body {
 
 .container-1 {
   top: 109px;
-  z-index: 12;
+  z-index: 11;
   width: 170px;
   height: 170px;
 }
 
 .container-2 {
   top: 460px;
-  z-index: 5;
+  z-index: 4;
   width: 76.0383386581%;
   height: 124px;
 }
 
 @media(max-width: 650px) {
-  .container .alterar_dados {
-    width: 47.5%;
-  }
-
   .container .alterar_senha {
-    width: 47.5%;
     line-height: 1.38;
   }
 
-  .container .carrinho {
-    right: 0.0303011938%;
+  .container .buttonperfil {
     width: 47.5%;
-  }
-
-  .container .feedback {
-    top: 140px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
   }
 
   .container .image {
     height: auto;
-  }
-
-  .container .mapa {
-    left: -0.0303011939%;
-    right: auto;
-    width: 47.5%;
   }
 
   .background .perfil,
@@ -236,8 +200,8 @@ body {
   }
 
   .perfil .container-2 {
-    width: 75.0102212329%;
-    height: 194px;
+    width: 75.1044482673%;
+    height: 123px;
   }
 }
 
@@ -246,8 +210,11 @@ body {
     font-size: 1em;
   }
 
+  .container .image {
+    height: auto;
+  }
+
   .background .perfil,
-  .container .feedback,
   .params .text,
   .perfil ._text,
   .perfil .container,
@@ -256,9 +223,5 @@ body {
     right: 0;
     margin-right: auto;
     margin-left: auto;
-  }
-
-  .container .image {
-    height: auto;
   }
 }
