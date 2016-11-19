@@ -21,13 +21,8 @@
     <p class="textheader">Scan&Skip</p>
     <div class="botoesbarra clearfix">
       {% if request.session.logado %}
-<<<<<<< HEAD
-        <button onClick="window.location='/logout'" class="botaoBarra botaoCadastro">Logout</button>
-        <button onClick="window.location='/perfil'" class="botaoBarra botaoLogin">Perfil</button>        
-=======
-        <button onClick="window.location='/perfil'" class="botaoBarra botaoLogin">Perfil</button>
         <button onClick="window.location='https://scan-skip-carrinho-teste.herokuapp.com/logout'" class="botaoBarra botaoCadastro">Logout</button>
->>>>>>> master
+        <button onClick="window.location='/perfil'" class="botaoBarra botaoLogin">Perfil</button>        
       {% else %}
         <button onclick="window.location='/cadastro'" class="botaoBarra botaoCadastro">Cadastre-se</button>
         <button onclick="window.location='/login'" class="botaoBarra botaoLogin">Login</button>        

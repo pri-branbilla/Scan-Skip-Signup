@@ -15,7 +15,7 @@
       <p class="text">Alterar Senha</p>
       <form class="style-1 alterarsenha clearfix" method="POST" action="{% url 'alterarsenha'%}"> 
         {% csrf_token %}      
-        <div style="font-size: 15px; color: rgb(0,0,0); text-align: center; margin-bottom: 15px;">  
+        <div style="font-size: 15px; color: red; text-align: center; margin-bottom: 15px;">  
           {% if atualErrada %}
             Senha atual não corresponde<br>
           {% endif %}

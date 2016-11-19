@@ -3,53 +3,47 @@
 {% load static %}
 {% block title %}Cadastro{% endblock %}
 
-
-     {% block extra_head_content %}
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
-     <link rel="stylesheet" href="{% static 'cadastroapp/css/cadastro-grid.css' %}">
+{% block extra_head_content %}
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/cadastro-grid.css' %}">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/cadastro.css' %}">
-    {% endblock %}
+{% endblock %}
 
-    {% block content %}
-
-
+{% block content %}
   <div class="container clearfix">
     <div class="background clearfix">
       <form class="style-1 cadastro clearfix" method="POST">{% csrf_token %}
 
-    <p class="text">Cadastre-se</p>
-     <div style="font-size: 10px; margin-left: 95px; margin-bottom:5px;">  {% if registrado %}
-        Usuário já cadastrado<br>
+        <p class="text">Cadastre-se</p>
+        <div style="font-size: 10px; margin-bottom: 5px; color: red; text-align: center"> 
+        {% if registrado %}
+          Usuário já cadastrado<br>
         {% endif %}
         {% if erroUsuario %}
-        Nome invalido<br>
+          Nome invalido<br>
         {% endif %}
-         {% if erroCPF %}
-         CPF inválido
-         {% endif %}
-         {% if erroCPFexistente %}
-         CPF já cadastrado
-         {% endif %}
-     {% if erroEmail %}
-        E-mail invalido<br>
+        {% if erroCPF %}
+          CPF inválido
         {% endif %}
-     {% if erroSenha %}
-        As senhas devem ser iguais<br>
-        {% endif %}</div>
-    <input class="_input _input-1" name="nome" placeholder="Nome completo" type="text">
-
-    <input class="_input _input-3" name="email" placeholder="E-mail" type="text">
-    <input class="_input _input-4" name="cpf" placeholder="CPF" type="text">
-    <input class="_input _input-5" name="senha1" placeholder="Senha" type="password">
-
-    <input class="_input _input-6" name="senha2" placeholder="Confirmar senha" type="password">
-
-    <button class="_button" type="submit">Cadastrar</button>
-  </form>
-      </div>
+        {% if erroCPFexistente %}
+          CPF já cadastrado
+        {% endif %}
+        {% if erroEmail %}
+          E-mail invalido<br>
+        {% endif %}
+        {% if erroSenha %}
+          As senhas devem ser iguais<br>
+        {% endif %}
+        </div>
+        <input class="_input _input-1" name="nome" placeholder="Nome completo" type="text">
+        <input class="_input _input-3" name="email" placeholder="E-mail" type="text">
+        <input class="_input _input-4" name="cpf" placeholder="CPF" type="text">
+        <input class="_input _input-5" name="senha1" placeholder="Senha" type="password">
+        <input class="_input _input-6" name="senha2" placeholder="Confirmar senha" type="password">
+        <button class="_button" type="submit">Cadastrar</button>
+      </form>
+    </div>
   </div>
 <script src="{% static 'cadastroapp/js/jquery-min.js' %}"></script>
-
-
 {% endblock %}
 

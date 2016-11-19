@@ -15,7 +15,7 @@
     <form class="style-1 alterardados clearfix" method="POST" action="{% url 'alterardados'%}">
       {% csrf_token %}
       <p class="text">Meus Dados Cadastrais</p>
-      <div style="font-size: 15px; color: rgb(0,0,0); text-align: center; top: 0px; margin-bottom:15px;">  
+      <div style="font-size: 15px; color: red; text-align: center; top: 0px; margin-bottom:15px;">  
         {% if atualErrada %}
           Senha atual não corresponde<br>
         {% endif %}

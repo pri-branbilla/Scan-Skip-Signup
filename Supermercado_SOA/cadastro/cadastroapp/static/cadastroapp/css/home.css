@@ -17,7 +17,7 @@ body {
   background-position: center center;
   background-color: rgb(255, 255, 255);
   font: 400 1em/1.38 'Open Sans';
-  color: rgb(0, 0, 0);
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .container {
@@ -52,7 +52,7 @@ body {
   min-height: 433px;
   margin-top: 42px;
   font-size: 1em;
-  color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0, 0.87);
 }
 
 .text-1 {
