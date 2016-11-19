@@ -1,22 +1,20 @@
 body {
-  background-color: rgb(255, 255, 255);
-  font: 700 1em/1.38 Helvetica;
-  color: rgb(255, 255, 255);
+    font-family: 'Open Sans'
 }
 
 .barra {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 6;
+  z-index: 96;
   width: 100%;
   height: 50px;
   margin: 0 auto;
   background-color: rgb(11, 62, 174);
 }
 
-.botaobarra {
+.botaoBarra {
   display: block;
   float: right;
   height: 31px;
@@ -28,22 +26,22 @@ body {
   color: rgb(255, 255, 255);
 }
 
-.botaobarra:hover {
+.botaoBarra:hover {
   color: rgb(250, 220, 10);
 }
 
-.botaocadastro {
+.botaoCadastro {
   clear: both;
   width: 34.0899002752%;
   margin: -31px 7.45717% 0 0;
 }
 
-.botaohome {
+.botaoHome {
   width: 20.4539401651%;
   margin: 10px 79.54606% 0 0;
 }
 
-.botaologin {
+.botaoLogin {
   position: relative;
   clear: both;
   z-index: 2;
@@ -51,7 +49,7 @@ body {
   margin: -31px 41.55003% 0 0;
 }
 
-.botaosobre {
+.botaoSobre {
   position: relative;
   clear: both;
   z-index: 1;
@@ -68,13 +66,16 @@ body {
 }
 
 .corpo {
+ background-color: rgb(255, 255, 255);
+  font: 700 1em/1.38 'Open Sans';
+  color: rgb(255, 255, 255);
   position: absolute;
   top: 50px;
   left: 0;
   right: 0;
   z-index: 9;
   width: 100%;
-  min-height: 800px;
+  min-height: 450px;
   margin: 0 auto;
 }
 
@@ -127,38 +128,38 @@ body {
     margin-left: 13.58008%;
   }
 
-  .botoesbarra .botaobarra {
+  .botoesbarra .botaoBarra {
     position: relative;
   }
 
-  .botoesbarra .botaocadastro {
+  .botoesbarra .botaoCadastro {
     z-index: 3;
     width: 37.9838423295%;
     min-width: 100px;
     margin-right: 3.55558%;
   }
 
-  .botoesbarra .botaohome {
+  .botoesbarra .botaoHome {
     z-index: 0;
     width: 20.4545454545%;
     min-width: 50px;
     margin-right: 79.54102%;
   }
 
-  .botoesbarra .botaologin {
+  .botoesbarra .botaoLogin {
     z-index: 2;
     width: 19.1273082386%;
     margin-right: 41.56605%;
   }
 
-  .botoesbarra .botaosobre {
+  .botoesbarra .botaoSobre {
     z-index: 1;
     width: 18.936434659%;
     margin-right: 60.61346%;
   }
 
   .corpo {
-    top: 98px;
+    top: 50px;
     left: 0;
     right: 0;
     height: 694px;
@@ -193,30 +194,30 @@ body {
     margin-left: 13.58073%;
   }
 
-  .botoesbarra .botaobarra {
+  .botoesbarra .botaoBarra {
     position: relative;
   }
 
-  .botoesbarra .botaocadastro {
+  .botoesbarra .botaoCadastro {
     z-index: 3;
     width: 37.9853219696%;
     margin-right: 8px;
   }
 
-  .botoesbarra .botaohome {
+  .botoesbarra .botaoHome {
     z-index: 0;
     width: 16.9197396963%;
     margin-right: 209px;
   }
 
-  .botoesbarra .botaologin {
+  .botoesbarra .botaoLogin {
     z-index: 2;
     width: 19.1287878787%;
     min-width: 50px;
     margin-right: 108px;
   }
 
-  .botoesbarra .botaosobre {
+  .botoesbarra .botaoSobre {
     z-index: 1;
     width: 18.9393939393%;
     min-width: 50px;
@@ -256,25 +257,25 @@ body {
     margin-left: -0.21739%;
   }
 
-  .botoesbarra .botaobarra {
+  .botoesbarra .botaoBarra {
     position: relative;
   }
 
-  .botoesbarra .botaocadastro {
+  .botoesbarra .botaoCadastro {
     z-index: 3;
     width: 30%;
     min-width: 80px;
     margin-right: 0;
   }
 
-  .botoesbarra .botaohome {
+  .botoesbarra .botaoHome {
     float: left;
     z-index: 0;
     width: 20%;
     margin-right: 0;
   }
 
-  .botoesbarra .botaologin {
+  .botoesbarra .botaoLogin {
     clear: none;
     z-index: 2;
     width: 20%;
@@ -282,7 +283,7 @@ body {
     margin-right: 134px;
   }
 
-  .botoesbarra .botaosobre {
+  .botoesbarra .botaoSobre {
     float: left;
     clear: none;
     z-index: 1;
@@ -328,30 +329,30 @@ body {
     margin-left: -0.2777800001%;
   }
 
-  .botoesbarra .botaobarra {
+  .botoesbarra .botaoBarra {
     position: relative;
   }
 
-  .botoesbarra .botaocadastro {
+  .botoesbarra .botaoCadastro {
     z-index: 3;
     width: 39.359029883%;
     margin-right: 0.27718%;
   }
 
-  .botoesbarra .botaohome {
+  .botoesbarra .botaoHome {
     float: right;
     z-index: 0;
     margin-right: 79.71849%;
   }
 
-  .botoesbarra .botaologin {
+  .botoesbarra .botaoLogin {
     clear: both;
     z-index: 2;
     margin-top: -31px;
     margin-right: 39.71416%;
   }
 
-  .botoesbarra .botaosobre {
+  .botoesbarra .botaoSobre {
     float: right;
     clear: both;
     z-index: 1;

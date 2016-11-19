@@ -27,7 +27,6 @@ body {
   right: 0;
   z-index: 3;
   width: 100%;
-  height: 954px;
   margin: 0 auto;
 }
 
@@ -60,6 +59,7 @@ body {
   width: 100%;
   min-height: 50px;
   font-size: 2em;
+  font-weight: 600;
   line-height: 2.5;
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
@@ -74,9 +74,8 @@ body {
   }
 
   .background .container {
-    top: -77px;
+    top: 0px;
     right: auto;
-    height: 1042px;
   }
 
   .container .image {
@@ -89,20 +88,12 @@ body {
 }
 
 @media(max-width: 600px) {
-  body {
-    font-size: 1em;
-  }
-
   .background {
     left: 0;
     right: 0;
     height: 711px;
     margin-right: auto;
     margin-left: auto;
-  }
-
-  .background .container {
-    height: 1209px;
   }
 
   .container .image {
@@ -142,10 +133,6 @@ body {
 }
 
 @media(max-width: 360px) {
-  body {
-    font-size: 1em;
-  }
-
   .background {
     left: 0;
     right: 0;

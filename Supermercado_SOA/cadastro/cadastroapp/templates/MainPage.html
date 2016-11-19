@@ -16,17 +16,19 @@
     {% block content %} {% endblock %}
   </div>
   <div class="barra clearfix">
+    <div class="icone">
+    </div>
     <p class="textheader">Scan&Skip</p>
     <div class="botoesbarra clearfix">
-      <button onclick="window.location='/'" class="botaoBarra botaoHome">Home</button>
-      <button onclick="window.location='/sobre'" class="botaoBarra botaoSobre">Sobre</button>
       {% if request.session.logado %}
-        <button onClick="window.location='/perfil'" class="botaoBarra botaoLogin">Perfil</button>
         <button onClick="window.location='/logout'" class="botaoBarra botaoCadastro">Logout</button>
+        <button onClick="window.location='/perfil'" class="botaoBarra botaoLogin">Perfil</button>        
       {% else %}
-        <button onclick="window.location='/login'" class="botaoBarra botaoLogin">Login</button>
         <button onclick="window.location='/cadastro'" class="botaoBarra botaoCadastro">Cadastre-se</button>
+        <button onclick="window.location='/login'" class="botaoBarra botaoLogin">Login</button>        
       {% endif %}
+      <button onclick="window.location='/sobre'" class="botaoBarra botaoSobre">Sobre</button>
+      <button onclick="window.location='/'" class="botaoBarra botaoHome">Home</button>      
     </div>
   </div>
 </body>
