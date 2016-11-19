@@ -27,13 +27,20 @@ def cadastro(request):
     erroSenha = False
     erroEmail = False
     erroCPF = False
+    erroCPFexistente = False
     erroUsuario = False
     chars = string.letters + string.digits
     siz = 25
     if request.method == 'POST':
         nome = request.POST['nome']
         email = request.POST['email']
-        cpf = request.POST['cpf']
+        cpf = str(request.POST['cpf'])
+        try:
+            user2 = Usuario.objects.get(cpf=cpf)
+            erroCPFexistente = True
+            print(erroCPFexistente)
+        except:
+            erroCPFexistente = False
         if nome=="":
             erroUsuario = True
         else:
@@ -56,7 +63,7 @@ def cadastro(request):
             erroEmail = False
         else:
             erroEmail = True
-        if not erroUsuario and not erroEmail and not erroSenha and not erroCPF:
+        if not erroUsuario and not erroEmail and not erroSenha and not erroCPF and not erroCPFexistente:
             tokenEmail = ''.join(random.choice(chars) for x in range(siz))
             cliente = Usuario(idusuario=str(random.randint(0, 100000)), nome=nome, email=email, cpf=cpf, senha=senha1, ativado=False, tokenEmail=tokenEmail)
             cliente.save()
@@ -74,7 +81,7 @@ def cadastro(request):
 
     return render(request,
                   'cadastroapp/Cadastro.html',
-                  {'erroSenha' : erroSenha, 'registrado' : registrado, 'erroEmail' : erroEmail, 'erroUsuario' : erroUsuario, 'erroCPF' : erroCPF})
+                  {'erroSenha' : erroSenha, 'erroCPFexistente' : erroCPFexistente, 'registrado' : registrado, 'erroEmail' : erroEmail, 'erroUsuario' : erroUsuario, 'erroCPF' : erroCPF})
 
 
 def login(request):
@@ -104,10 +111,16 @@ def login(request):
 
     return render(request, 'cadastroapp/login.html', {'errado': errado})
 
+def mapa(request):
+    return render(request, 'cadastroapp/mapa.html', {})
+
 
 def logout(request):
     logado = verificaUsuario(request)
     if logado:
+        del request.session['logado']
+        del request.session['nome']
+        del request.session['idusuario']
         MongoSession.objects.get(session_key=request.session.session_key).delete()
     return render(request, 'cadastroapp/home.html', {})
 
@@ -122,11 +135,13 @@ def perfil(request):
     else:
         return render(request, 'cadastroapp/home.html', {})
 
+
 def Ativa(request, token):
     user=Usuario.objects.get(tokenEmail = token)
     user.ativado = True
     user.save()
     return redirect('/perfil')
+
 
 def alterar_dados(request):
     logado = verificaUsuario(request)
@@ -164,6 +179,7 @@ def alterar_dados(request):
     else:
         return render(request, 'cadastroapp/home.html', {})
 
+
 def alterar_senha(request):
     atualErrada = False
     naoConfirma = False
@@ -181,10 +197,6 @@ def alterar_senha(request):
             senha_atual = request.POST.get('senha_atual')
             senha_nova = request.POST.get('senha_nova')
             senha_confirma = request.POST.get('senha_confirma')
-            print("salva: ", senha_salva)
-            print("atual: ", senha_atual)
-            print("nova: ", senha_nova)
-            print("confirma: ", senha_confirma)
 
             if (senha_salva == senha_atual): # se senha correta
                 if (senha_nova == senha_confirma):
