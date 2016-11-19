@@ -68,7 +68,11 @@ body {
   height: 300px;
   border: 1px solid rgba(0, 0, 0, 0.54);
   border-radius: 5px;
+  background-image: url('../images/compra-desenho-390x291.png');
   background-color: rgb(255, 255, 255);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .text {
@@ -293,7 +297,7 @@ body {
 
   .container .image {
     height: auto;
-    width: 100%;
+    width: 80%;
   }
 
   ._container {
@@ -313,7 +317,6 @@ body {
 
   .container .container-3 {
     top: 275px;
-    height: 240px;
   }
 
   .container .text-1 {
@@ -344,7 +347,6 @@ body {
 
   .container .image {
     height: auto;
-    width: 100%;
   }
 
   ._container {
