@@ -5,6 +5,10 @@ body {
   position: absolute;
 }
 
+.container._container.clearfix {
+  top: 110px;
+}
+
 .element {
   position: relative;
   float: left;
@@ -14,7 +18,7 @@ body {
   margin: 349px 0 0 0.0097699999%;
   border: 1px solid rgba(0, 0, 0, 0.54);
   border-radius: 5px;
-  background: url('../images/eng-soft-time.jpg') rgb(222, 222, 222);
+  background: url('../images/eng-soft-time.jpg');
   background-size: cover;
   background-position: center center;
 }
@@ -28,6 +32,7 @@ body {
 }
 
 ._container {
+  top: 0;
   left: 0;
   right: 0;
   margin-right: auto;
@@ -39,26 +44,24 @@ body {
   bottom: 0;
   z-index: 5;
   width: 80%;
-  height: 660px;
+  min-height: 660px;
+  overflow: auto;
   margin-top: auto;
   margin-bottom: auto;
-  background-color: rgb(255, 255, 255, 0.5);
   font: 400 1em/1.38 'Open Sans';
   color: rgb(255, 255, 255);
 }
 
 .container-1 {
-  top: -10px;
   z-index: 7;
   width: 100%;
-  height: 950px;
+  height: 900px;
   background-image: url('../images/Pague%20leve.png');
   background-size: cover;
   background-position: center center;
 }
 
 .container-3 {
-  top: 11px;
   left: 51%;
   z-index: 3;
   width: 48.9981607174%;
@@ -68,18 +71,22 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
+.text {
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1em;
+}
+
 .text-1 {
   position: absolute;
-  top: 45px;
+  min-height: 50px;
   left: 0;
   right: 0;
   z-index: 6;
   width: 100%;
-  margin: 0 auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin-top: 15px;
   font-size: 2em;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 2.5;
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
@@ -87,18 +94,15 @@ body {
 
 .text-2 {
   position: absolute;
-  top: 11px;
+  top: 0px;
   left: 0.0113937855%;
   width: 48.9574686263%;
   height: 300px;
   min-height: 293px;
-  padding-top: 3px;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding: 10px 15px 10px 15px;
   border-radius: 10px;
   background-color: rgba(11, 62, 174, 0.5);
-  font-size: 1.5em;
-  text-align: left;
+  font-size: 1em;
   color: rgb(255, 255, 255);
 }
 
@@ -110,22 +114,16 @@ body {
   height: 300px;
   min-height: 256px;
   margin: 349px 0 0 2.01986%;
-  padding-top: 3px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 10px 15px 10px 15px;
   border-radius: 10px;
   background-color: rgba(11, 62, 174, 0.5);
-  font-size: 1.25em;
-  text-align: left;
+  font-size: 1em;
   color: rgb(255, 255, 255);
 }
 
-@media(max-width: 1000px) {
-  body {
-    font-size: 1.625em;
-  }
-
+@media(max-width: 1010px) {
   .container .element {
+    height: 350px;
     position: relative;
     z-index: 4;
   }
@@ -137,7 +135,7 @@ body {
   }
 
   ._container {
-    top: -5px;
+    top: 0;
     left: 0;
     right: 0;
     margin-right: auto;
@@ -157,28 +155,21 @@ body {
     right: 0;
     margin-right: auto;
     margin-left: auto;
-    font-size: 1.231em;
   }
 
   .container .text-2 {
-    font-size: 26px;
   }
 
   .container .text-3 {
+    height: 350px;
     position: relative;
     z-index: 1;
-    margin-left: 2.01758%;
-    font-size: 26px;
   }
 }
 
-@media(max-width: 800px) {
-  body {
-    font-size: 1.5em;
-  }
-
+@media(max-width: 900px) {
   .container {
-    top: -8px;
+    top: 0;
     left: 0;
   }
 
@@ -187,7 +178,7 @@ body {
     z-index: 4;
     width: 100.1562499999%;
     height: 369px;
-    margin-top: 592px;
+    margin-top: 715px;
     margin-left: -0.15625%;
   }
 
@@ -211,7 +202,7 @@ body {
   }
 
   .container .container-3 {
-    top: 182px;
+    top: 195px;
     left: 0;
     width: 99.84375%;
     height: 248px;
@@ -222,16 +213,14 @@ body {
     right: 0;
     margin-right: auto;
     margin-left: auto;
-    font-size: 1.333em;
   }
 
   .container .text-2 {
-    top: 8px;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 158px;
+    height: 170px;
     min-height: 90px;
-    font-size: 24px;
   }
 
   .container .text-3 {
@@ -239,22 +228,18 @@ body {
     clear: both;
     z-index: 1;
     width: 100.1562499999%;
-    height: 120px;
+    height: 220px;
     min-height: 90px;
-    margin-top: -515px;
+    margin-top: -615px;
     margin-left: -0.15625%;
-    font-size: 24px;
   }
 }
 
 @media(max-width: 700px) {
-  body {
-    font-size: 1.25em;
-  }
-
   .container .element {
     position: relative;
     z-index: 4;
+    margin-top: 815px;
   }
 
   .container .image {
@@ -276,39 +261,39 @@ body {
     margin: auto;
   }
 
+  .container .container-3 {
+    top: 220px; 
+  }
+
   .container .text-1 {
     left: 0;
     right: 0;
     margin-right: auto;
     margin-left: auto;
-    font-size: 1.6em;
   }
 
   .container .text-2 {
-    font-size: 20px;
+    height: 200px;
   }
 
   .container .text-3 {
     position: relative;
     z-index: 1;
-    font-size: 20px;
+    height: 305px;
+    margin-top: -695px;
   }
 }
 
 @media(max-width: 500px) {
-  body {
-    font-size: 1.125em;
-  }
-
   .container .element {
     position: relative;
     z-index: 4;
-    margin-top: 583px;
-    margin-left: -0.25%;
+    margin-top: 1020px;
   }
 
   .container .image {
     height: auto;
+    width: 100%;
   }
 
   ._container {
@@ -326,39 +311,40 @@ body {
     margin: auto;
   }
 
+  .container .container-3 {
+    top: 275px;
+    height: 240px;
+  }
+
   .container .text-1 {
     left: 0;
     right: 0;
     margin-right: auto;
     margin-left: auto;
-    font-size: 1.778em;
   }
 
   .container .text-2 {
-    font-size: 18px;
+    height: 255px;
   }
 
   .container .text-3 {
     position: relative;
     z-index: 1;
-    margin-top: -506px;
-    font-size: 18px;
+    height: 460px;
+    margin-top: -850px;
   }
 }
 
 @media(max-width: 360px) {
-  body {
-    font-size: 1em;
-  }
-
   .container .element {
     position: relative;
     z-index: 4;
-    margin-left: -0.30382%;
+    margin-top: 1095px;
   }
 
   .container .image {
     height: auto;
+    width: 100%;
   }
 
   ._container {
@@ -376,22 +362,26 @@ body {
     margin: auto;
   }
 
+  .container .container-3 {
+    top: 325px;
+    height: 220px;
+  }
+
   .container .text-1 {
     left: 0;
     right: 0;
     margin-right: auto;
     margin-left: auto;
-    font-size: 2em;
   }
 
   .container .text-2 {
-    font-size: 16px;
+    height: 305px;
   }
 
   .container .text-3 {
     position: relative;
     z-index: 1;
-    margin-left: -0.15191%;
-    font-size: 16px;
+    height: 510px;
+    margin-top: -900px;
   }
 }
