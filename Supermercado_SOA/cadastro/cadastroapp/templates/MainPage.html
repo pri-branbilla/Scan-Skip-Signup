@@ -16,9 +16,11 @@
     {% block content %} {% endblock %}
   </div>
   <div class="barra clearfix">
+    <a href="http://scan-skip-teste.herokuapp.com/">
     <div class="icone">
-    </div>
-    <p class="textheader">Scan&Skip</p>
+    </div></a>
+    <a href="http://scan-skip-teste.herokuapp.com/">
+    <p class="textheader">Scan&Skip</p></a>
     <div class="botoesbarra clearfix">
       {% if request.session.logado %}
         <button onClick="window.location='https://scan-skip-carrinho-teste.herokuapp.com/logout'" class="botaoBarra botaoCadastro">Logout</button>
