@@ -69,6 +69,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.54);
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
+  font-family: Helvetica;
 }
 
 .container {
@@ -110,6 +111,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.54);
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
+  font-family: Helvetica;
   font: 1em/1.38 Helvetica;
 }
 
@@ -126,7 +128,7 @@ body {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   text-align: center;
-  font: 400 2em/2.5 'Open Sans';
+  font: 600 2em/2.5 'Open Sans';
   color: rgba(0, 0, 0, 0.87);
 }
 
