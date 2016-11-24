@@ -57,6 +57,8 @@ body {
 }
 
 .text-1 {
+  position: absolute;
+  top: 20px;
   width: 100%;
   min-height: 50px;
   font-size: 2em;
