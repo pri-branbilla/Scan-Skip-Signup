@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import print_function
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -38,7 +39,7 @@ def cadastro(request):
         try:
             user2 = Usuario.objects.get(cpf=cpf)
             erroCPFexistente = True
-            print(erroCPFexistente)
+
         except:
             erroCPFexistente = False
         if nome=="":
@@ -65,7 +66,7 @@ def cadastro(request):
             erroEmail = True
         if not erroUsuario and not erroEmail and not erroSenha and not erroCPF and not erroCPFexistente:
             tokenEmail = ''.join(random.choice(chars) for x in range(siz))
-            cliente = Usuario(idusuario=str(random.randint(0, 100000)), nome=nome, email=email, cpf=cpf, senha=senha1, ativado=False, tokenEmail=tokenEmail)
+            cliente = Usuario(idusuario=str(random.randint(0, 100000)), nome=nome, email=email, cpf=cpf, senha=senha1, ativado=False, tokenEmail=tokenEmail, tentativas=0)
             cliente.save()
             subject = '[Sem Resposta]'
             message = 'Acesse o link para confirmar seu e-mail /n https://scan-skip-teste.herokuapp.com/cadastro/ativa/token=' + tokenEmail
@@ -86,8 +87,9 @@ def cadastro(request):
 
 def login(request):
     desativada = False
-    errado = False
-
+    Usererrado = False
+    SenhaErrada = False
+    tent = 0
     if request.method == 'POST':
         email = request.POST.get('email')
         senha = request.POST.get('senha')
@@ -105,11 +107,23 @@ def login(request):
             request.session['logado'] = True
             request.session['nome'] = nome
             request.session['idusuario'] = id1
+            user.tentativas=0
+            user.save()
             return HttpResponseRedirect(siteCarrinho + 'id=' + id1 + '/nome=' + nome)
         except:
-            errado = True
+            try:
+                user2 = Usuario.objects.get(email=email)
+                SenhaErrada = True
+                tent = user2.tentativas
+                if(tent<3):
+                    tent = tent+1
+                    user2.tentativas=tent
+                    user2.save()
 
-    return render(request, 'cadastroapp/login.html', {'errado': errado})
+            except:
+                Usererrado = True
+
+    return render(request, 'cadastroapp/login.html', {'Usererrado': Usererrado, 'tent': tent, 'SenhaErrada': SenhaErrada})
 
 def mapa(request):
     return render(request, 'cadastroapp/mapa.html', {})
@@ -214,5 +228,37 @@ def alterar_senha(request):
     else:
         return render(request, 'cadastroapp/home.html', {})
 
-    
 
+def recuperarsenha(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        subject = 'Recuperar senha'
+        usuario = Usuario.objects.get(email=email)
+        idusuario=usuario.idusuario
+        message = 'Foi detectado uma nova solicitacao para recuperacao de senha. Para confirmar clique no link a seguir: \n http://localhost:8000/novasenha/'+idusuario+ '\nCaso nao tenha solicitado a recuperacao de senha ignore esse e-mail. \n\nAtt. Scan&Skip'
+        from_email = settings.EMAIL_HOST_USER
+        to_list = [email]
+        send_mail(subject, message, from_email, to_list, fail_silently=True)
+        return login(request)
+    return render(request, 'cadastroapp/recuperar-senha.html', {})
+
+
+def novasenha(request, idusuario):
+
+    chars = string.letters + string.digits
+    siz = 8
+    senhanova = ''.join(random.choice(chars) for x in range(siz))
+    usuario = Usuario.objects.get(idusuario=idusuario)
+    usuario.senha = senhanova
+    usuario.save()
+    email= usuario.email
+    subject = 'Nova Senha'
+    message = 'Sua nova senha é: ' +senhanova
+    from_email = settings.EMAIL_HOST_USER
+    to_list = [email]
+    send_mail(subject, message, from_email, to_list, fail_silently=True)
+    return redirect('/confirmacao-email')
+
+
+def confirmacaoemail(request):
+    return render(request, 'cadastroapp/confirmacao-email.html', {})

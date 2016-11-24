@@ -12,4 +12,7 @@ urlpatterns = [
     url(r'^mapa/', views.mapa, name="mapa"),
     url(r'^$', views.Home, name="Home"),
     url(r'^ativa/token=(?P<token>[-\w ]+)', views.Ativa, name="Ativa"),
+    url(r'^recuperar-senha/', views.recuperarsenha, name="recuperarsenha"),
+    url(r'^novasenha/(?P<idusuario>[-\w ]+)', views.novasenha, name="novasenha"),
+    url(r'^confirmacao-email/', views.confirmacaoemail, name="confirmacaoemail"),
 ]
