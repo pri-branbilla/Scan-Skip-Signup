@@ -5,7 +5,7 @@
 {% block title %}Login{% endblock %}
 
 {% block extra_head_content %}
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,400" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/login-grid.css' %}">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/login.css' %}">
 {% endblock %}
@@ -13,7 +13,7 @@
 {% block content %}
   <div class="background">
     <div class="container container-1">
-
+      <p class="text-2">Acesse sua conta</p>
       <form class="login" method="POST">{% csrf_token %}
 
         <input class="_input _input-2" name="email" placeholder="E-mail" type="email">
@@ -33,8 +33,8 @@
 
       </form>
       <button onClick="window.location='/cadastro'" class="_button _button-1" type="button">Cadastre-se</button>
-      <p class="text text-1">Ainda não tem conta?</p>
-      <p class="text text-2">Acesse sua conta</p>
+      <p class="text-1">Ainda não tem conta?</p>
+
     </div>
   </div>
 {% endblock %}

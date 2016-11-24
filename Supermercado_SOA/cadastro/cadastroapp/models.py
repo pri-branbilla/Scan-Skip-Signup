@@ -22,6 +22,7 @@ class Usuario(Document):
     senha = StringField(max_length=15)
     ativado = BooleanField()
     tokenEmail = StringField()
+    tentativas = IntField()
 
     def getNome(self):
         return self.nome

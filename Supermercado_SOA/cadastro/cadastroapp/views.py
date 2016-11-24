@@ -65,7 +65,7 @@ def cadastro(request):
             erroEmail = True
         if not erroUsuario and not erroEmail and not erroSenha and not erroCPF and not erroCPFexistente:
             tokenEmail = ''.join(random.choice(chars) for x in range(siz))
-            cliente = Usuario(idusuario=str(random.randint(0, 100000)), nome=nome, email=email, cpf=cpf, senha=senha1, ativado=False, tokenEmail=tokenEmail)
+            cliente = Usuario(idusuario=str(random.randint(0, 100000)), nome=nome, email=email, cpf=cpf, senha=senha1, ativado=False, tokenEmail=tokenEmail, tentativas=0)
             cliente.save()
             subject = '[Sem Resposta]'
             message = 'Acesse o link para confirmar seu e-mail /n https://scan-skip-teste.herokuapp.com/cadastro/ativa/token=' + tokenEmail
@@ -86,8 +86,9 @@ def cadastro(request):
 
 def login(request):
     desativada = False
-    errado = False
-
+    Usererrado = False
+    SenhaErrada = False
+    tent = 0
     if request.method == 'POST':
         email = request.POST.get('email')
         senha = request.POST.get('senha')
@@ -105,11 +106,26 @@ def login(request):
             request.session['logado'] = True
             request.session['nome'] = nome
             request.session['idusuario'] = id1
+            user.tentativas=0
+            user.save()
             return HttpResponseRedirect(siteCarrinho + 'id=' + id1 + '/nome=' + nome)
         except:
-            errado = True
+            try:
+                user2 = Usuario.objects.get(email=email)
+                SenhaErrada = True
+                tent = user2.tentativas
+                if(tent<3):
+                    tent = tent+1
+                    user2.tentativas=tent
+                    user2.save()
+                    print(tent)
+                else:
+                    print("CHEGOU EM 3")
 
-    return render(request, 'cadastroapp/login.html', {'errado': errado})
+            except:
+                Usererrado = True
+
+    return render(request, 'cadastroapp/login.html', {'Usererrado': Usererrado, 'tent': tent, 'SenhaErrada': SenhaErrada})
 
 def mapa(request):
     return render(request, 'cadastroapp/mapa.html', {})
