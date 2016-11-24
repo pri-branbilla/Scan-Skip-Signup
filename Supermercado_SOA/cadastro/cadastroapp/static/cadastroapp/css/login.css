@@ -21,6 +21,8 @@ body {
 .checkbox {
   display: block;
   float: left;
+  margin: auto;
+  vertical-align: middle;
 }
 
 .container {
@@ -44,16 +46,15 @@ body {
 .login .container {
   bottom: 115px;
   z-index: 7;
-  width: 80.1435406698%;
+  width: 100%;
   height: 14px;
 }
 
 .login .text {
   display: inline-block;
-  float: left;
-  width: 29.2537313432%;
+  float: right;
+  width: 40%;
   height: 14px;
-  margin-top: 2px;
   font: bold italic 0.8em/1.25 'Open Sans';
   text-align: right;
   color: rgb(11, 62, 174);
@@ -67,21 +68,21 @@ body {
 .permanecer-conectado {
   display: block;
   float: left;
-  width: 70.447761194%;
+  width: 60%;
   height: 14px;
-  margin: 2px 0 0 0.00291%;
+  margin: auto;
 }
 
 .point-text {
   display: block;
+  width: 80%;
+  height: 14px;
   float: left;
   margin-left: 6px;
+  vertical-align: middle;
   font: 0.8em/1.38 'Open Sans';
 }
 
-.point-text:hover {
-  text-decoration: underline;
-}
 
 ._button {
   display: block;
@@ -89,6 +90,7 @@ body {
   left: 0;
   right: 0;
   height: 52px;
+  width: 60%;
   margin: 0 auto;
   border-radius: 10px;
   font-style: italic;
@@ -110,7 +112,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  width: 80.0164473684%;
+  width: 100%;
   height: 33px;
   margin: 0 auto;
   padding: 0 10px;
@@ -128,15 +130,15 @@ body {
 .login ._button {
   bottom: 26px;
   z-index: 2;
-  width: 45%;
+  
 }
 
 .container-1 {
   top: 0;
   bottom: 0;
   z-index: 12;
-  width: 69.7829716193%;
-  height: 541px;
+  width: 70%;
+  height: 560px;
   margin-top: auto;
   margin-bottom: auto;
   border-radius: 10px;
@@ -144,20 +146,28 @@ body {
 }
 
 .text-1 {
-  position: absolute;
-  bottom: 135px;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 9;
   width: 100%;
-  height: 30px;
+  height: 66px;
   min-height: 50px;
   margin: 0 auto;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  font: 600 2em/2.5 'Open Sans';
+  font: 600 2em/1.38 'Open Sans';
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
+}
+
+.cadastrar {
+  position: absolute;
+  top: 400px;
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  padding: auto;
+
 }
 
 .text-2 {
@@ -178,9 +188,9 @@ body {
 }
 
 .container ._button-1 {
-  bottom: 59.5px;
+  position: absolute;
+  bottom: -70px;
   z-index: 11;
-  width: 36%;
   background-color: rgb(62, 113, 225);
 }
 
@@ -231,7 +241,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    width: 69.7829716193%;
+    width: 70%;
     margin: auto;
   }
 
@@ -245,8 +255,7 @@ body {
 
   .container ._button-1 {
     left: 0;
-    right: 0;
-    width: 36%;
+    right: 0; 
     margin-right: auto;
     margin-left: auto;
   }
@@ -257,7 +266,7 @@ body {
   .login .container {
     left: 0;
     right: 0;
-    width: 95.6276791181%;
+    width: 90%;
     margin-right: auto;
     margin-left: auto;
   }
@@ -277,7 +286,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    width: 83.6244541484%;
+    width: 90%;
     margin: auto;
   }
 
@@ -310,82 +319,23 @@ body {
   }
 
   .container ._button-1 {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
   }
 }
 
-@media(max-width: 460px) {
-  body {
-  }
-
+@media(max-width: 490px) {
   .container .permanecer-conectado {
-    position: relative;
-    z-index: 5;
-    margin-left: 5.32787%;
-  }
-
-  .login .text {
-    position: relative;
-    clear: both;
-    z-index: 6;
-    margin-top: -14px;
-    margin-left: 63.60997%;
-  }
-
-  .container .text-1,
-  .container .text-2,
-  .login ._button,
-  .login ._input,
-  .login .container {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .background .container-1 {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
-
-  .container ._button-1 {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-
-@media(max-width: 410px) {
-  .container .permanecer-conectado {
-    position: relative;
-    z-index: 5;
-    width: 79.1562799616%;
-    margin-left: 5.35613%;
   }
 
   .login .container {
     bottom: 114px;
     left: 0;
     right: 0;
-    width: 90.9507655633%;
+    width: 90%;
     margin-right: auto;
     margin-left: auto;
   }
 
   .login .text {
-    position: relative;
-    z-index: 6;
-    width: 44.1802492809%;
-    margin-top: 21px;
-    margin-left: 7.50424%;
-    text-align: left;
   }
 
   .login ._button {
@@ -407,12 +357,7 @@ body {
   }
 
   .background .container-1 {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 89.4607843137%;
-    margin: auto;
+   
   }
 }
 
@@ -421,15 +366,9 @@ body {
   }
 
   .container .permanecer-conectado {
-    position: relative;
-    z-index: 5;
-    margin-left: 5.35448%;
   }
 
   .login .text {
-    position: relative;
-    z-index: 6;
-    margin-left: 7.50401%;
   }
 
   .container ._button-1,
@@ -450,31 +389,13 @@ body {
     right: 0;
     margin: auto;
   }
-
-  .container .text-2 {
-    top: 19px;
-    left: 0;
-    right: 0;
-    width: 99.8996185504%;
-    height: 68px;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 2.5em;
-    line-height: 1;
-  }
 }
 
 @media(max-width: 310px) {
   .container .permanecer-conectado {
-    position: relative;
-    z-index: 5;
-    margin-left: 5.35915%;
   }
 
   .login .text {
-    position: relative;
-    z-index: 6;
-    margin-left: 7.50156%;
   }
 
   .container ._button-1,
@@ -495,49 +416,5 @@ body {
     left: 0;
     right: 0;
     margin: auto;
-  }
-}
-
-@media(max-width: 260px) {
-  body {
-  }
-
-  .container .permanecer-conectado {
-    position: relative;
-    z-index: 5;
-    margin-left: 5.35781%;
-  }
-
-  .login .text {
-    position: relative;
-    z-index: 6;
-    margin-left: 7.5069%;
-  }
-
-  .container .text-1,
-  .container .text-2,
-  .login ._button,
-  .login ._input,
-  .login .container {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .background .container-1 {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
-
-  .container ._button-1 {
-    left: 0;
-    right: 0;
-    font-size: 1em;
-    margin-right: auto;
-    margin-left: auto;
   }
 }
