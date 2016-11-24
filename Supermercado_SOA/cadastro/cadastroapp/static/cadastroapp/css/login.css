@@ -14,7 +14,7 @@ body {
   background-size: cover;
   background-position: center center;
   background-color: rgb(255, 255, 255);
-  font: 400 1em/2.5 'Open Sans';
+  font: 400 1em/1.38 'Open Sans';
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -49,7 +49,7 @@ body {
 }
 
 .login .text {
-  display: block;
+  display: inline-block;
   float: left;
   width: 29.2537313432%;
   height: 14px;
@@ -145,7 +145,7 @@ body {
 
 .text-1 {
   position: absolute;
-  bottom: 95px;
+  bottom: 135px;
   left: 0;
   right: 0;
   z-index: 10;
@@ -155,15 +155,14 @@ body {
   margin: 0 auto;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  font-size: 1em;
-  font-weight: 600;
+  font: 600 2em/2.5 'Open Sans';
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
 }
 
 .text-2 {
   position: absolute;
-  top: 21px;
+  top: 20px;
   left: 0;
   right: 0;
   z-index: 9;
@@ -173,7 +172,7 @@ body {
   margin: 0 auto;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  font-size: 2em;
+  font: 600 2em/2.5 'Open Sans';
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
 }
