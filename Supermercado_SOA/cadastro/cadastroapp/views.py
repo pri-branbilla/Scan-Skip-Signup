@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import print_function
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -227,5 +228,37 @@ def alterar_senha(request):
     else:
         return render(request, 'cadastroapp/home.html', {})
 
-    
 
+def recuperarsenha(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        subject = 'Recuperar senha'
+        usuario = Usuario.objects.get(email=email)
+        idusuario=usuario.idusuario
+        message = 'Foi detectado uma nova solicitacao para recuperacao de senha. Para confirmar clique no link a seguir: \n http://localhost:8000/novasenha/'+idusuario+ '\nCaso nao tenha solicitado a recuperacao de senha ignore esse e-mail. \n\nAtt. Scan&Skip'
+        from_email = settings.EMAIL_HOST_USER
+        to_list = [email]
+        send_mail(subject, message, from_email, to_list, fail_silently=True)
+        return login(request)
+    return render(request, 'cadastroapp/recuperar-senha.html', {})
+
+
+def novasenha(request, idusuario):
+
+    chars = string.letters + string.digits
+    siz = 8
+    senhanova = ''.join(random.choice(chars) for x in range(siz))
+    usuario = Usuario.objects.get(idusuario=idusuario)
+    usuario.senha = senhanova
+    usuario.save()
+    email= usuario.email
+    subject = 'Nova Senha'
+    message = 'Sua nova senha é: ' +senhanova
+    from_email = settings.EMAIL_HOST_USER
+    to_list = [email]
+    send_mail(subject, message, from_email, to_list, fail_silently=True)
+    return redirect('/confirmacao-email')
+
+
+def confirmacaoemail(request):
+    return render(request, 'cadastroapp/confirmacao-email.html', {})

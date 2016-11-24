@@ -1,0 +1,21 @@
+{% extends "MainPage.html" %}
+{% load static %}
+
+{% block title %}confirmacao-email{% endblock %}
+
+  {% block extra_head_content %}
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/confirmacao-email-grid.css' %}">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/confirmacao-email.css' %}">
+  {% endblock %}
+
+{% block content %}
+  <div class="background">
+    <div class="element">
+      <div class="text">
+        <p>Pronto!&nbsp;</p>
+        <p>Foi enviada uma senha provisória para o e-mail cadastrado!</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
