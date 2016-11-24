@@ -38,7 +38,7 @@ def cadastro(request):
         try:
             user2 = Usuario.objects.get(cpf=cpf)
             erroCPFexistente = True
-            print(erroCPFexistente)
+
         except:
             erroCPFexistente = False
         if nome=="":
@@ -118,9 +118,6 @@ def login(request):
                     tent = tent+1
                     user2.tentativas=tent
                     user2.save()
-                    print(tent)
-                else:
-                    print("CHEGOU EM 3")
 
             except:
                 Usererrado = True
