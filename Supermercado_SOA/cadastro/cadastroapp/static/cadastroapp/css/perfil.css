@@ -1,7 +1,4 @@
 body {
-  background-color: rgb(255, 255, 255);
-  font: 600 1em/2.5 'Open Sans';
-  color: rgba(0, 0, 0, 0.87);
 }
 
 .alterar_dados {
@@ -17,17 +14,19 @@ body {
   top: 0;
   right: 0;
   background-color: #3e71ff;
-  line-height: 2;
+  line-height: 1.38;
 }
 
 .background {
-  position: relative;
   float: left;
   width: 100%;
   height: 800px;
+  border: 1px double rgb(0, 0, 0);
   background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
   background-size: cover;
   background-position: center center;
+  font: 400 1em/1.38 'Open Sans';
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .buttonperfil {
@@ -64,7 +63,7 @@ body {
 .cpf {
   top: 47px;
   z-index: 6;
-  width: 99.7429305912%;
+  width: 80%;
   height: 35px;
   border: 1px solid rgba(0, 0, 0, 0.54);
   border-radius: 10px;
@@ -76,7 +75,7 @@ body {
 .email {
   top: 94px;
   z-index: 5;
-  width: 100%;
+  width: 80%;
   height: 35px;
   border: 1px solid rgba(0, 0, 0, 0.54);
   border-radius: 10px;
@@ -104,8 +103,9 @@ body {
 
 .nome {
   top: 0;
+  position: relative;
   z-index: 7;
-  width: 100%;
+  width: 80%;
   height: 35px;
   border: 1px solid rgba(0, 0, 0, 0.54);
   border-radius: 10px;
@@ -115,14 +115,16 @@ body {
 }
 
 .params {
-  position: absolute;
+  display: inline-block;
+  position: relative;
   top: 315px;
   left: 0;
   right: 0;
   z-index: 8;
-  width: 75.8253461128%;
+  width: 100%;
   height: 128px;
   margin: 0 auto;
+  padding: auto;
 }
 
 .perfil {
@@ -139,6 +141,8 @@ body {
 }
 
 .text {
+  display: inline-block;
+  height: auto;
   position: absolute;
   left: 0;
   right: 0;
@@ -151,7 +155,9 @@ body {
   z-index: 9;
   width: 100%;
   min-height: 63px;
-  font-size: 1.5em;
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 2.5;
   color: rgb(0, 0, 0);
 }
 
@@ -163,19 +169,19 @@ body {
 }
 
 .container-2 {
-  top: 460px;
+  display: inline-block;  
+  margin: auto;  
+  top: 465px;
   z-index: 4;
-  width: 76.0383386581%;
+  width: 80%;
   height: 124px;
 }
 
 @media(max-width: 650px) {
   .container .alterar_senha {
-    line-height: 1.38;
   }
 
   .container .buttonperfil {
-    width: 47.5%;
   }
 
   .container .image {
@@ -200,15 +206,11 @@ body {
   }
 
   .perfil .container-2 {
-    width: 75.1044482673%;
     height: 123px;
   }
 }
 
 @media(max-width: 360px) {
-  body {
-    font-size: 1em;
-  }
 
   .container .image {
     height: auto;

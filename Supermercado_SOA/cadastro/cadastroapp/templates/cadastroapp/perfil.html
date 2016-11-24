@@ -4,8 +4,7 @@
 {% block title %}Perfil{% endblock %}
 
 {% block extra_head_content %}
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/perfil-grid.css' %}">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/perfil.css' %}">
 {% endblock %}
@@ -18,9 +17,9 @@
       </div>
       <p class="text _text">Meu Perfil</p>
       <div class="params">
-        <p class="text nome">Nome: {{ request.session.nome }}</p>
-        <p class="text cpf">CPF: {{ CPF }}</p>
-        <p class="text email">E-mail: {{ email }}</p>
+        <div class="text nome">Nome: {{ request.session.nome }}</div>
+        <div class="text cpf">CPF: {{ CPF }}</div>
+        <div class="text email">E-mail: {{ email }}</div>
       </div>
       <div class="container container-2">
         <button onClick="window.location='https://scan-skip-carrinho-teste.herokuapp.com/'" class="buttonperfil carrinho">Carrinho</button>
