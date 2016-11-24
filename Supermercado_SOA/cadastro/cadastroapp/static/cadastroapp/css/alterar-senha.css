@@ -16,8 +16,6 @@ body {
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
   font-family: Helvetica;
-  font-style: italic;
-  font-size: 0.375em;
   color: rgb(0, 0, 0);
 }
 
@@ -32,6 +30,8 @@ body {
   background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
   background-size: cover;
   background-position: center center;
+  font: 400 1em/1.38 'Open Sans';
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .buttonsenha {
@@ -47,8 +47,6 @@ body {
   background-color: rgb(62, 113, 225);
   font-family: Helvetica;
   font-style: italic;
-  font-size: 0.75em;
-  font-weight: 700;
   text-align: center;
   color: rgb(255, 255, 255);
 }
@@ -71,10 +69,6 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.54);
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
-  font-family: Helvetica;
-  font-style: italic;
-  font-size: 0.375em;
-  color: rgb(0, 0, 0);
 }
 
 .container {
@@ -89,8 +83,6 @@ body {
   margin: auto;
   border-radius: 10px;
   background-color: rgba(113, 164, 255, 0.2);
-  font: 400 2em/2.5 'Open Sans';
-  color: rgba(0, 0, 0, 0.87);
 }
 
 .alterarsenha {
@@ -118,10 +110,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.54);
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
-  font-family: Helvetica;
-  font-style: italic;
-  font-size: 0.375em;
-  color: rgb(0, 0, 0);
+  font: 1em/1.38 Helvetica;
 }
 
 .text {
@@ -137,7 +126,8 @@ body {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   text-align: center;
-  color: rgba(0, 0, 0, 0.87);  
+  font: 400 2em/2.5 'Open Sans';
+  color: rgba(0, 0, 0, 0.87);
 }
 
 @media(max-width: 1000px) {
