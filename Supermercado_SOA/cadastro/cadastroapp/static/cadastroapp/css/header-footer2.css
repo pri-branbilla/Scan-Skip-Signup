@@ -39,7 +39,8 @@ body {
 }
 
 .botaoBarra:hover {
-  color: rgb(250, 220, 10);
+    text-decoration:none;
+    color:rgb(250, 220, 10);
 }
 
 .botaoCadastro {

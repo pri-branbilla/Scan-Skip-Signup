@@ -320,7 +320,6 @@ body {
 
 @media(max-width: 460px) {
   body {
-    font-size: 0.75em;
   }
 
   .container .permanecer-conectado {
@@ -420,7 +419,6 @@ body {
 
 @media(max-width: 370px) {
   body {
-    font-size: 0.75em;
   }
 
   .container .permanecer-conectado {
@@ -503,7 +501,6 @@ body {
 
 @media(max-width: 260px) {
   body {
-    font-size: 0.75em;
   }
 
   .container .permanecer-conectado {
