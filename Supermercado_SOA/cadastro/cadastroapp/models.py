@@ -18,7 +18,7 @@ class Usuario(Document):
     idusuario = StringField()
     nome = StringField(max_length=200)
     email = EmailField(max_length=200)
-    cpf = StringField(max_length=15)
+    cpf = StringField(max_length=14)
     senha = StringField(max_length=15)
     ativado = BooleanField()
     tokenEmail = StringField()
