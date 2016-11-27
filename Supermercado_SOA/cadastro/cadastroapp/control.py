@@ -33,7 +33,7 @@ def validar_cpf(cpf):
 
     hifen = cpf.count('-')
     pontos = cpf.count('.')
-    if(hifen!=1 or pontos!=3):
+    if(hifen!=1 or pontos!=2):
         return False
     inteiros = map(int, cpf)
     novo = inteiros[:9]

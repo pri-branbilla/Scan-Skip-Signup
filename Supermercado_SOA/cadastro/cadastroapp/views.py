@@ -156,7 +156,7 @@ def Ativa(request, token):
     user=Usuario.objects.get(tokenEmail = token)
     user.ativado = True
     user.save()
-    return redirect('/perfil')
+    return redirect('/login?ativado='+token)
 
 
 def alterar_dados(request):
