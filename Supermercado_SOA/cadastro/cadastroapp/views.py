@@ -24,6 +24,7 @@ def Home(request):
     return render(request, 'cadastroapp/home.html', {})
 
 def cadastro(request):
+
     registrado = False
     erroSenha = False
     erroEmail = False
@@ -32,10 +33,11 @@ def cadastro(request):
     erroUsuario = False
     chars = string.letters + string.digits
     siz = 25
+    cpf = ""
     if request.method == 'POST':
-        nome = request.POST['nome']
-        email = request.POST['email']
-        cpf = str(request.POST['cpf'])
+        nome = request.POST.get('nome')
+        email = request.POST.get('email')
+        cpf = str(request.POST.get('cpf'))
         try:
             user2 = Usuario.objects.get(cpf=cpf)
             erroCPFexistente = True
@@ -82,7 +84,7 @@ def cadastro(request):
 
     return render(request,
                   'cadastroapp/Cadastro.html',
-                  {'erroSenha' : erroSenha, 'erroCPFexistente' : erroCPFexistente, 'registrado' : registrado, 'erroEmail' : erroEmail, 'erroUsuario' : erroUsuario, 'erroCPF' : erroCPF})
+                  {'nome': nome, 'cpf': cpf, 'email': email, 'erroSenha' : erroSenha, 'erroCPFexistente' : erroCPFexistente, 'registrado' : registrado, 'erroEmail' : erroEmail, 'erroUsuario' : erroUsuario, 'erroCPF' : erroCPF})
 
 
 def login(request):
@@ -154,7 +156,7 @@ def Ativa(request, token):
     user=Usuario.objects.get(tokenEmail = token)
     user.ativado = True
     user.save()
-    return redirect('/perfil')
+    return redirect('/login?ativado='+token)
 
 
 def alterar_dados(request):
