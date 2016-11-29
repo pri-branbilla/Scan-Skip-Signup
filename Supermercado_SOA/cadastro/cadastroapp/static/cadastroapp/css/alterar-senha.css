@@ -2,23 +2,6 @@ body {
 
 }
 
-.atual {
-  display: block;
-  position: absolute;
-  top: 30px;
-  left: 0;
-  right: 0;
-  width: 40%;
-  height: 33px;
-  margin: 0 auto;
-  padding: 0 10px;
-  border: 1px solid rgba(0, 0, 0, 0.54);
-  border-radius: 5px;
-  background-color: rgb(255, 255, 255);
-  font-family: Helvetica;
-  color: rgb(0, 0, 0);
-}
-
 .background {
   z-index: -1;
   position: fixed;
@@ -34,191 +17,79 @@ body {
   color: rgba(0, 0, 0, 0.87);
 }
 
+.container {  
+  width: 70%;
+  height: 560px;
+  margin: 75px auto;
+  background-color: rgba(113, 164, 255, 0.2);
+}
+
+
+.alterarsenha {  
+  width: 100%;
+  min-width: 175px;
+  height: 540px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+
+.text {
+  float: left;
+  width: 100%;
+  margin: 10px auto;
+  min-height: 50px;
+  font: 600 2em/2.5 'Open Sans';
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+._input {
+  display: block;
+  clear: both;
+  width: 80%;
+  height: 33px;
+  padding: 0 10px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  font: 0.8em/1.38 'Open Sans';
+  color: rgb(0, 0, 0);
+}
+
+._input:focus {
+  border: 1 solid rgba(0, 0, 0, 0.54);
+}
+
+.alterarsenha .atual {
+  margin: 10px auto 0;
+}
+
+.alterarsenha .nova,
+.alterarsenha .confirma {
+  margin: 28px auto;
+}
+
 .buttonsenha {
   display: block;
-  position: absolute;
-  top: 180px;
-  left: 0;
-  right: 0;
-  width: 25%;
+  clear: both;
   height: 52px;
-  margin: 0 auto;
+  width: 30%;
+  min-width: 175px;
+  margin: auto;
   border-radius: 5px;
   background-color: rgb(62, 113, 225);
-  font-family: Helvetica;
-  font-style: italic;
-  text-align: center;
+  font: italic 600 1.35em/1.38 'Open Sans';
+  text-align: center;  
   color: rgb(255, 255, 255);
 }
 
 .buttonsenha:hover {
   background-color: rgb(11, 62, 174);
-  color: rgb(250, 220, 10);
 }
 
-.confirma {
-  display: block;
-  position: absolute;
-  top: 126px;
-  left: 0;
-  right: 0;
-  width: 40%;
-  height: 33px;
-  margin: 0 auto;
-  padding: 0 10px;
-  border: 1px solid rgba(0, 0, 0, 0.54);
-  border-radius: 5px;
-  background-color: rgb(255, 255, 255);
-  font-family: Helvetica;
-}
-
-.container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 6;
-  width: 66.4440734557%;
-  height: 507px;
-  margin: auto;
-  border-radius: 10px;
-  background-color: rgba(113, 164, 255, 0.2);
-}
-
-.alterarsenha {
-  position: absolute;
-  top: 100px;
-  left: 0;
-  right: 0;
-  z-index: 4;
-  width: 100%;
-  height: 196px;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0);
-}
-
-.nova {
-  display: block;
-  position: absolute;
-  top: 78px;
-  left: 0;
-  right: 0;
-  width: 40%;
-  height: 33px;
-  margin: 0 auto;
-  padding: 0 10px;
-  border: 1px solid rgba(0, 0, 0, 0.54);
-  border-radius: 5px;
-  background-color: rgb(255, 255, 255);
-  font-family: Helvetica;
-  font: 1em/1.38 Helvetica;
-}
-
-.text {
-  position: absolute;
-  top: 21px;
-  left: 0;
-  right: 0;
-  z-index: 9;
-  width: 100%;
-  height: 66px;
-  min-height: 50px;
-  margin: 0 auto;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  text-align: center;
-  font: 600 2em/2.5 'Open Sans';
-  color: rgba(0, 0, 0, 0.87);
-}
-
-@media(max-width: 1000px) {
-  .background .container {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    min-width: 175px;
-    margin: auto;
-  }
-
-  .container .alterarsenha {
-    left: 0;
-    right: 0;
-    min-width: 175px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
+@media(max-width: 350px) {
   .container .text {
-    left: 0;
-    right: 0;
-    min-width: 175px;
-    margin-right: auto;
-    margin-left: auto;
-    line-height: 2;
-  }
-
-  .alterarsenha .buttonsenha {
-    left: 0;
-    right: 0;
-    min-width: 165px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .alterarsenha .atual,
-  .alterarsenha .confirma,
-  .alterarsenha .nova {
-    left: 0;
-    right: 0;
-    min-width: 165px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-
-@media(max-width: 600px) {
-
-  .background .container {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
-
-  .container .alterarsenha,
-  .container .text,
-  .alterarsenha .atual,
-  .alterarsenha .buttonsenha,
-  .alterarsenha .confirma,
-  .alterarsenha .nova {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-
-@media(max-width: 320px) {
-  .background .container {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
-
-  .container .alterarsenha,
-  .container .text,
-  .alterarsenha .atual,
-  .alterarsenha .buttonsenha,
-  .alterarsenha .confirma,
-  .alterarsenha .nova {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+    font: 600 2em/1.38 'Open Sans';
   }
 }
