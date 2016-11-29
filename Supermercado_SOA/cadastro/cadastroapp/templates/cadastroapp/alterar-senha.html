@@ -11,8 +11,6 @@
 
 {% block content %}
   <div class="background clearfix">
-  </div>
-  <div>
     <div class="container">
       <p class="text">Alterar Senha</p>
       <form class="style-1 alterarsenha clearfix" method="POST" action="{% url 'alterarsenha'%}"> 
@@ -25,9 +23,9 @@
             Senha não está de acordo com a confirmação<br>
           {% endif %}
         </div>           
-        <input class="atual" name="senha_atual" placeholder="Senha atual" type="password">
-        <input class="nova" name="senha_nova" placeholder="Nova senha" type="password">
-        <input class="confirma" name="senha_confirma" placeholder="Confirme sua nova senha" type="password">     
+        <input class="_input atual" name="senha_atual" placeholder="Senha atual" type="password">
+        <input class="_input nova" name="senha_nova" placeholder="Nova senha" type="password">
+        <input class="_input confirma" name="senha_confirma" placeholder="Confirme sua nova senha" type="password">     
         
         <button class="buttonsenha alterar" type="submit">Alterar senha</button>   
 
