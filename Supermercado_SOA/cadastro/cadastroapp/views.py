@@ -237,7 +237,7 @@ def recuperarsenha(request):
         subject = 'Recuperar senha'
         usuario = Usuario.objects.get(email=email)
         idusuario=usuario.idusuario
-        message = 'Foi detectado uma nova solicitacao para recuperacao de senha. Para confirmar clique no link a seguir: \n http://localhost:8000/novasenha/'+idusuario+ '\nCaso nao tenha solicitado a recuperacao de senha ignore esse e-mail. \n\nAtt. Scan&Skip'
+        message = 'Foi detectado uma nova solicitacao para recuperacao de senha. Para confirmar clique no link a seguir: \n https://scan-skip-teste.herokuapp.com/novasenha/'+idusuario+ '\nCaso nao tenha solicitado a recuperacao de senha ignore esse e-mail. \n\nAtt. Scan&Skip'
         from_email = settings.EMAIL_HOST_USER
         to_list = [email]
         send_mail(subject, message, from_email, to_list, fail_silently=True)

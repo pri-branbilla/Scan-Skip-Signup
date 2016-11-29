@@ -3,9 +3,14 @@ body {
 }
 
 .background {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  float: left;
   width: 100%;
-  height: 712px;
-  background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
+  min-height: 100vh;
+  border: 1px double rgb(0, 0, 0);
+  background: url('../images/Pague%20leve.png');
   background-size: cover;
   background-position: center center;
   font: 400 1em/1.38 'Open Sans';
@@ -14,13 +19,18 @@ body {
 
 .container {
   width: 80%;  
-  margin: auto;
+  margin: 75px auto;
 }
 
 .descr {
   display: inline-block;
   width: 100%;
 }
+
+.descr ._text {
+  margin-bottom: 28px;
+}
+
 .image {
   display: inline-block;
   width: 100%;
