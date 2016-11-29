@@ -76,7 +76,7 @@ def cadastro(request):
             to_list = [email]
             send_mail(subject, message, from_email, to_list, fail_silently=True)
             registrado = True
-            return HttpResponseRedirect('/login')
+            return HttpResponseRedirect('https://scan-skip-teste.herokuapp.com/login')
     else:
         usuario = ''
         nome = ''
@@ -153,10 +153,10 @@ def perfil(request):
 
 
 def Ativa(request, token):
-    user=Usuario.objects.get(tokenEmail = token)
+    user=Usuario.objects.get(tokenEmail=token)
     user.ativado = True
     user.save()
-    return redirect('/login?ativado='+token)
+    return redirect('https://scan-skip-teste.herokuapp.com')
 
 
 def alterar_dados(request):
@@ -259,7 +259,7 @@ def novasenha(request, idusuario):
     from_email = settings.EMAIL_HOST_USER
     to_list = [email]
     send_mail(subject, message, from_email, to_list, fail_silently=True)
-    return redirect('/confirmacao-email')
+    return redirect('https://scan-skip-teste.herokuapp.com/confirmacao-email/')
 
 
 def confirmacaoemail(request):
