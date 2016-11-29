@@ -9,25 +9,74 @@
   {% endblock %}
 
 {% block content %}
-  <div class="container _container container-1">
-    <p class="text text-1">Como funciona?</p>
-    <div class="container _container clearfix">
-      <div class="container container-3 clearfix">        
+  <div class="background">
+    <div class="container">
+      <p class="text">Como funciona?</p>
+      <p class="_text expl">Veja como é simples utilizar o Scan&amp;Skip em suas compras de supermercado!</p>
+      
+      <hr>
+
+      <div class="row row-centered">
+        <div class="col-xs-6t col-centered"><div class="item"><div class="content">
+
+          <div class="number">1</div>
+          <div class="_text">Cadastre-se <a href="/cadastro">aqui</a> e confirme suas informações pelo email que te mandaremos.</div>
+        </div></div></div>
+        <div class="col-xs-6i col-centered"><div class="item"><div class="content">
+          <img class="image" src="{% static 'cadastroapp/images/icon-cadastro.PNG' %}" data-rimage data-src="{% static 'cadastroapp/images/icon-cadastro.PNG' %}">
+        </div></div></div>
       </div>
-      <p class="text text-2">O primeiro passo é se cadastrar em nosso sistema. Feito isso, basta fazer login no seu smartphone* e começar a escanear os produtos dos supermercados listados abaixo:
-      <br><br>
-      Pão de Açúcar: Pça. Panamericana.<br>
-      Pão de Açúcar: R. Quatá.<br>
-      Mambo: R. Dep. Lacerda Franca.
-   </p>
-      <div class="element"></div>
-      <p class="text text-3">Você também tem a opção de buscar um produto para ver em que local do supermercado em que você está ele se encontra.
-Se você for pagar sua compra em dinheiro, cartão de débito, ou crédito, e estiver quase encerrando suas compras, você deve solicitar entrada à fila, para que não gaste muito tempo aguardando a sua vez parado. Se você sentir que não dará tempo de finalizar a compra antes de ser chamado a um caixa, basta cancelar sua inscrição à fila.
-Você também pode realizar o pagamento por meio do seu smartphone, utilizando seu cartão de crédito de forma totalmente segura.
-</p>
+
+      <hr>
+
+      <div class="row row-centered">
+        <div class="col-xs-6t col-centered"><div class="item"><div class="content">
+          <div class="number">2</div>
+          <p class="_text">Faça login no seu smartphone* e vá a um de nossos supermercados parceiros.</p>          
+          <p style="margin: 10px; font-size: 13px; float:right;">*Apenas smartphones que tenham leitor RFID embutido ou acoplado habilitado.</p>
+        </div></div></div>
+        <div class="col-xs-6i col-centered"><div class="item"><div class="content">
+          <img class="image" src="{% static 'cadastroapp/images/icon-logar.PNG' %}" data-rimage data-src="{% static 'cadastroapp/images/icon-logar.PNG' %}">
+        </div></div></div>                
+      </div>
+
+      <hr>
+
+      <div class="row row-centered">
+        <div class="col-xs-6t col-centered"><div class="item"><div class="content">
+          <div class="number">3</div>
+          <p class="_text">Dirija-se, autonomamente ou por meio do mapa do supermercado, ao produto que deseja adicionar ao carrinho e encoste seu celular no local indicado na prateleira.</p>
+        </div></div></div>
+        <div class="col-xs-6i col-centered"><div class="item"><div class="content">
+          <p style="text-align:center;  margin: auto; color: red;">*GIF*</p>
+          <!--<img class="image" src="{% static 'cadastroapp/images/icon-cadastro.PNG' %}" data-rimage data-src="{% static 'cadastroapp/images/icon-cadastro.PNG' %}">-->
+        </div></div></div>
+      </div>
+
+      <hr>
+
+      <div class="row row-centered">
+        <div class="col-xs-6t col-centered"><div class="item"><div class="content">  
+          <div class="number">4</div>   
+          <p class="_text">Entre com a quantidade desse produto que você está colocando em seu carrinho físico e clique em <i>Adicionar</i>. Se queria apenas conferir seu preço, simplesmente feche a aba aberta.</p>          
+        </div></div></div>
+        <div class="col-xs-6i col-centered"><div class="item"><div class="content">
+          <img class="image" src="{% static 'cadastroapp/images/icon-carrinho.PNG' %}" data-rimage data-src="{% static 'cadastroapp/images/icon-carrinho.PNG' %}">
+        </div></div></div>
+      </div>
+
+      <hr>
+
+      <div class="row row-centered">
+        <div class="col-xs-6t col-centered"><div class="item"><div class="content">
+          <div class="number">5</div>
+          <p class="_text">Quando terminar sua compra, escolha entre pagar a conta pelo próprio aplicativo, ou receber uma senha para ser atendido por um caixa.</p>
+        </div></div></div>
+        <div class="col-xs-6i col-centered"><div class="item"><div class="content">
+          <img class="image" src="{% static 'cadastroapp/images/icon-pagar.PNG' %}" data-rimage data-src="{% static 'cadastroapp/images/icon-pagar.PNG' %}">
+        </div></div></div>
+      </div>
+
     </div>
   </div>
-
-  <script src="{% static 'cadastroapp/js/jquery-min.js' %}"></script>
-  <script src="{% static 'cadastroapp/js/rimages.js' %}"></script>
 {% endblock %}
