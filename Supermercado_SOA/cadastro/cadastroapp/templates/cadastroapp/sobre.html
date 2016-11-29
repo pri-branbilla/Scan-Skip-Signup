@@ -1,4 +1,3 @@
-
 {% extends "MainPage.html" %}
 {% load static %}
 
@@ -9,11 +8,12 @@
   {% endblock %}
 
 {% block content %}
-  <div class="background">
+  <div class="background"></div>
+  <div>
     <div class="container">
       <p class="text">Como funciona?</p>
       <p class="_text expl">Veja como é simples utilizar o Scan&amp;Skip em suas compras de supermercado!</p>
-      
+
       <hr>
 
       <div class="row row-centered">
@@ -32,12 +32,12 @@
       <div class="row row-centered">
         <div class="col-xs-6t col-centered"><div class="item"><div class="content">
           <div class="number">2</div>
-          <p class="_text">Faça login no seu smartphone* e vá a um de nossos supermercados parceiros.</p>          
-          <p style="margin: 10px; font-size: 13px; float:right;">*Apenas smartphones que tenham leitor RFID embutido ou acoplado habilitado.</p>
+          <p class="_text">Faça login no seu smartphone* e vá a um de nossos supermercados parceiros.</p>
+          <p style="margin: 10px; font-size: 13px; float:right;">*Apenas smartphones que tenham leitor NFC embutido ou acoplado habilitado.</p>
         </div></div></div>
         <div class="col-xs-6i col-centered"><div class="item"><div class="content">
           <img class="image" src="{% static 'cadastroapp/images/icon-logar.PNG' %}" data-rimage data-src="{% static 'cadastroapp/images/icon-logar.PNG' %}">
-        </div></div></div>                
+        </div></div></div>
       </div>
 
       <hr>
@@ -56,9 +56,9 @@
       <hr>
 
       <div class="row row-centered">
-        <div class="col-xs-6t col-centered"><div class="item"><div class="content">  
-          <div class="number">4</div>   
-          <p class="_text">Entre com a quantidade desse produto que você está colocando em seu carrinho físico e clique em <i>Adicionar</i>. Se queria apenas conferir seu preço, simplesmente feche a aba aberta.</p>          
+        <div class="col-xs-6t col-centered"><div class="item"><div class="content">
+          <div class="number">4</div>
+          <p class="_text">Entre com a quantidade desse produto que você está colocando em seu carrinho físico e clique em <i>Adicionar</i>. Se queria apenas conferir seu preço, simplesmente feche a aba aberta.</p>
         </div></div></div>
         <div class="col-xs-6i col-centered"><div class="item"><div class="content">
           <img class="image" src="{% static 'cadastroapp/images/icon-carrinho.PNG' %}" data-rimage data-src="{% static 'cadastroapp/images/icon-carrinho.PNG' %}">

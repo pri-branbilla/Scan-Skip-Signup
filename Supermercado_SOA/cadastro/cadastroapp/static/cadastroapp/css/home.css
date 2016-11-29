@@ -3,9 +3,13 @@ body {
 }
 
 .background {
-  position: absolute;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  float: left;
   width: 100%;
-  height: 712px;
+  min-height: 100vh;
+  border: 1px double rgb(0, 0, 0);
   background: url('../images/Pague%20leve.png');
   background-size: cover;
   background-position: center center;
@@ -14,7 +18,7 @@ body {
 }
 
 .container {
-  width: 80%;  
+  width: 80%;
   margin: 75px auto;
 }
 
@@ -35,7 +39,7 @@ body {
   overflow: hidden;
 }
 
-.slogan {  
+.slogan {
   width: 100%;
   min-height: 150px;
   font: 600 2em/1.38 'Open Sans';
@@ -43,7 +47,7 @@ body {
   color: rgba(0, 0, 0, 0.87);
 }
 
-.titulo {  
+.titulo {
   width: 100%;
   min-height: 50px;
   font: 600 1.5em/1.38 'Open Sans';
@@ -88,11 +92,11 @@ body {
     margin-right:-4px;
     vertical-align: middle;
 }
-.col-min {    
+.col-min {
     /* custom min width */
     min-width:200px;
 }
-.col-min6 {    
+.col-min6 {
     /* custom min width */
     min-width:250px;
 }
