@@ -8,38 +8,47 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/login-grid.css' %}">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/login.css' %}">
+
 {% endblock %}
 
 {% block content %}
   <div class="background">
-    <div class="container container-1">
-      <p class="text-2">Acesse sua conta</p>
+    <div class="container container-1" id="bg">      
       <form class="login" method="POST">{% csrf_token %}
-
-        <input class="_input _input-2" name="email" placeholder="E-mail" type="email">
-        <input class="_input _input-1" name="senha" placeholder="Senha" type="password">
-        <button class="_button" type="submit">Entrar</button>
-        {% if errado %}
-          <div style="margin-top: -10px; color: red; text-align: center; font-size: 15px;">E-mail e/ou senha incorretos</div>
-        {% endif %}
-        <div class="container clearfix">
-
-          <label class="permanecer-conectado clearfix">
+        <p class="text-2">Acesse sua conta</p>
+        <input class="_input _input-1" name="email" placeholder="E-mail" type="email">
+        <input class="_input _input-2" name="senha" placeholder="Senha" type="password">
+        <div class="container perma-rec">
+          <label class="permanecer-conectado">
             <input class="checkbox" type="checkbox" name="permanece">
             <span class="point-text">Permanecer conectado</span>
           </label>
           <a href="/recuperar-senha" class="text">Esqueci a senha</a>
         </div>
-        {% if tent >= 3 %}
-          <div style="margin-top: 100px; color: red; text-align: center; font-size: 15px;" class="g-recaptcha" data-sitekey="6LcyzwwUAAAAAPNVpcBMb0_P-iTnXbc78uBkV5g2"></div>
-        {% endif %}
-      </form>
+        {% if SenhaErrada or Usererrado %}
+          <div style="margin: 10px; color: red; text-align: center; font-size: 15px;">Usuário inexistente e/ou senha incorreta</div>
+        {% endif %}       
 
-      <div class="container cadastrar">
-        <p class="text-1">Ainda não tem conta?</p>
+        {% if tent >= 3 %}
+          <div style="margin: 15px auto;" class="g-recaptcha" data-sitekey="6LcyzwwUAAAAAPNVpcBMb0_P-iTnXbc78uBkV5g2"></div>
+        {% endif %}
+        <button class="_button" type="submit" id="b1">Entrar</button>
+        <p class="text-1" id="t1">Ainda não tem conta?</p>
         <button onClick="window.location='/cadastro'" class="_button _button-1" type="button">Cadastre-se</button>
-    </div>
+      </form>      
     </div>
   </div>
 <script src='https://www.google.com/recaptcha/api.js'></script>
+<script language='javascript'>
+function recaptcha(){
+  if ({{tent}} >= 3) {
+    document.getElementById("bg").style.height='660px';    
+  }   
+}
+</script>
+
+<script>
+//call after page loaded
+window.onload=recaptcha;
+</script>
 {% endblock %}

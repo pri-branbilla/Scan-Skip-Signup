@@ -30,4 +30,3 @@ class Usuario(Document):
         return self.email
     def getSenha(self):
         return self.senha
-    
