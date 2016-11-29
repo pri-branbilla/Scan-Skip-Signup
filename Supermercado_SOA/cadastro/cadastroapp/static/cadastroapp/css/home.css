@@ -3,156 +3,118 @@ body {
 }
 
 .background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 4;
   width: 100%;
-  min-height: 800px;
-  margin: 0 auto;
-  background-image: url('../images/Pague%20leve.png');
-  background-repeat: repeat-y;
+  height: 712px;
+  background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
   background-size: cover;
   background-position: center center;
-  background-color: rgb(255, 255, 255);
   font: 400 1em/1.38 'Open Sans';
   color: rgba(0, 0, 0, 0.87);
 }
 
 .container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
-  width: 100%;
-  margin: 0 auto;
+  width: 80%;  
+  margin: auto;
 }
 
+.descr {
+  display: inline-block;
+  width: 100%;
+}
 .image {
-  display: block;
-  width: 450px;
+  display: inline-block;
+  width: 100%;
+  min-width: 250px;
   height: auto;
-  margin: 0 auto;
   overflow: hidden;
 }
 
-.text {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.text-2 p {
-  margin-bottom: 1em;
-  text-align: center;
-}
-
-._text {
-  width: 56.0833333333%;
-  min-height: 433px;
-  margin-top: 42px;
-  font-size: 1em;
-  color: rgb(0, 0, 0, 0.87);
-}
-
-.text-1 {
-  position: absolute;
-  top: 20px;
+.slogan {  
   width: 100%;
-  min-height: 50px;
-  font-size: 2em;
-  font-weight: 600;
-  line-height: 2.5;
+  min-height: 150px;
+  font: 600 2em/1.38 'Open Sans';
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
 }
 
-@media(max-width: 800px) {
-  .background {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .background .container {
-    top: 0px;
-    right: auto;
-  }
-
-  .container .image {
-    height: auto;
-  }
-
-  .container ._text {
-    width: 70%;
-  }
+.titulo {  
+  width: 100%;
+  min-height: 50px;
+  font: 600 1.5em/1.38 'Open Sans';
+  vertical-align: middle;
+  color: rgba(0, 0, 0, 0.87);
+  text-align: center;
 }
 
-@media(max-width: 600px) {
-  .background {
-    left: 0;
-    right: 0;
-    height: 711px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .container .image {
-    width: 400px;
-    height: auto;
-    margin-top: 80px;
-  }
-
-  .container .text-1 {
-    float: left;
-    margin-right: 0;
-    margin-left: 0;
-  }
+._text {
+  padding: 5px;
+  width: 100%;
+  font: 400 1em/1.38 'Open Sans';
+  color: rgb(0, 0, 0, 0.87);
+  text-align: center;
 }
 
-@media(max-width: 460px) {
-  .background {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .background .container {
-    height: 1266px;
-  }
-
-  .container .image {
-    width: 300px;
-    height: auto;
-  }
-
-  .container ._text {
-    width: 80%;
-    margin-top: 28px;
-  }
+._button {
+  display: block;
+  width: 100%;
+  height: 52px;
+  border-radius: 5px;
+  background-color: rgb(62, 113, 225);
+  font: italic 600 1.35em/1.38 'Open Sans';
+  text-align: center;
+  color: rgb(255, 255, 255);
 }
 
-@media(max-width: 360px) {
-  .background {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
+._button:hover {
+  background-color: rgb(16, 161, 36);
+}
 
-  .background .container {
-    height: 1499px;
-  }
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+    vertical-align: middle;
+}
+.col-min {    
+    /* custom min width */
+    min-width:200px;
+}
+.col-min6 {    
+    /* custom min width */
+    min-width:250px;
+}
+.col-xs-6 {
+  width: 45%;
+}
 
-  .container .image {
-    width: 250px;
-    height: auto;
-  }
+.col-xs-31 {
+  width: 25%;
+}
+.col-xs-32 {
+  width: 40%;
+}
+.col-xs-3 {
+  width: 25%;
+}
 
-  .container ._text {
-    width: 80%;
-  }
+/* visual styles */
+
+[class*="col-"] {
+    padding-top:15px;
+    padding-bottom:15px;
+}
+[class*="col-"]:before {
+    display:block;position:relative;
+    text-align:left;
+}
+.item {
+    width:100%;
+    height:100%;
 }
