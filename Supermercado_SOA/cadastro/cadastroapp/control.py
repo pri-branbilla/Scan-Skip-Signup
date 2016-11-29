@@ -31,10 +31,6 @@ def validar_cpf(cpf):
     if (not cpf) or (len(cpf) < 11):
         return False
 
-    hifen = cpf.count('-')
-    pontos = cpf.count('.')
-    if(hifen!=1 or pontos!=2):
-        return False
     inteiros = map(int, cpf)
     novo = inteiros[:9]
 

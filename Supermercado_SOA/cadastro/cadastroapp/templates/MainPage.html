@@ -2,78 +2,52 @@
 {% load static %}
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0">
-  <title>Scan&Skip - {% block title %}{% endblock %}</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}">
-  <link rel="stylesheet" href="{% static 'cadastroapp/css/header---footer-grid.css' %}">
-  <link rel="stylesheet" href="{% static 'cadastroapp/css/header-footer2.css' %}">
-  {% block extra_head_content %}{% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>Scan&Skip - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'cadastroapp/css/standardize.css' %}">
+    <link rel="stylesheet" href="{% static 'cadastroapp/css/header---footer-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'cadastroapp/css/header-footer2.css' %}">
+    {% block extra_head_content %}{% endblock %}
 </head>
 <body class="body page-header---footer clearfix">
-  <div class="corpo">
-    {% block content %} {% endblock %}
-  </div>
-  <div class="barra clearfix">
-    <a href="http://scan-skip-teste.herokuapp.com/">
-    <div class="icone">
-    </div></a>
-    <a href="http://scan-skip-teste.herokuapp.com/">
-    <p class="textheader">Scan&Skip</p></a>
-    <div class="botoesbarra clearfix">
-      <script src="JavaScript/jquery-1.10.2.js" type="text/javascript"></script> 
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: rgb(11, 62, 174); border-color: rgb(11, 62, 174);">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="padding: 0 !important; padding-left: 10px !important;" href="https://scan-skip-teste.herokuapp.com/">
+                    <img alt="Brand" class="img-responsive" src="{% static 'cadastroapp/images/LOGO.png' %}" style="height: 50px; width: 80px; display: inline-block !important;">
+                </a>
+                <a href="https://scan-skip-teste.herokuapp.com/">
+                    <span class="navbar-brand-text" style="color: rgb(250, 220, 10); font: italic 400 2em/1.5 'Open Sans'; padding: 0 !important; padding-left: 5px !important;">Scan&Skip</span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://scan-skip-teste.herokuapp.com/sobre" class="botaoBarra">Como usar</a></li>
+                    {% if request.session.logado %}
+                        <li><a href="https://scan-skip-teste.herokuapp.com/mapa" class="botaoBarra">Mapa</a></li>
+                        <li><a href="https://scan-skip-carrinho-teste.herokuapp.com/" class="botaoBarra">Carrinho</a></li>
+                        <li><a href="https://scan-skip-teste.herokuapp.com/perfil" class="botaoBarra">Minha Conta</a></li>
+                        <li><a href="https://scan-skip-carrinho-teste.herokuapp.com/logout" class="botaoBarra">Logout</a></li>
+                    {% else %}
+                        <li><a href="https://scan-skip-teste.herokuapp.com/cadastro" class="botaoBarra">Cadastre-se</a></li>
+                        <li><a href="https://scan-skip-teste.herokuapp.com/login" class="botaoBarra">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-      <script type="text/javascript">
-        $(function() {
-          var button = "";
-    
-        // this will get the full URL at the address bar
-          var url = window.location.href;
-            if (url == "https://scan-skip-teste.herokuapp.com//")
-            {
-              $('.textheader').html("home");
-              button = "b1";
-            }
-            else if (url == "https://scan-skip-teste.herokuapp.com/sobre/")
-            {
-              $('.textheader').html("sobre");
-              button = "b2";
-            }
-            else if (url == "https://scan-skip-teste.herokuapp.com/login/")
-            {
-              $('.textheader').html("login");            
-              button = "b3";
-            }
-            else if (url == "https://scan-skip-teste.herokuapp.com/cadastro/")
-            {
-              $('.textheader').html("cadastro");
-              button = "b4";
-            }
-            else if (url == "https://scan-skip-teste.herokuapp.com/perfil/")
-            {
-              $('.textheader').html("perfil");
-              button = "b5";
-            }
-            else if (url == "https://scan-skip-teste.herokuapp.com//logout/")
-            {
-              $('.textheader').html("logout");
-              button = "b6";
-            }
-          document.getElementById(button).style.background='rgb(113, 164, 255)';
-          $('.textheader').html(url);
-        });        
-      </script>
-
-      {% if request.session.logado %}
-        <button onClick="window.location='https://scan-skip-carrinho-teste.herokuapp.com/logout'" class="botaoBarra botaoCadastro" id="b6">Logout</button>
-        <button onClick="window.location='/perfil'" class="botaoBarra botaoLogin" id="b5">Perfil</button>
-      {% else %}
-        <button onclick="window.location='/cadastro'" class="botaoBarra botaoCadastro" id="b4">Cadastre-se</button>
-        <button onclick="window.location='/login'" class="botaoBarra botaoLogin" id="b3">Login</button> 
-      {% endif %}
-      <button onclick="window.location='/sobre'" class="botaoBarra botaoSobre" id="b2">Sobre</button>
-      <button onclick="window.location='/'" class="botaoBarra botaoHome" id="b1">Home</button></li>      
+    <div class="corpo">
+        {% block content %} {% endblock %}
     </div>
-  </div>
 </body>

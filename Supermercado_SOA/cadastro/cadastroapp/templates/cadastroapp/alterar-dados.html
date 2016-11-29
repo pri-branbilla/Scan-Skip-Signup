@@ -12,6 +12,8 @@
 
 {% block content %}
   <div class="background clearfix">
+  </div>
+  <div>
     <form class="style-1 alterardados clearfix" method="POST" action="{% url 'alterardados'%}">
       {% csrf_token %}
       <p class="text">Meus Dados Cadastrais</p>
