@@ -1,0 +1,71 @@
+{% extends "MainPage.html" %}
+{% load static %}
+
+  {% block extra_head_content %}
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/home-grid.css' %}">
+  <link rel="stylesheet" href="{% static 'cadastroapp/css/home.css' %}">
+  {% endblock %}
+
+{% block content %}
+  <div class="background">
+  </div>
+  <div>
+    <div class="container">
+      <div class="row row-centered">
+        <div class="col-xs-6 col-centered col-min6"><div class="item"><div class="content">
+          <p class="slogan">FAZER COMPRAS NO MERCADO FICOU MAIS FÁCIL</p>
+        </div></div></div>
+        <div class="col-xs-6 col-centered col-min6"><div class="item"><div class="content">
+          <img class="image" src="{% static 'cadastroapp/images/Pague leve LOGO 2-450x278.png' %}" data-rimage data-src="{% static 'cadastroapp/images/Pague leve LOGO 2-450x278.png' %}">
+        </div></div></div>
+      </div>
+
+      <div class="descr">
+        <p class="_text">Após muita dedicação de um grupo de alunos de Engenharia da USP, nasceu o Scan&amp;Skip, uma nova forma de tornar a sua compra de supermercado mais rápida e interativa!</p>
+      </div>
+
+      <hr>
+
+      <div class="row row-centered">
+        <div class="col-xs-31 col-centered col-min"><div class="item"><div class="content">
+          <p class="titulo">Primeiro acesso?</p>
+        </div></div></div>
+        <div class="col-xs-32 col-centered col-min"><div class="item"><div class="content">
+          <p class="_text">Faça parte dessa grande mudança!</p>
+        </div></div></div>
+        <div class="col-xs-3 col-centered col-min"><div class="item"><div class="content">
+          <button onClick="window.location='/cadastro'" class="_button" type="button">Cadastre-se!</button>
+        </div></div></div>
+      </div>
+
+      <hr>
+
+      <div class="row row-centered">
+        <div class="col-xs-31 col-centered col-min"><div class="item"><div class="content">
+          <p class="titulo">Já é cadastrado?</p> 
+        </div></div></div>
+        <div class="col-xs-32 col-centered col-min"><div class="item"><div class="content">
+          <p class="_text">Faça o login e comece a sua compra!</p>
+        </div></div></div>
+        <div class="col-xs-3 col-centered col-min"><div class="item"><div class="content">
+          <button onClick="window.location='/login'" class="_button" type="button">Fazer login</button>
+        </div></div></div>
+      </div>
+
+      <hr>
+
+      <div class="row row-centered">
+        <div class="col-xs-31 col-centered col-min"><div class="item"><div class="content">
+          <p class="titulo">Quer saber mais?</p>
+        </div></div></div>
+        <div class="col-xs-32 col-centered col-min"><div class="item"><div class="content">
+          <p class="_text">Entenda melhor como funciona o Scan&amp;Skip!</p>
+        </div></div></div>
+        <div class="col-xs-3 col-centered col-min"><div class="item"><div class="content">
+          <button onClick="window.location='/sobre'" class="_button" type="button">Saiba mais</button>
+        </div></div></div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
