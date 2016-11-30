@@ -2,20 +2,13 @@ body {
 
 }
 
-.alterardados {
-  width: 70%;
-  min-width: 600px;
-  height: 541px;
-  margin: 75px auto 0;
-  border-radius: 10px;
-  background-color: rgba(113, 164, 255, 0.2);
-  
-}
-
 .background {
+  z-index: -1;
+  position: fixed;
+  top: 0;
   float: left;
   width: 100%;
-  height: 712px;
+  min-height: 100vh;
   border: 1px double rgb(0, 0, 0);
   background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
   background-size: cover;
@@ -24,91 +17,85 @@ body {
   color: rgba(0, 0, 0, 0.87);
 }
 
+.container {
+  width: 70%;
+  height: 560px;
+  min-width: 270px;
+  margin: 75px auto;
+  background-color: rgba(113, 164, 255, 0.2);
+}
+
+.alterardados {
+  width: 80%;
+  height: 540px;
+  margin: 0 auto;
+  border-radius: 10px;  
+}
+
+.text {
+  float: left;
+  width: 100%;
+  margin: 10px auto;
+  min-height: 50px;
+  font: 600 2em/2.5 'Open Sans';
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+}
+
 .buttondados {
   display: block;
-  float: left;
   clear: both;
-  width: 28.7066246056%;
-  min-width: 200px;
   height: 52px;
-  margin: 29px 0 0 35.64033%;
+  width: 30%;
+  min-width: 195px;
+  margin: auto;
   border-radius: 5px;
   background-color: rgb(62, 113, 225);
-  font-family: Helvetica;
-  font-style: italic;
-  text-align: center;
+  font: italic 600 1.35em/1.38 'Open Sans';
+  text-align: center;  
   color: rgb(255, 255, 255);
 }
 
 .buttondados:hover {
-  background-color: rgb(16, 161, 36);
+  background-color: rgb(11, 62, 174);
 }
 
-.cpf,
-.email,
-.nome{
-  display: block;
-  float: left;
+._input {
+  display: block;  
   clear: both;
-  width: 80.0177444794%;
-  height: 33px;
-  margin: 28px 0 0 9.93197%;
+  margin: auto;
+  width: 100%;
+  min-width: 195px;
+  height: auto;
+  min-height: 33px;
   padding: 0 10px;
   border: 1px solid rgba(0, 0, 0, 0.54);
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
-  font-family: Helvetica;
-}
-
-.text {
-  width: 100%;
-  min-height: 50px;
-  margin: 28px auto 0;
+  font: 0.8em/1.38 'Open Sans';
+  color: rgb(0, 0, 0);
+  vertical-align: middle;
   text-align: center;
-  font: 600 2em/2.5 'Open Sans';
-  color: rgba(0, 0, 0, 0.87);
+  overflow: visible;
+  word-wrap: break-word;
 }
 
-@media(max-width: 900px) {
-  .alterardados .buttondados {
-    float: none;
-    clear: none;
-    margin-top: 28px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .alterardados .cpf,
-  .alterardados .email,
-  .alterardados .nome,
-  .alterardados .sobrenome {
-    float: none;
-    clear: none;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .background .alterardados {
-    width: 65.1447661469%;
-    min-width: 400px;
-  }
+._input:focus {
+  border: 1 solid rgba(0, 0, 0, 0.54);
 }
 
-@media(max-width: 600px) {
-
-  .background .alterardados {
-    width: 65.2173913043%;
-    min-width: 300px;
-  }
+.alterardados ._input-1{
+  margin: 10px auto 0;
 }
 
-@media(max-width: 360px) {
-  .alterardados .buttondados {
-    margin-top: 40px;
-  }
+.alterardados ._input-2,
+.alterardados ._input-3{
+  margin: 28px auto;
+}
 
-  .background .alterardados {
-    width: 85%;
-    min-width: 208px;
+@media(max-width: 700px) {
+  .alterardados .text {
+    font: 600 2em/1.38 'Open Sans'; 
+    margin: 18px auto;
   }
 }

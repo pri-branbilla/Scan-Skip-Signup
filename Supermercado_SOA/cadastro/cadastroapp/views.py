@@ -71,12 +71,12 @@ def cadastro(request):
             cliente = Usuario(idusuario=str(random.randint(0, 100000)), nome=nome, email=email, cpf=cpf, senha=senha1, ativado=False, tokenEmail=tokenEmail, tentativas=0)
             cliente.save()
             subject = '[Sem Resposta]'
-            message = 'Acesse o link para confirmar seu e-mail /n https://scan-skip-teste.herokuapp.com/cadastro/ativa/token=' + tokenEmail
+            message = 'Acesse o link para confirmar seu e-mail /n https://scan-skip-teste.herokuapp.com/ativa/token=' + tokenEmail
             from_email = settings.EMAIL_HOST_USER
             to_list = [email]
             send_mail(subject, message, from_email, to_list, fail_silently=True)
             registrado = True
-            return HttpResponseRedirect('/login')
+            return HttpResponseRedirect('https://scan-skip-teste.herokuapp.com/login')
     else:
         usuario = ''
         nome = ''
@@ -164,10 +164,14 @@ def perfil(request):
 
 
 def Ativa(request, token):
-    user=Usuario.objects.get(tokenEmail = token)
+    user=Usuario.objects.get(tokenEmail=token)
     user.ativado = True
     user.save()
+<<<<<<< HEAD
     return redirect('/login/'+token)
+=======
+    return redirect('https://scan-skip-teste.herokuapp.com/login')
+>>>>>>> 79fb67b7a86fc7fb80ecb751016eae7739c50642
 
 
 def alterar_dados(request):
@@ -248,7 +252,7 @@ def recuperarsenha(request):
         subject = 'Recuperar senha'
         usuario = Usuario.objects.get(email=email)
         idusuario=usuario.idusuario
-        message = 'Foi detectado uma nova solicitacao para recuperacao de senha. Para confirmar clique no link a seguir: \n http://localhost:8000/novasenha/'+idusuario+ '\nCaso nao tenha solicitado a recuperacao de senha ignore esse e-mail. \n\nAtt. Scan&Skip'
+        message = 'Foi detectado uma nova solicitacao para recuperacao de senha. Para confirmar clique no link a seguir: \n https://scan-skip-teste.herokuapp.com/novasenha/'+idusuario+ '\nCaso nao tenha solicitado a recuperacao de senha ignore esse e-mail. \n\nAtt. Scan&Skip'
         from_email = settings.EMAIL_HOST_USER
         to_list = [email]
         send_mail(subject, message, from_email, to_list, fail_silently=True)
@@ -270,7 +274,7 @@ def novasenha(request, idusuario):
     from_email = settings.EMAIL_HOST_USER
     to_list = [email]
     send_mail(subject, message, from_email, to_list, fail_silently=True)
-    return redirect('/confirmacao-email')
+    return redirect('https://scan-skip-teste.herokuapp.com/confirmacao-email/')
 
 
 def confirmacaoemail(request):

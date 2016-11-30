@@ -5,11 +5,12 @@ p {
 .background {
   font: 600 2.5em/1.38 'Open Sans';
   color: rgb(0, 0, 0);
-  position: relative;
+  position: fixed;
+  top: 0;
   float: left;
   width: 100%;
-  height: 800px;
-  min-height: 800px;
+  min-height: 100vh;
+  border: 1px double rgb(0, 0, 0);
   background: url('../images/Scan&Skip%20Background.png') rgb(222, 222, 222);
   background-size: cover;
   background-position: center center;
@@ -31,7 +32,7 @@ p {
 
 .text {
   position: absolute;
-  top: 0;
+  top: 120px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -39,7 +40,7 @@ p {
   height: 268px;
   min-height: 72px;
   margin: auto;
-  font-size: 1em;
+  font-size: 2em;
   text-align: center;
   color: rgb(0, 0, 0);
 }

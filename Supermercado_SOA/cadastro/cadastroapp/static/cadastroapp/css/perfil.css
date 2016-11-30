@@ -1,26 +1,13 @@
 body {
 }
 
-.alterar_dados {
-  top: 0;
-  left: 0;
-  z-index: 1;
-  padding: 5px;
-  background-color: rgb(62, 113, 255);
-  line-height: 1.38;
-}
-
-.alterar_senha {
-  top: 0;
-  right: 0;
-  background-color: #3e71ff;
-  line-height: 1.38;
-}
-
 .background {
+  z-index: -1;
+  position: fixed;
+  top: 0;
   float: left;
   width: 100%;
-  height: 800px;
+  min-height: 100vh;
   border: 1px double rgb(0, 0, 0);
   background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
   background-size: cover;
@@ -29,201 +16,184 @@ body {
   color: rgba(0, 0, 0, 0.87);
 }
 
-.buttonperfil {
-  display: block;
-  position: absolute;
-  width: 49%;
-  height: 54px;
-  border-radius: 3px;
-  font-size: 1em;
-  text-align: center;
-  color: rgb(255, 255, 255);
-}
-
-.buttonperfil:hover {
-  color: rgb(240, 205, 101);
-}
-
-.carrinho {
-  top: 70px;
-  right: 0;
-  z-index: 3;
-  padding: 5px;
-  background-color: rgb(62, 113, 255);
-  line-height: 1.38;
-}
-
 .container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  width: 70%;
+  min-width: 250px;
+  height: 560px;
+  margin: 75px auto;
 }
 
-.cpf {
-  top: 47px;
-  z-index: 6;
-  width: 80%;
-  height: 35px;
-  border: 1px solid rgba(0, 0, 0, 0.54);
-  border-radius: 10px;
-  background-color: rgb(255, 255, 255);
-  font-size: 1em;
-  color: rgba(0, 0, 0, 0.87);
-}
-
-.email {
-  top: 94px;
-  z-index: 5;
-  width: 80%;
-  height: 35px;
-  border: 1px solid rgba(0, 0, 0, 0.54);
-  border-radius: 10px;
-  background-color: rgb(255, 255, 255);
-  font-size: 1em;
-  color: rgba(0, 0, 0, 0.87);
-}
-
-.image {
+.image {  
   display: block;
-  float: left;
   width: 170px;
   height: auto;
+  margin: 100px auto 0 auto;
   overflow: hidden;
 }
 
-.mapa {
-  top: 70px;
-  left: 0;
-  z-index: 2;
-  padding: 5px;
-  background-color: rgb(62, 113, 255);
-  line-height: 1.38;
+.perfil {
+  width: 100%;
+  height: 540px;
+  margin: 0 auto;
+  border-radius: 10px;
 }
 
-.nome {
-  top: 0;
-  position: relative;
-  z-index: 7;
-  width: 80%;
-  height: 35px;
+._button {
+  display: block;
+  width: 95%;
+  min-width: 190px;
+  height: 52px;
+  margin: auto;
+  border-radius: 5px;
+  background-color: rgb(62, 113, 225);
+  font: italic 600 1.35em/1.38 'Open Sans';
+  text-align: center;  
+  color: rgb(255, 255, 255);
+}
+
+._button:hover {
+  background-color: rgb(11, 62, 174)
+}
+
+._params {
+  display: block;
+  overflow: visible;
+  clear: both;
+  margin: auto;
+  vertical-align: middle;
+  width: 90%;
+  height: auto;
   border: 1px solid rgba(0, 0, 0, 0.54);
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
-  font-size: 1em;
-  color: rgba(0, 0, 0, 0.87);
+  font: 1em/1.38 'Open Sans';
+  color: rgb(0, 0, 0);
+  text-align: center;
+  word-wrap: break-word;
 }
 
-.params {
-  display: inline-block;
-  position: relative;
-  top: 315px;
-  left: 0;
-  right: 0;
-  z-index: 8;
-  width: 100%;
-  height: 128px;
-  margin: 0 auto;
-  padding: auto;
+.perfil ._param-1,
+.perfil ._param-2,
+.perfil ._param-3,
+.perfil .container-2 {
+  margin: 28px auto;
 }
 
-.perfil {
-  position: absolute;
-  top: 34px;
-  left: 0;
-  right: 0;
-  z-index: 12;
-  width: 78.25%;
-  height: 678px;
-  margin: 0 auto;
-  border-radius: 10px;
-  background-color: rgba(113, 164, 255, 0.2);
+
+.container-2 .mapa {
+  margin: auto;
 }
+
+.container-2 .carrinho {
+  margin: auto;
+}
+
+
+.container-2 .alterar_dados {
+  margin: auto;
+}
+
+.container-2 .alterar_senha {
+  margin: auto;
+}
+
 
 .text {
   display: inline-block;
   height: auto;
-  position: absolute;
-  left: 0;
-  right: 0;
   margin: 0 auto;
   text-align: center;
 }
 
 ._text {
-  top: 28px;
-  z-index: 9;
+  float: left;
   width: 100%;
-  min-height: 63px;
-  font-size: 2em;
-  font-weight: 600;
-  line-height: 2.5;
-  color: rgb(0, 0, 0);
+  margin: 10px auto;
+  min-height: 50px;
+  font: 600 2em/2.5 'Open Sans';
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .container-1 {
-  top: 109px;
-  z-index: 11;
-  width: 170px;
-  height: 170px;
+  z-index: 12;
+  width: 70%;
+  height: 630px;
+  margin: 75px auto;
+  border-radius: 10px;
+  background-color: rgba(113, 164, 255, 0.2);
 }
 
-.container-2 {
-  display: inline-block;  
-  margin: auto;  
-  top: 465px;
+.container-2 { 
+  margin: auto;
+  width: 100%; 
   z-index: 4;
-  width: 80%;
   height: 124px;
+  border-radius: 10px;
 }
 
-@media(max-width: 650px) {
-  .container .alterar_senha {
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+    width: 100%;
+    margin-top: auto;
+
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:center;
+    /* inline-block space fix */
+    margin-right:-4px;
+    vertical-align: middle;
+}
+
+.col-xs-6 {
+  width: 50%;
+  min-width: 160px;
+}
+
+/* visual styles */
+
+[class*="col-"] {
+    padding-top:5px;
+    padding-bottom:5px;
+}
+[class*="col-"]:before {
+    display:block;position:relative;
+    text-align:left;
+}
+.item {
+    width:90%;
+    height:90%;
+    margin:auto;
+} 
+.content {
+  margin: auto;
+}
+
+@media(max-width: 680px) {
+  .background {
+    height: 850px;
   }
 
-  .container .buttonperfil {
-  }
-
-  .container .image {
-    height: auto;
-  }
-
-  .background .perfil,
-  .params .text,
-  .perfil ._text,
-  .perfil .params {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .perfil .container {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
+  .perfil ._param-1,
+  .perfil ._param-2,
+  .perfil ._param-3,
   .perfil .container-2 {
-    height: 123px;
-  }
-}
-
-@media(max-width: 360px) {
-
-  .container .image {
-    height: auto;
+    margin: 18px auto 0;
   }
 
-  .background .perfil,
-  .params .text,
-  .perfil ._text,
-  .perfil .container,
-  .perfil .params {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+  .background .container-1 {
+    height: 780px;
+  }
+  .col-xs-6 {
+    width: 100%;
+    min-width: 170px;
+  }
+  .container-2 {
+    margin: auto;
+    padding: 0;
   }
 }

@@ -1,21 +1,20 @@
-body {
-
-}
-
 .background {
-  position: absolute;
+  z-index: -1;
+  position: fixed;
   top: 0;
-  left: 0;
-  z-index: 13;
+  float: left;
   width: 100%;
-  height: 712px;
+  min-height: 100vh;
   border: 1px double rgb(0, 0, 0);
   background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
   background-size: cover;
   background-position: center center;
-  background-color: rgb(255, 255, 255);
   font: 400 1em/1.38 'Open Sans';
   color: rgba(0, 0, 0, 0.87);
+}
+
+.g-recaptcha  div {
+  margin: 15px auto;
 }
 
 .checkbox {
@@ -26,36 +25,25 @@ body {
 }
 
 .container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-right: auto;
-  margin-left: auto;
+  width: 70%;
+  height: 560px;
+  margin: 75px auto;
 }
 
 .login {
-  position: absolute;
-  bottom: 185.5px;
-  left: 9.8086124401%;
-  z-index: 8;
-  width: 80%;
-  height: 268px;
-  border-radius: 10px;
-}
-
-.login .container {
-  bottom: 115px;
-  z-index: 7;
   width: 100%;
-  height: 14px;
+  height: 540px;
+  margin: 0 auto;
+  border-radius: 10px;
 }
 
 .login .text {
   display: inline-block;
   float: right;
-  width: 40%;
+  width: 38%;
   height: 14px;
   font: bold italic 0.8em/1.25 'Open Sans';
+  padding-right: 10px;
   text-align: right;
   color: rgb(11, 62, 174);
 }
@@ -65,12 +53,18 @@ body {
   text-decoration: underline;
 }
 
+.login .perma-rec {
+  display: block;
+  width: 80%;
+  height: 14px;
+  margin: 28px auto;
+}
+
 .permanecer-conectado {
   display: block;
   float: left;
-  width: 60%;
+  width: 62%;
   height: 14px;
-  margin: auto;
 }
 
 .point-text {
@@ -78,27 +72,22 @@ body {
   width: 80%;
   height: 14px;
   float: left;
-  margin-left: 6px;
-  vertical-align: middle;
+  margin-left: 10px;
   font: 0.8em/1.38 'Open Sans';
 }
 
 
 ._button {
   display: block;
-  position: absolute;
-  left: 0;
-  right: 0;
+  clear: both;
   height: 52px;
-  width: 60%;
-  margin: 0 auto;
-  border-radius: 10px;
-  font-style: italic;
-  font-size: 1.35em;
-  font-weight: 600;
-  line-height: 1.38;
-  text-align: center;
+  width: 40%;
+  min-width: 150px;
+  margin: auto;
+  border-radius: 5px;
   background-color: rgb(62, 113, 225);
+  font: italic 600 1.35em/1.38 'Open Sans';
+  text-align: center;  
   color: rgb(255, 255, 255);
 }
 
@@ -109,12 +98,9 @@ body {
 
 ._input {
   display: block;
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: 100%;
+  clear: both;
+  width: 80%;
   height: 33px;
-  margin: 0 auto;
   padding: 0 10px;
   border: 1px solid rgba(0, 0, 0, 0.54);
   border-radius: 5px;
@@ -127,294 +113,50 @@ body {
   border: 1 solid rgba(0, 0, 0, 0.54);
 }
 
-.login ._button {
-  bottom: 26px;
-  z-index: 2;
-  
-}
-
 .container-1 {
-  top: 0;
-  bottom: 0;
   z-index: 12;
   width: 70%;
-  height: 560px;
-  margin-top: auto;
-  margin-bottom: auto;
+  height: 540px;
+  margin: 75px auto;
   border-radius: 10px;
   background-color: rgba(113, 164, 255, 0.2);
 }
 
 .text-1 {
-  left: 0;
-  right: 0;
+  top: 10px;
   z-index: 9;
   width: 100%;
-  height: 66px;
   min-height: 50px;
-  margin: 0 auto;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  font: 600 2em/1.38 'Open Sans';
-  text-align: center;
-  color: rgba(0, 0, 0, 0.87);
-}
-
-.cadastrar {
-  position: absolute;
-  top: 400px;
-  width: 80%;
-  text-align: center;
-  margin: auto;
-  padding: auto;
-
-}
-
-.text-2 {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  right: 0;
-  z-index: 9;
-  width: 100%;
-  height: 66px;
-  min-height: 50px;
-  margin: 0 auto;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  margin: 20px auto 0;
   font: 600 2em/2.5 'Open Sans';
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
 }
 
-.container ._button-1 {
-  position: absolute;
-  bottom: -70px;
-  z-index: 11;
-  background-color: rgb(62, 113, 225);
-}
-
-._button-1:hover {
-  background-color: rgb(11, 62, 174);
+.text-2 {
+  float: left;
+  top: 10px;
+  z-index: 9;
+  width: 100%;
+  min-height: 50px;
+  margin: 10px auto;
+  font: 600 2em/2.5 'Open Sans';
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .login ._input-1 {
-  bottom: 155px;
-  z-index: 1;
+  margin: 10px auto 0;
 }
 
 .login ._input-2 {
-  bottom: 215px;
+  margin: 28px auto;
 }
 
-@media(max-width: 720px) {
+@media(max-width: 510px) {
 
-  .container .permanecer-conectado {
-    margin-left: 0;
-  }
-
-  .login .container {
-    left: 0;
-    right: 0;
-    width: 80.1435406698%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .login ._button {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .container .text-1,
-  .login ._input {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .background .container-1 {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 70%;
-    margin: auto;
-  }
-
-  .container .text-2 {
-    left: 0;
-    right: 0;
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .container ._button-1 {
-    left: 0;
-    right: 0; 
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-
-@media(max-width: 580px) {
-
-  .login .container {
-    left: 0;
-    right: 0;
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .container .text-1,
-  .container .text-2,
-  .login ._button,
-  .login ._input {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .background .container-1 {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 90%;
-    margin: auto;
-  }
-
-  .container ._button-1 {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-
-@media(max-width: 520px) {
-  .container .text-1,
-  .container .text-2,
-  .login ._button,
-  .login ._input,
-  .login .container {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .background .container-1 {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
-
-  .container ._button-1 {
-  }
-}
-
-@media(max-width: 490px) {
-  .container .permanecer-conectado {
-  }
-
-  .login .container {
-    bottom: 114px;
-    left: 0;
-    right: 0;
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .login .text {
-  }
-
-  .login ._button {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .container ._button-1,
-  .container .text-1,
-  .container .text-2,
-  .login ._input {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .background .container-1 {
-   
-  }
-}
-
-@media(max-width: 370px) {
-  body {
-  }
-
-  .container .permanecer-conectado {
-  }
-
-  .login .text {
-  }
-
-  .container ._button-1,
-  .container .text-1,
-  .login ._button,
-  .login ._input,
-  .login .container {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .background .container-1 {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
-}
-
-@media(max-width: 310px) {
-  .container .permanecer-conectado {
-  }
-
-  .login .text {
-  }
-
-  .container ._button-1,
-  .container .text-1,
-  .container .text-2,
-  .login ._button,
-  .login ._input,
-  .login .container {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .background .container-1 {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+  .container .text-1 {
+    font: 600 2em/1.38 'Open Sans';
+    margin-bottom: 15px;
   }
 }

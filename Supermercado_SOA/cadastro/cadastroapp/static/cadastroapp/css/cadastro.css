@@ -3,9 +3,12 @@ body {
 }
 
 .background {
+  z-index: -1;
+  position: fixed;
+  top: 0;
   float: left;
   width: 100%;
-  height: 712px;
+  min-height: 100vh;
   border: 1px double rgb(0, 0, 0);
   background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
   background-size: cover;
@@ -15,42 +18,39 @@ body {
 }
 
 .cadastro {
-  width: 70%;
+  width: 100%;
   min-width: 600px;
-  height: 541px;
-  margin: 75px auto 0;
+  height: 540px;
+  margin: 0 auto;
   border-radius: 10px;
-  background-color: rgba(113, 164, 255, 0.2);
 }
 
 .container {
-  position: relative;
-  float: left;
-  width: 100%;
-  height: 712px;
+  width: 70%;
+  height: 560px;
+  margin: 75px auto;
+  background-color: rgba(113, 164, 255, 0.2);
 }
 
 .text {
   float: left;
   width: 100%;
+  margin: 10px auto;
   min-height: 50px;
+  font: 600 2em/2.5 'Open Sans';
   text-align: center;
-  font-size: 2em;
-  font-weight: 600;
-  line-height: 2.5;
-  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 ._button {
-  display: inline-block;
-  float: left;
+  display: block;
   clear: both;
-  width: 28.7066246056%;
+  width: 30%;
   height: 52px;
-  margin: 40px 0 0 35.64033%;
+  margin: auto;
   border-radius: 5px;
   background-color: rgb(67, 212, 87);
-  font: italic 1em/1.38 Helvetica;
+  font: italic 600 1.35em/1.38 'Open Sans';
   text-align: center;
   color: rgb(255, 255, 255);
 }
@@ -61,108 +61,57 @@ body {
 
 ._input {
   display: block;
-  float: left;
   clear: both;
-  width: 80.0177444794%;
+  width: 80%;
   height: 33px;
   padding: 0 10px;
   border: 1px solid rgba(0, 0, 0, 0.54);
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
-  font: 1em/1.38 Helvetica;
+  font: 0.8em/1.38 'Open Sans';
+  color: rgb(0, 0, 0);
+}
+
+._input:focus {
+  border: 1 solid rgba(0, 0, 0, 0.54);
 }
 
 .cadastro ._input-1 {
-  margin-left: 9.93197%;
+  margin: 10px auto 0;
 }
 
 .cadastro ._input-2,
 .cadastro ._input-3,
 .cadastro ._input-4 {
-  margin: 28px 0 0 9.93197%;
+  margin: 28px auto;
 }
 
 .cadastro ._input-5 {
-  margin: 28px 0 0 9.93571%;
+  margin: 28px auto;
 }
 
 .cadastro ._input-6 {
-  margin: 28px 0 0 9.8759%;
+  margin: 28px auto;
 }
 
 @media(max-width: 900px) {
-  .background .cadastro {
-    width: 65.1447661469%;
-    min-width: 400px;
+  .container .cadastro {
+    min-width: 200px;
   }
 
   .cadastro ._button {
-    margin-left: 35.64904%;
+    min-width: 120px;
   }
 
   .cadastro ._input-1,
   .cadastro ._input-2,
   .cadastro ._input-3,
   .cadastro ._input-4 {
-    margin-left: 9.93056%;
   }
 
   .cadastro ._input-5 {
-    margin-left: 9.9359%;
   }
 
   .cadastro ._input-6 {
-    margin-left: 9.87714%;
-  }
-}
-
-@media(max-width: 600px) {
-
-  .background .cadastro {
-    width: 65.2173913043%;
-    min-width: 300px;
-  }
-
-  .container {
-    height: 711px;
-  }
-
-  .cadastro ._button {
-    margin-left: 35.64503%;
-  }
-
-  .cadastro ._input-1,
-  .cadastro ._input-2,
-  .cadastro ._input-3,
-  .cadastro ._input-4,
-  .cadastro ._input-5 {
-    margin-left: 9.92388%;
-  }
-
-  .cadastro ._input-6 {
-    margin-left: 9.86779%;
-  }
-}
-
-@media(max-width: 360px) {
-  .background .cadastro {
-    width: 85%;
-    min-width: 200px;
-  }
-
-  .cadastro ._button {
-    margin-left: 35.63543%;
-  }
-
-  .cadastro ._input-1,
-  .cadastro ._input-2,
-  .cadastro ._input-3,
-  .cadastro ._input-4,
-  .cadastro ._input-5 {
-    margin-left: 9.9152799999%;
-  }
-
-  .cadastro ._input-6 {
-    margin-left: 9.86393%;
   }
 }

@@ -12,23 +12,24 @@
 
 {% block content %}
   <div class="background clearfix">
-    <form class="style-1 alterardados clearfix" method="POST" action="{% url 'alterardados'%}">
-      {% csrf_token %}
-      <p class="text">Meus Dados Cadastrais</p>
-      <div style="font-size: 15px; color: red; text-align: center; top: 0px; margin-bottom:15px;">  
-        {% if atualErrada %}
-          Senha atual não corresponde<br>
-        {% endif %}
-        {% if naoConfirma %}
-          Senha não está de acordo com a confirmação<br>
-        {% endif %}
-      </div>
-      <input class="nome" name="nome" value="{{nome}}" type="text">
-      <input class="email" name="email" value="{{email}}" type="text">
-      <input class="cpf" name="CPF" placeholder="{{CPF}}" type="text" disabled>
-      <button class="buttondados salvar" type="submit">Salvar alterações</button>
-    </form>
+  
+    <div class="container">
+      <form class="alterardados clearfix" method="POST" action="{% url 'alterardados'%}">{% csrf_token %}
+        <p class="text">Meus Dados Cadastrais</p>
+        <div style="font-size: 15px; color: red; text-align: center; top: 0px; margin-bottom:15px;">  
+          {% if atualErrada %}
+            Senha atual não corresponde<br>
+          {% endif %}
+          {% if naoConfirma %}
+            Senha não está de acordo com a confirmação<br>
+          {% endif %}
+        </div>
+        <input class="_input _input-1" name="nome" value="{{nome}}" type="text">
+        <input class="_input _input-2" name="email" value="{{email}}" type="text">
+        <input class="_input _input-3" name="CPF" placeholder="{{CPF}}" type="text" disabled>
+        <button class="buttondados salvar" type="submit">Salvar alterações</button>
+      </form>
+    </div>
   </div>
-
   <script src="js/jquery-min.js"></script>
 {% endblock %}
