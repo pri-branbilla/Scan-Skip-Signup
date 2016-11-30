@@ -4,21 +4,20 @@
 {% block title %}recuperarsenha{% endblock %}
 
   {% block extra_head_content %}
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/recuperar-senha-grid.css' %}">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/recuperar-senha.css' %}">
   {% endblock %}
 
 {% block content %}
-  <div class="background"></div>
-  <div>
+  <div class="background">
     <div class="container">
-      <p class="text text-1">Recuperação de senha</p>
-      <form class="login" method="POST">
+      <p class="text-1">Recuperação de senha</p>
+      <form class="recuperar" method="POST">
         {% csrf_token %}
-        <p class="text">Insira o e-mail associado à sua conta.</p>
-        <button class="_button" type="submit">Enviar</button>
+        <p class="texto">Insira o e-mail associado à sua conta.</p>        
         <input class="_input" name="email" placeholder="E-mail" type="text">
+        <button class="_button" type="submit">Enviar</button>
       </form>
     </div>
   </div>

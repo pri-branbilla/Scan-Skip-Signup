@@ -9,226 +9,88 @@
   background: url('../images/Pague%20leve.png') rgb(255, 255, 255);
   background-size: cover;
   background-position: center center;
-}
-
-.container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 5;
-  width: 56.0934891485%;
-  height: 507px;
-  margin: auto;
-  border-radius: 10px;
-  background-color: rgba(113, 164, 255, 0.2);
-  font: 600 2em/2.5 'Open Sans';
-  color: rgb(0, 0, 0);
-
-}
-
-.login {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
-  width: 100%;
-  height: 194px;
-  margin: auto;
-  background-color: rgba(255, 255, 255, 0);
-}
-
-.login .text {
-  float: left;
-  font-size: 0.563em;
-  font-weight: 400;
+  font: 400 1em/1.38 'Open Sans';
   color: rgba(0, 0, 0, 0.87);
 }
 
-.text {
+.container {
+  width: 70%;
+  min-width: 250px;
+  height: 560px;
+  margin: 75px auto;
+  border-radius: 10px;
+  background-color: rgba(113, 164, 255, 0.2);
+
+}
+
+.recuperar {
   width: 100%;
+  height: 540px;
+  margin: 0 auto;
+}
+
+.texto {
+  float: left;
+  width: 100%;
+  overflow: auto;
+  margin: auto;
   min-height: 50px;
+  font: 400 1em/1.38 'Open Sans';
   text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.text-1 {
+  float: left;
+  width: 100%;
+  margin: 10px auto;
+  min-height: 50px;
+  font: 600 2em/2.5 'Open Sans';
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 ._button {
   display: block;
-  position: absolute;
-  top: 115px;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  width: 21.7703349282%;
+  clear: both;
   height: 52px;
-  margin: 0 auto;
+  width: 40%;
+  min-width: 150px;
+  margin: 28px auto;
   border-radius: 5px;
   background-color: rgb(62, 113, 225);
-  font: italic 700 0.75em/1.38 Helvetica;
-  text-align: center;
+  font: italic 600 1.35em/1.38 'Open Sans';
+  text-align: center;  
   color: rgb(255, 255, 255);
 }
 
 ._button:hover {
   background-color: rgb(11, 62, 174);
-  color: rgb(250, 220, 10);
 }
 
 ._input {
   display: block;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  right: 0;
-  width: 56.3397129186%;
+  clear: both;
+  width: 80%;
+  min-width: 190px;
   height: 33px;
-  margin: 0 auto;
   padding: 0 10px;
+  margin: 28px auto 0;
   border: 1px solid rgba(0, 0, 0, 0.54);
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
-  font: italic 400 0.375em/1.38 Helvetica;
+  font: 0.8em/1.38 'Open Sans';
   color: rgb(0, 0, 0);
 }
 
-.text-1 {
-  position: absolute;
-  top: 36px;
-  left: 0;
-  right: 0;
-  z-index: 4;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0);
-  font-size: 1em;
-  color: rgb(0, 0, 0);
+._input:focus {
+  border: 1 solid rgba(0, 0, 0, 0.54);
 }
 
-@media(max-width: 670px) {
-  .background .container,
-  .container .login {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
-
-  .login .text {
-    width: 91.5222656977%;
-  }
-
-  .login ._button {
-    top: 125px;
-    left: 0;
-    right: 0;
-    width: 27.128749767%;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 0.688em;
-  }
-
-  .login ._input {
-    top: 72px;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
+@media(max-width: 510px) {
 
   .container .text-1 {
-    left: 0;
-    right: 0;
-    width: 86.7353321379%;
-    margin-right: auto;
-    margin-left: auto;
-    line-height: 1.5;
-  }
-}
-
-@media(max-width: 600px) {
-  body {
-    font-size: 2em;
-  }
-
-  .background .container,
-  .container .login {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
-
-  .login .text {
-    margin-top: -10px;
-    margin-left: 2.77623%;
-    line-height: 2;
-  }
-
-  .container .text-1,
-  .login ._button,
-  .login ._input {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-
-@media(max-width: 390px) {
-  .background .container {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 70.1030927835%;
-    margin: auto;
-  }
-
-  .container .login {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
-
-  .login .text {
-    position: absolute;
-    float: none;
-    left: 0;
-    right: 0;
-    width: 91.5211397058%;
-    margin-top: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .login ._button {
-    top: 133px;
-    left: 0;
-    right: 0;
-    width: 36.7647058823%;
-    height: 44px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .login ._input {
-    top: 88px;
-    left: 0;
-    right: 0;
-    width: 79.7794117647%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .container .text-1 {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+    font: 600 2em/1.38 'Open Sans';
+    margin-bottom: 15px;
   }
 }
