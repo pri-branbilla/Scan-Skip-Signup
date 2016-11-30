@@ -86,11 +86,60 @@ def cadastro(request):
                   'cadastroapp/Cadastro.html',
                   {'nome': nome, 'cpf': cpf, 'email': email, 'erroSenha' : erroSenha, 'erroCPFexistente' : erroCPFexistente, 'registrado' : registrado, 'erroEmail' : erroEmail, 'erroUsuario' : erroUsuario, 'erroCPF' : erroCPF})
 
+def loginEMailConfirmado(request, tk):
+    desativada = False
+    Usererrado = False
+    SenhaErrada = False
+    EmailConfirmado = ""
+    if(tk=="confirma"):
+        EmailConfirmado = "Conta confirmada com sucesso"
+    elif(tk=="notfound"):
+        EmailConfirmado = "Conta não encontrada"
+    tent = 0
+    tokenC = ""
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        senha = request.POST.get('senha')
+        permanece = request.POST.get('permanece')
+        try:  # se usuario e senha corretos
+            user = Usuario.objects.get(email=email, senha=senha)
+            id1 = str(user.idusuario)
+            nome = str(user.nome)
+
+            if (permanece == "on"):
+                tempo = 1000000000
+            else:
+                tempo = 10000
+            request.session.set_expiry(tempo)
+            request.session['logado'] = True
+            request.session['nome'] = nome
+            request.session['idusuario'] = id1
+            user.tentativas = 0
+            user.save()
+            return HttpResponseRedirect(siteCarrinho + 'id=' + id1 + '/nome=' + nome)
+        except:
+            try:
+                user2 = Usuario.objects.get(email=email)
+                SenhaErrada = True
+                tent = user2.tentativas
+                if (tent < 3):
+                    tent = tent + 1
+                    user2.tentativas = tent
+                    user2.save()
+
+            except:
+                Usererrado = True
+
+    return render(request, 'cadastroapp/login.html',
+                  {'EmailConfirmado': EmailConfirmado, 'Usererrado': Usererrado, 'tent': tent,
+                   'SenhaErrada': SenhaErrada})
+
 
 def login(request):
     desativada = False
     Usererrado = False
     SenhaErrada = False
+    EmailConfirmado = ""
     tent = 0
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -125,7 +174,7 @@ def login(request):
             except:
                 Usererrado = True
 
-    return render(request, 'cadastroapp/login.html', {'Usererrado': Usererrado, 'tent': tent, 'SenhaErrada': SenhaErrada})
+    return render(request, 'cadastroapp/login.html', {'EmailConfirmado': EmailConfirmado, 'Usererrado': Usererrado, 'tent': tent, 'SenhaErrada': SenhaErrada})
 
 def mapa(request):
     return render(request, 'cadastroapp/mapa.html', {})
@@ -153,10 +202,15 @@ def perfil(request):
 
 
 def Ativa(request, token):
-    user=Usuario.objects.get(tokenEmail=token)
-    user.ativado = True
-    user.save()
-    return redirect('https://scan-skip-teste.herokuapp.com/login')
+    try:
+        user=Usuario.objects.get(tokenEmail=token)
+        user.ativado = True
+        user.save()
+        return redirect('/login/confirma')
+    except:
+        return redirect('/login/notfound')
+
+
 
 
 def alterar_dados(request):
