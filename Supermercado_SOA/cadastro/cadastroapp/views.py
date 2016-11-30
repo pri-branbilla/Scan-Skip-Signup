@@ -86,12 +86,23 @@ def cadastro(request):
                   'cadastroapp/Cadastro.html',
                   {'nome': nome, 'cpf': cpf, 'email': email, 'erroSenha' : erroSenha, 'erroCPFexistente' : erroCPFexistente, 'registrado' : registrado, 'erroEmail' : erroEmail, 'erroUsuario' : erroUsuario, 'erroCPF' : erroCPF})
 
+#def loginEMailConfirmado(request, tk):
+#    global tokenC
+#    tokenC = tk
+#    return login(request)
 
 def login(request):
+    global tokenC
     desativada = False
     Usererrado = False
     SenhaErrada = False
+    EmailConfirmado = False
+ #   if(tokenC!=""):
+ #       EmailConfirmado = True
+ #   else:
+ #       EmailConfirmado = False
     tent = 0
+    tokenC = ""
     if request.method == 'POST':
         email = request.POST.get('email')
         senha = request.POST.get('senha')
@@ -125,7 +136,7 @@ def login(request):
             except:
                 Usererrado = True
 
-    return render(request, 'cadastroapp/login.html', {'Usererrado': Usererrado, 'tent': tent, 'SenhaErrada': SenhaErrada})
+    return render(request, 'cadastroapp/login.html', {'EmailConfirmado': EmailConfirmado, 'Usererrado': Usererrado, 'tent': tent, 'SenhaErrada': SenhaErrada})
 
 def mapa(request):
     return render(request, 'cadastroapp/mapa.html', {})
@@ -156,7 +167,7 @@ def Ativa(request, token):
     user=Usuario.objects.get(tokenEmail = token)
     user.ativado = True
     user.save()
-    return redirect('/login?ativado='+token)
+    return redirect('/login/'+token)
 
 
 def alterar_dados(request):
