@@ -18,7 +18,7 @@ body {
 
 .container {
   width: 70%;
-  min-width: 250px;
+  min-width: 150px;
   height: 560px;
   margin: 75px auto;
 }
@@ -41,7 +41,7 @@ body {
 ._button {
   display: block;
   width: 95%;
-  min-width: 190px;
+  min-width: 100px;
   height: 52px;
   margin: auto;
   border-radius: 5px;
@@ -145,7 +145,6 @@ body {
     /* reset the text-align */
     text-align:center;
     /* inline-block space fix */
-    margin-right:-4px;
     vertical-align: middle;
 }
 
