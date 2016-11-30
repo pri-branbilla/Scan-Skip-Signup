@@ -23,6 +23,7 @@
   top: 30%;
   overflow: auto;
   width: 50%;
+  min-width: 270px;
   height: auto;
   margin: auto;
   padding: 28px;

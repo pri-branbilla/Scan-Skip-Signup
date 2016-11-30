@@ -16,6 +16,7 @@
 .container {
   width: 70%;
   margin: 75px auto;
+  min-width: 270px;
 }
 
 .descr {
