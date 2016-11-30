@@ -19,6 +19,7 @@ body {
 
 .container {
   width: 80%;
+  min-width: 270px;
   margin: 75px auto;
 }
 

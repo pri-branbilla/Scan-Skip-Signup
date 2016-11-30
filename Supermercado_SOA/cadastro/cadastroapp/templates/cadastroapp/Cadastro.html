@@ -12,7 +12,8 @@
 {% endblock %}
 
 {% block content %}
-  <div class="background">
+  <div class="background"></div>
+  <div>
     <div class="container">
       <form class="cadastro" method="POST">{% csrf_token %}
 
@@ -22,7 +23,7 @@
           Usuário já cadastrado<br>
         {% endif %}
         {% if erroUsuario %}
-          Nome invalido<br>
+          Nome inválido<br>
         {% endif %}
         {% if erroCPF %}
           CPF inválido
@@ -31,7 +32,7 @@
           CPF já cadastrado
         {% endif %}
         {% if erroEmail %}
-          E-mail invalido<br>
+          E-mail inválido<br>
         {% endif %}
         {% if erroSenha %}
           As senhas devem ser iguais<br>

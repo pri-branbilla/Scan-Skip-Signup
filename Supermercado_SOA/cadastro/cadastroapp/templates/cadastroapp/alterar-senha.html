@@ -10,10 +10,11 @@
 {% endblock %}
 
 {% block content %}
-  <div class="background clearfix">
+  <div class="background"></div>
+  <div>
     <div class="container">
       <p class="text">Alterar Senha</p>
-      <form class="style-1 alterarsenha clearfix" method="POST" action="{% url 'alterarsenha'%}"> 
+      <form class="style-1 alterarsenha" method="POST" action="{% url 'alterarsenha'%}"> 
         {% csrf_token %}      
         <div style="font-size: 15px; color: red; text-align: center; margin-bottom: 15px;">  
           {% if atualErrada %}

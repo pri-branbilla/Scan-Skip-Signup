@@ -1,20 +1,21 @@
 {% extends "MainPage.html" %}
+
 {% load static %}
 
 {% block title %}Alterar-dados{% endblock %}
 
 {% block extra_head_content %}
-
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,400" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/alterar-dados-grid.css' %}">
   <link rel="stylesheet" href="{% static 'cadastroapp/css/alterar-dados.css' %}">
+
 {% endblock %}
 
 {% block content %}
-  <div class="background clearfix">
-  
+  <div class="background"></div>
+  <div>  
     <div class="container">
-      <form class="alterardados clearfix" method="POST" action="{% url 'alterardados'%}">{% csrf_token %}
+      <form class="alterardados" method="POST" action="{% url 'alterardados'%}">{% csrf_token %}
         <p class="text">Meus Dados Cadastrais</p>
         <div style="font-size: 15px; color: red; text-align: center; top: 0px; margin-bottom:15px;">  
           {% if atualErrada %}

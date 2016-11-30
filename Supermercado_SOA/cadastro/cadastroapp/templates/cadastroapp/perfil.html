@@ -11,8 +11,9 @@
 
 {% block content %}
 
-  <div class="background">
-    <div class="container container-1">
+  <div class="background"></div>
+  <div>
+    <div class="container">
       <div class="perfil">
         <p class="text _text">Minha Conta</p>
         <img class="image" src="{% static 'cadastroapp/images/zeus-170x170.jpg' %}" data-rimage data-src="{% static 'cadastroapp/images/zeus-170x170.jpg' %}">
@@ -20,22 +21,22 @@
         <div class="_params _param-2">CPF: {{ CPF }}</div>
         <div class="_params _param-3">E-mail: {{ email }}</div>
           
-        <div class="container container-2">
+        <div class="container-2">
           <div class="row-centered">
-            <div class="col-xs-6 col-centered"><div class="item"><div class="content">
+            <div class="col-xs-6 col-centered esq"><div class="item"><div class="content">
               <button onClick="window.location='/mapa'" class="_button mapa">Mapa</button>
             </div></div></div>
-            <div class="col-xs-6 col-centered"><div class="item"><div class="content">
+            <div class="col-xs-6 col-centered dir"><div class="item"><div class="content">
               <button onClick="window.location='https://scan-skip-carrinho-teste.herokuapp.com/'" class="_button carrinho">Carrinho</button>
             </div></div></div>
           </div>
 
           <div class="row-centered">
-            <div class="col-xs-6 col-centered"><div class="item"><div class="content">
+            <div class="col-xs-6 col-centered esq"><div class="item"><div class="content">
               <button onClick="window.location='/editarcadastro'" class="_button alterar_dados">Alterar Dados</button>
             </div></div></div>
           
-            <div class="col-xs-6 col-centered"><div class="item"><div class="content">
+            <div class="col-xs-6 col-centered dir"><div class="item"><div class="content">
               <button onClick="window.location='/editarsenha'" class="_button alterar_senha">Alterar Senha</button>
             </div></div></div>                
           </div>
