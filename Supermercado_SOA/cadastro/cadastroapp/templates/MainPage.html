@@ -13,6 +13,16 @@
     <link rel="stylesheet" href="{% static 'cadastroapp/css/header---footer-grid.css' %}">
     <link rel="stylesheet" href="{% static 'cadastroapp/css/header-footer2.css' %}">
     {% block extra_head_content %}{% endblock %}
+    <script language="javascript">
+        function logout() {
+        var r = confirm("Deseja realmente sair?");
+        if (r == true){
+            document.getElementById("botaoLogout").href = 'https://scan-skip-carrinho-teste.herokuapp.com/logout';
+        }else{
+          //Não vai pra nenhum link
+        }
+      }
+    </script>
 </head>
 <body class="body page-header---footer clearfix">
     <nav class="navbar navbar-default navbar-fixed-top" style="background-color: rgb(11, 62, 174); border-color: rgb(11, 62, 174);">
@@ -34,10 +44,10 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="https://scan-skip-teste.herokuapp.com/sobre" class="botaoBarra">Como usar</a></li>
                     {% if request.session.logado %}
-                        <li><a href="https://scan-skip-teste.herokuapp.com/mapa" class="botaoBarra">Mapa</a></li>
+                        <li><a href="https://scan-skip-carrinho-teste.herokuapp.com/mapa" class="botaoBarra">Mapa</a></li>
                         <li><a href="https://scan-skip-carrinho-teste.herokuapp.com/" class="botaoBarra">Carrinho</a></li>
                         <li><a href="https://scan-skip-teste.herokuapp.com/perfil" class="botaoBarra">Minha Conta</a></li>
-                        <li><a href="https://scan-skip-carrinho-teste.herokuapp.com/logout" class="botaoBarra">Logout</a></li>
+                        <li onClick="logout()"><a id="botaoLogout" href="" class="botaoBarra">Logout</a></li>
                     {% else %}
                         <li><a href="https://scan-skip-teste.herokuapp.com/cadastro" class="botaoBarra">Cadastre-se</a></li>
                         <li><a href="https://scan-skip-teste.herokuapp.com/login" class="botaoBarra">Login</a></li>

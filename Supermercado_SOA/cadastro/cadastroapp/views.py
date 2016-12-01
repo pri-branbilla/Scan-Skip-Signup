@@ -24,7 +24,9 @@ def Home(request):
     return render(request, 'cadastroapp/home.html', {})
 
 def cadastro(request):
-
+    logado = verificaUsuario(request)
+    if logado:
+        return redirect('https://scan-skip-teste.herokuapp.com/perfil')
     registrado = False
     erroSenha = False
     erroEmail = False
@@ -68,10 +70,10 @@ def cadastro(request):
             erroEmail = True
         if not erroUsuario and not erroEmail and not erroSenha and not erroCPF and not erroCPFexistente:
             tokenEmail = ''.join(random.choice(chars) for x in range(siz))
-            cliente = Usuario(idusuario=str(random.randint(0, 100000)), nome=nome, email=email, cpf=cpf, senha=senha1, ativado=False, tokenEmail=tokenEmail, tentativas=0)
+            cliente = Usuario(idusuario=cpf, nome=nome, email=email, cpf=cpf, senha=senha1, ativado=False, tokenEmail=tokenEmail, tentativas=0)
             cliente.save()
             subject = '[Sem Resposta]'
-            message = 'Acesse o link para confirmar seu e-mail /n https://scan-skip-teste.herokuapp.com/ativa/token=' + tokenEmail
+            message = 'Seja bem-vindo à Scan&Skip.\n Seu cadastro está quase pronto! Falta apenas confirmar o seu e-mail! \n Acesse o link para confirmar seu e-mail /n https://scan-skip-teste.herokuapp.com/ativa/token=' + tokenEmail
             from_email = settings.EMAIL_HOST_USER
             to_list = [email]
             send_mail(subject, message, from_email, to_list, fail_silently=True)
@@ -136,6 +138,9 @@ def loginEMailConfirmado(request, tk):
 
 
 def login(request):
+    logado = verificaUsuario(request)
+    if logado:
+        return redirect('https://scan-skip-teste.herokuapp.com/perfil')
     desativada = False
     Usererrado = False
     SenhaErrada = False
