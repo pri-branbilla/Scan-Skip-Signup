@@ -9,7 +9,6 @@ body {
   float: left;
   width: 100%;
   min-height: 100vh;
-  border: 1px double rgb(0, 0, 0);
   background: url('../images/Pague%20leve.png');
   background-size: cover;
   background-position: center center;

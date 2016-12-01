@@ -567,7 +567,7 @@ body {
 
 @media(max-width: 1000px) {
   .background {
-    top: auto;
+    top: 0;
     left: 0;
     right: 0;
     margin-right: auto;
