@@ -10,12 +10,10 @@ from django.conf import settings
 from mongoengine.django.sessions import MongoSession
 import string
 from cadastroapp.control import verificaUsuario, pegaUsuario
-from control import *
+from .control import *
 import random
 from .models import Usuario
 from tests import *
-
-siteCarrinho = 'https://scan-skip-carrinho-teste.herokuapp.com/'
 
 def Sobre(request):
     return render(request, 'cadastroapp/sobre.html', {})
@@ -26,14 +24,14 @@ def Home(request):
 def cadastro(request):
     logado = verificaUsuario(request)
     if logado:
-        return redirect('https://scan-skip-teste.herokuapp.com/perfil')
+        return redirect('/perfil')
     registrado = False
     erroSenha = False
     erroEmail = False
     erroCPF = False
     erroCPFexistente = False
     erroUsuario = False
-    chars = string.letters + string.digits
+    chars = string.ascii_letters + string.digits
     siz = 25
     cpf = ""
     if request.method == 'POST':
@@ -78,7 +76,7 @@ def cadastro(request):
             to_list = [email]
             send_mail(subject, message, from_email, to_list, fail_silently=True)
             registrado = True
-            return HttpResponseRedirect('https://scan-skip-teste.herokuapp.com/login')
+            return HttpResponseRedirect('/login')
     else:
         usuario = ''
         nome = ''
@@ -118,7 +116,7 @@ def loginEMailConfirmado(request, tk):
             request.session['idusuario'] = id1
             user.tentativas = 0
             user.save()
-            return HttpResponseRedirect(siteCarrinho + 'id=' + id1 + '/nome=' + nome)
+            return HttpResponseRedirect('/perfil')
         except:
             try:
                 user2 = Usuario.objects.get(email=email)
@@ -140,7 +138,7 @@ def loginEMailConfirmado(request, tk):
 def login(request):
     logado = verificaUsuario(request)
     if logado:
-        return redirect('https://scan-skip-teste.herokuapp.com/perfil')
+        return redirect('/perfil')
     desativada = False
     Usererrado = False
     SenhaErrada = False
@@ -165,7 +163,7 @@ def login(request):
             request.session['idusuario'] = id1
             user.tentativas=0
             user.save()
-            return HttpResponseRedirect(siteCarrinho + 'id=' + id1 + '/nome=' + nome)
+            return HttpResponseRedirect('/perfil')
         except:
             try:
                 user2 = Usuario.objects.get(email=email)

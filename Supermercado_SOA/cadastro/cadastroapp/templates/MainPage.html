@@ -33,24 +33,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" style="padding: 0 !important; padding-left: 10px !important;" href="https://scan-skip-teste.herokuapp.com/">
+                <a class="navbar-brand" style="padding: 0 !important; padding-left: 10px !important;" href="{% url 'Home' %}">
                     <img alt="Brand" class="img-responsive" src="{% static 'cadastroapp/images/LOGO.png' %}" style="height: 50px; width: 80px; display: inline-block !important;">
                 </a>
-                <a href="https://scan-skip-teste.herokuapp.com/">
+                <a href="{% url 'Home' %}">
                     <span class="navbar-brand-text" style="color: rgb(250, 220, 10); font: italic 400 2em/1.5 'Open Sans'; padding: 0 !important; padding-left: 5px !important;">Scan&Skip</span>
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="https://scan-skip-teste.herokuapp.com/sobre" class="botaoBarra">Como usar</a></li>
+                    <li><a href="{% url 'Sobre' %}" class="botaoBarra">Como usar</a></li>
                     {% if request.session.logado %}
                         <li><a href="https://scan-skip-carrinho-teste.herokuapp.com/mapa" class="botaoBarra">Mapa</a></li>
                         <li><a href="https://scan-skip-carrinho-teste.herokuapp.com/" class="botaoBarra">Carrinho</a></li>
-                        <li><a href="https://scan-skip-teste.herokuapp.com/perfil" class="botaoBarra">Minha Conta</a></li>
+                        <li><a href="{% url 'perfil' %}" class="botaoBarra">Minha Conta</a></li>
                         <li onClick="logout()"><a id="botaoLogout" href="" class="botaoBarra">Logout</a></li>
                     {% else %}
-                        <li><a href="https://scan-skip-teste.herokuapp.com/cadastro" class="botaoBarra">Cadastre-se</a></li>
-                        <li><a href="https://scan-skip-teste.herokuapp.com/login" class="botaoBarra">Login</a></li>
+                        <li><a href="{% url 'cadastro' %}" class="botaoBarra">Cadastre-se</a></li>
+                        <li><a href="{% url 'login' %}" class="botaoBarra">Login</a></li>
                     {% endif %}
                 </ul>
             </div>

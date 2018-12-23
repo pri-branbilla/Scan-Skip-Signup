@@ -13,37 +13,7 @@ Abra a pasta que se deseja inicializar (por exemplo, login) e utilize:
 ### Requerimentos:
 <sup>OBS: Em alguns sistemas é necessário utilizar o comando "pip" com sudo</sup>
 
-* Python 2.7
-
-* Django (https://www.djangoproject.com/download/):
-
-```pip install Django```
-
-* Mongoengine (http://docs.mongoengine.org/):
-
-```pip install mongoengine==0.9```
-
-* Django REST Framework (http://www.django-rest-framework.org/):
-
-```
-pip install djangorestframework
-pip install markdown
-pip install django-filter
-```
-
-* Blinker (https://pythonhosted.org/blinker/):
-
-```pip install blinker```
-
-* Django Rest Framework Mongoengine (https://github.com/umutbozkurt/django-rest-framework-mongoengine):
-
-```pip install django-rest-framework-mongoengine```
-
-* Fazendo downgrade no PyMongo para funcionar direito:
-
-```pip uninstall pymongo```
-
-```pip install pymongo==2.8```
+* Python 3.6
 
 * Para instalar o MongoDB no Windows
 
@@ -59,9 +29,13 @@ https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubunt
 
 * Executando o MongoDB (Ubuntu)
 
-```cd /usr
+```
 
-./bin/mongo```
+cd /usr
+
+./bin/mongo
+
+```
 
 ou 
 
@@ -89,3 +63,7 @@ Sigam o item 2, e criem da seguinte forma (caso usem o banco de dados local para
 ```senha: admin123 ```
 
 Façam assim para que o django consiga conectar no bd, já que os arquivos foram configurados dessa forma.
+
+* Instalando os pacotes utilizados:
+
+```pip install -r requirements.txt```

@@ -1,4 +1,4 @@
-from models import *
+from .models import *
 import re
 
 def verificaUsuario(request):
@@ -31,7 +31,7 @@ def validar_cpf(cpf):
     if (not cpf) or (len(cpf) < 11):
         return False
 
-    inteiros = map(int, cpf)
+    inteiros = list(map(int, cpf))
     novo = inteiros[:9]
 
     while len(novo) < 11:
@@ -52,6 +52,6 @@ if __name__ == "__main__":
     import doctest, sys
     result = doctest.testmod() #verbose=True)
     if result[0] == 0:
-        print "OK!"
+        print("OK!")
     else:
-        print result
+        print(result)
