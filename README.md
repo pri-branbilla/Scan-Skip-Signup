@@ -10,40 +10,6 @@ Abra a pasta que se deseja inicializar (por exemplo, login) e utilize:
 
 ```python manage.py runserver```
 
-### Trabalhando em branches separadas:
-
-* Criando uma branch nova e mudando para ela (o nome ficará no estilo "seunome/nomebranch"):
-
-```git branch -m seunome/nomebranch```
-
-* Dando o primeiro push nessa branch
-
-```git push --set-upstream origin seunome/nomebranch```
-
-* Para ver em qual branch se está nesse momento:
-
-```git branch```
-
-* Para mudar de branch:
-
-```git checkout branch-que-deseja-ir```
-
-* Depois de terminar o trabalho na sua branch (ter feito os commits e os pushs), para fazer um merge colocando o seu novo conteúdo na master:
-
-```git checkout master``` 
-
-```git merge seunome/nomebranch```
-
-```git push origin master```
-
-* Se você quiser fazer um merge do conteúdo da master na sua branch, é só fazer:
-
-```git checkout seunome/nomebranch``` 
-
-```git merge master```
-
-```git push origin seunome/nomebranch```
-
 ### Requerimentos:
 <sup>OBS: Em alguns sistemas é necessário utilizar o comando "pip" com sudo</sup>
 
